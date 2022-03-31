@@ -15,29 +15,32 @@ from tqdm import tqdm
 TOKEN = "ghp_YEKVmKSn1Z9..."  # GitHub access token
 date = datetime.datetime(2022, 3, 1)  # count stars since this day
 repos = [
-    'ultralytics/yolov5',
-    'facebookresearch/detectron2',
-    'PyTorchLightning/pytorch-lightning',
-    'streamlit/streamlit',
-    'ray-project/ray',
-    'PaddlePaddle/Paddle',
-    'tencent/ncnn',
+    'ultralytics/yolov5',  # YOLOv5
+
+    'facebookresearch/detectron2',  # FAANG companies
+    'deepmind/deepmind-research',
+    'aws/amazon-sagemaker-examples',
+    'awslabs/autogluon',
     'microsoft/lightgbm',
     'openai/gpt-3',
-    'google/automl',
-    'deepmind/deepmind-research',
-    'awslabs/autogluon',
-    'aws/amazon-sagemaker-examples',
     'apple/turicreate',
     'apple/coremltools',
-    'pjreddie/darknet',
-    'alexeyab/darknet',
-    'explosion/spaCy',
+
+    'tencent/ncnn',  # Chinese companies
     'Megvii-BaseDetection/YOLOX',
-    'WongKinYiu/yolor',
-    'rwightman/pytorch-image-models',
-    'wandb/client',
+    'PaddlePaddle/Paddle',
+
+    'rwightman/pytorch-image-models',  # Startups/architectures
+    'streamlit/streamlit',
+    'explosion/spaCy',
+    'PyTorchLightning/pytorch-lightning',
+    'ray-project/ray',
     'fastai/fastai',
+    'google/automl',
+    'alexeyab/darknet',
+    'pjreddie/darknet',
+    'WongKinYiu/yolor',
+    'wandb/client',
     'Deci-AI/super-gradients',
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
 ]
