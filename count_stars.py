@@ -16,20 +16,20 @@ TOKEN = "ghp_YEKVmKSn1Z9..."  # GitHub access token
 date = datetime.datetime(2022, 3, 1)  # count stars since this day
 repos = [
     'ultralytics/yolov5',
-    'PyTorchLightning/pytorch-lightning',
     'facebookresearch/detectron2',
+    'PyTorchLightning/pytorch-lightning',
     'streamlit/streamlit',
     'ray-project/ray',
     'PaddlePaddle/Paddle',
     'tencent/ncnn',
     'microsoft/lightgbm',
+    'openai/gpt-3',
     'google/automl',
+    'deepmind/deepmind-research',
     'awslabs/autogluon',
     'aws/amazon-sagemaker-examples',
     'apple/turicreate',
     'apple/coremltools',
-    'openai/gpt-3',
-    'deepmind/deepmind-research',
     'pjreddie/darknet',
     'alexeyab/darknet',
     'explosion/spaCy',
@@ -43,7 +43,7 @@ repos = [
 g = Github(TOKEN)  # create a Github instance
 now = datetime.datetime.now()
 days = (now - date).days + (now - date).seconds / 86400  # days since date
-print(f'Counting stars for last {days:.1f} days')
+print(f'Counting stars for last {days:.1f} days\n')
 
 # Run
 for repo in repos:
@@ -58,7 +58,9 @@ for repo in repos:
             if x.starred_at > date:
                 n += 1
             else:
-                pbar.desc = f'{r.full_name:50s}: {n} stars ({n / days:.1f}/day)'
+                s1 = f'{n} stars'
+                s2 = f'({n / days:.1f}/day)'
+                pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
                 break
     except Exception as e:
         print(e)
