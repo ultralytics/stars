@@ -35,7 +35,10 @@ repos = [
     'explosion/spaCy',
     'Megvii-BaseDetection/YOLOX',
     'WongKinYiu/yolor',
-    'rwightman/pytorch-image-models'
+    'rwightman/pytorch-image-models',
+    'wandb/client',
+    'fastai/fastai',
+    'Deci-AI/super-gradients',
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
 ]
 
