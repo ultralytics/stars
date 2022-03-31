@@ -25,6 +25,7 @@ When run on March 31st, 2022 result is:
 
 ```python
 Counting stars for last 30.8 days
+
 ultralytics/yolov5                      : 1602 stars (52.0/day):   7%|▋         | 1602/24084 [00:12<02:58, 126.09it/s]
 PyTorchLightning/pytorch-lightning      : 414 stars (13.4/day):   2%|▏         | 414/17853 [00:03<02:20, 124.19it/s]
 facebookresearch/detectron2             : 385 stars (12.5/day):   2%|▏         | 385/20348 [00:03<02:43, 121.77it/s]
