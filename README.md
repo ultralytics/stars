@@ -1,4 +1,4 @@
-# Count GitHub Stars ⭐
+# Count GitHub Stars per Day ⭐
 
 ### Requirements
 
@@ -13,7 +13,7 @@ pip install PyGithub
 
 ### Usage
 
-Update `TOKEN` to a valid GitHub access token in `count_stars.py` L15 and then run:
+Update `TOKEN` to a valid [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) in `count_stars.py` L15 and then run:
 
 ```python
 python count_stars.py
