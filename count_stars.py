@@ -6,6 +6,7 @@ Usage:
     $ python path/to/count_stars.py
 """
 
+import time
 from datetime import datetime
 
 import pandas as pd
@@ -56,7 +57,7 @@ print(f'Counting stars for last {days:.1f} days\n')
 pd.options.display.max_columns = None
 
 # Run
-users = []
+t, users = time.time(), []
 for repo in repos:
     r = g.get_repo(repo)
     s = r.get_stargazers_with_dates().reversed
@@ -89,6 +90,7 @@ for repo in repos:
     # for i, x in pbar:
     #     n += x  # im, hw_orig, hw_resized = load_image(self, i)
 
+print(f'Done in {time.time() - t:.1f}s')
 if save:
     x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers'])
     x.to_csv(f'users.csv')
