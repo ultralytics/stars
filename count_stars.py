@@ -14,36 +14,18 @@ from tqdm import tqdm
 # Settings
 TOKEN = "ghp_YEKVmKSn1Z9..."  # GitHub access token
 date = datetime.datetime(2022, 3, 1)  # count stars since this day
-repos = [
-    'ultralytics/yolov5',  # YOLOv5 🚀
+repos = []
 
-    'facebookresearch/detectron2',  # FAANG companies
-    'deepmind/deepmind-research',
-    'aws/amazon-sagemaker-examples',
-    'awslabs/autogluon',
-    'microsoft/lightgbm',
-    'openai/gpt-3',
-    'apple/turicreate',
-    'apple/coremltools',
+# Read repos
+with open("repos.txt") as file:
+    for line in file.readlines():
+        try:
+            repo, comment = line.split("#")
+        except ValueError:
+            repo = line
 
-    'tencent/ncnn',  # Chinese companies
-    'Megvii-BaseDetection/YOLOX',
-    'PaddlePaddle/Paddle',
-
-    'rwightman/pytorch-image-models',  # Startups/architectures
-    'streamlit/streamlit',
-    'explosion/spaCy',
-    'PyTorchLightning/pytorch-lightning',
-    'ray-project/ray',
-    'fastai/fastai',
-    'google/automl',
-    'alexeyab/darknet',
-    'pjreddie/darknet',
-    'WongKinYiu/yolor',
-    'wandb/client',
-    'Deci-AI/super-gradients',
-    # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
-]
+        repos.append(repo.strip())
+    repos = list(filter(None, repos))
 
 # Parameters
 g = Github(TOKEN)  # create a Github instance
