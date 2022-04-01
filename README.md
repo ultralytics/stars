@@ -1,6 +1,6 @@
 # Count GitHub Stars per Day ⭐
 
-This tool helps track 
+Track GitHub stars per day over a given date range to measure the open-source popularity of your repo!
 
 ### Requirements
 
@@ -23,10 +23,10 @@ python count_stars.py
 
 ### Result
 
-When run on March 31st, 2022 result is:
+When run on April 1st, 2022 result is:
 
 ```python
-Counting stars for last 30.8 days
+Counting stars for last 31.5 days
 
 ultralytics/yolov5                      1636 stars  (52.0/day)  :   7%|▋         | 1636/24118 [00:16<03:52, 96.58it/s]
 facebookresearch/detectron2             400 stars   (12.7/day)  :   2%|▏         | 400/20363 [00:03<02:53, 114.75it/s]
