@@ -1,6 +1,6 @@
 # Count GitHub Stars per Day ⭐
 
-Track GitHub stars per day over a given date range to measure the open-source popularity of your repo!
+Track GitHub stars per day over a date range to measure the open-source popularity of different repositories.
 
 ### Requirements
 
