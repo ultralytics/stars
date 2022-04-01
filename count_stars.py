@@ -15,7 +15,7 @@ from tqdm import tqdm
 TOKEN = "ghp_YEKVmKSn1Z9..."  # GitHub access token
 date = datetime.datetime(2022, 3, 1)  # count stars since this day
 repos = [
-    'ultralytics/yolov5',  # YOLOv5
+    'ultralytics/yolov5',  # YOLOv5 🚀
 
     'facebookresearch/detectron2',  # FAANG companies
     'deepmind/deepmind-research',
