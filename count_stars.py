@@ -6,7 +6,7 @@ Usage:
     $ python path/to/count_stars.py
 """
 
-import datetime
+from datetime import datetime
 
 import pandas as pd
 from github import Github  # pip install PyGithub
@@ -14,7 +14,10 @@ from tqdm import tqdm
 
 # Settings
 TOKEN = "ghp_YEKVmKSn1Z9..."  # GitHub access token
-date = datetime.datetime(2022, 3, 1)  # count stars since this day
+# date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
+# days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
+days = 30  # specify days directly, i.e. last 30 days
+
 repos = [
     'ultralytics/yolov5',  # YOLOv5 🚀
 
@@ -49,8 +52,6 @@ save = False  # save user info
 
 # Parameters
 g = Github(TOKEN)  # create a Github instance
-now = datetime.datetime.now()
-days = (now - date).days + (now - date).seconds / 86400  # days since date
 print(f'Counting stars for last {days:.1f} days\n')
 pd.options.display.max_columns = None
 
@@ -65,7 +66,8 @@ for repo in repos:
         n = 0
         pbar = tqdm(s, total=total, desc=r.full_name)
         for x in pbar:
-            if x.starred_at > date:
+            dt = (datetime.now() - x.starred_at).total_seconds() / 86400
+            if dt < days:
                 n += 1
                 if save:
                     u = x.user
@@ -79,17 +81,15 @@ for repo in repos:
     except Exception as e:
         print(e)
 
-    if save:
-        x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers'])
-        x.to_csv(f'users.csv')
-        print(f'{len(x)} users saved to users.csv')
-
     # Threaded
     # from multiprocessing.pool import Pool, ThreadPool
     # fcn = lambda x: x.starred_at > date
     # results = ThreadPool(8).imap(fcn, s)
     # pbar = tqdm(enumerate(results), total=total)
-    # n = 0
     # for i, x in pbar:
     #     n += x  # im, hw_orig, hw_resized = load_image(self, i)
-    #     pbar.desc = f'{n}/{i}'
+
+if save:
+    x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers'])
+    x.to_csv(f'users.csv')
+    print(f'{len(x)} users saved to users.csv')
