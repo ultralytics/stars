@@ -8,6 +8,7 @@ Usage:
 
 import datetime
 
+import pandas as pd
 from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
@@ -44,14 +45,17 @@ repos = [
     'Deci-AI/super-gradients',
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
 ]
+save = False  # save user info
 
 # Parameters
 g = Github(TOKEN)  # create a Github instance
 now = datetime.datetime.now()
 days = (now - date).days + (now - date).seconds / 86400  # days since date
 print(f'Counting stars for last {days:.1f} days\n')
+pd.options.display.max_columns = None
 
 # Run
+users = []
 for repo in repos:
     r = g.get_repo(repo)
     s = r.get_stargazers_with_dates().reversed
@@ -63,6 +67,10 @@ for repo in repos:
         for x in pbar:
             if x.starred_at > date:
                 n += 1
+                if save:
+                    u = x.user
+                    if u.email is not None:
+                        users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers])
             else:
                 s1 = f'{n} stars'
                 s2 = f'({n / days:.1f}/day)'
@@ -70,6 +78,11 @@ for repo in repos:
                 break
     except Exception as e:
         print(e)
+
+    if save:
+        x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers'])
+        x.to_csv(f'users.csv')
+        print(f'{len(x)} users saved to users.csv')
 
     # Threaded
     # from multiprocessing.pool import Pool, ThreadPool
