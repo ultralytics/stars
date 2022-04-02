@@ -1,2 +1,3 @@
-tqdm==4.63.1
-PyGithub==1.55
+pandas>=1.3.5
+PyGithub>=1.55
+tqdm>=4.63.1
