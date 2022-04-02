@@ -64,21 +64,29 @@ for repo in repos:
     total = s.totalCount
 
     try:
-        n = 0
+        dates = []
         pbar = tqdm(s, total=total, desc=r.full_name)
         for x in pbar:
             dt = (datetime.now() - x.starred_at).total_seconds() / 86400
             if dt < days:
-                n += 1
+                dates.append([x.starred_at, 1])
                 if save:
                     u = x.user
                     if u.email is not None:
-                        users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers])
+                        users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers,
+                                      x.starred_at])
             else:
-                s1 = f'{n} stars'
-                s2 = f'({n / days:.1f}/day)'
-                pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
                 break
+        df = pd.DataFrame(dates, columns=['date', 'stars'])
+        df.date = pd.to_datetime(df.date)
+        dg = df.groupby(pd.Grouper(key='date', freq='1M')).sum()  # group by month
+        dg.index = dg.index.strftime('%B')
+        # dg.to_csv(f'dates_{r.name}.csv')
+
+        n = dg.sum().stars
+        s1 = f'{n} stars'
+        s2 = f'({n / days:.1f}/day)'
+        pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
     except Exception as e:
         print(e)
 
@@ -86,12 +94,10 @@ for repo in repos:
     # from multiprocessing.pool import Pool, ThreadPool
     # fcn = lambda x: x.starred_at > date
     # results = ThreadPool(8).imap(fcn, s)
-    # pbar = tqdm(enumerate(results), total=total)
-    # for i, x in pbar:
-    #     n += x  # im, hw_orig, hw_resized = load_image(self, i)
+    # n = sum([x for x in tqdm(results, total=total)])
 
 print(f'Done in {time.time() - t:.1f}s')
 if save:
-    x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers'])
+    x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers', 'Date'])
     x.to_csv(f'users.csv')
     print(f'{len(x)} users saved to users.csv')
