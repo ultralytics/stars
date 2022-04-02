@@ -63,8 +63,8 @@ for repo in repos:
     s = r.get_stargazers_with_dates().reversed
     total = s.totalCount
 
+    dates = []
     try:
-        dates = []
         pbar = tqdm(s, total=total, desc=r.full_name)
         for x in pbar:
             dt = (datetime.now() - x.starred_at).total_seconds() / 86400
@@ -77,24 +77,19 @@ for repo in repos:
                                       x.starred_at])
             else:
                 break
-        df = pd.DataFrame(dates, columns=['date', 'stars'])
-        df.date = pd.to_datetime(df.date)
-        dg = df.groupby(pd.Grouper(key='date', freq='1M')).sum()  # group by month
-        dg.index = dg.index.strftime('%B')
-        # dg.to_csv(f'dates_{r.name}.csv')
 
-        n = dg.sum().stars
+        n = len(dates)
         s1 = f'{n} stars'
         s2 = f'({n / days:.1f}/day)'
         pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
     except Exception as e:
         print(e)
 
-    # Threaded
-    # from multiprocessing.pool import Pool, ThreadPool
-    # fcn = lambda x: x.starred_at > date
-    # results = ThreadPool(8).imap(fcn, s)
-    # n = sum([x for x in tqdm(results, total=total)])
+    df = pd.DataFrame(dates, columns=['date', 'stars'])
+    df.date = pd.to_datetime(df.date)
+    # df.to_csv(f'dates_{r.name}.csv')
+    # dg = df.groupby(pd.Grouper(key='date', freq='1M')).sum()  # group by month
+    # dg = df.groupby(pd.Grouper(key='date', freq='1D')).sum()  # group by day
 
 print(f'Done in {time.time() - t:.1f}s')
 if save:
