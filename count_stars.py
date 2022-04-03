@@ -76,12 +76,12 @@ for repo in repos:
                         users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers,
                                       x.starred_at])
             else:
+                n = len(dates)
+                s1 = f'{n} stars'
+                s2 = f'({n / days:.1f}/day)'
+                pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
                 break
 
-        n = len(dates)
-        s1 = f'{n} stars'
-        s2 = f'({n / days:.1f}/day)'
-        pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
     except Exception as e:
         print(e)
 
