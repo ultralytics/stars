@@ -23,33 +23,35 @@ python count_stars.py
 
 ### Result
 
-When run on April 1st, 2022 result is:
+When run on April 3rd, 2022 result is:
 
 ```python
-Counting stars for last 31.5 days
+Counting stars for last 30.0 days
 
-ultralytics/yolov5                      1636 stars  (52.0/day)  :   7%|▋         | 1636/24118 [00:16<03:52, 96.58it/s]
-facebookresearch/detectron2             400 stars   (12.7/day)  :   2%|▏         | 400/20363 [00:03<02:53, 114.75it/s]
-deepmind/deepmind-research              209 stars   (6.6/day)   :   2%|▏         | 209/9924 [00:01<01:21, 119.41it/s]
-aws/amazon-sagemaker-examples           138 stars   (4.4/day)   :   2%|▏         | 138/6723 [00:01<01:00, 108.33it/s]
-awslabs/autogluon                       153 stars   (4.9/day)   :   4%|▎         | 153/4311 [00:01<00:35, 117.60it/s]
-microsoft/LightGBM                      129 stars   (4.1/day)   :   1%|          | 129/13611 [00:01<02:17, 98.37it/s]
-openai/gpt-3                            70 stars    (2.2/day)   :   1%|          | 70/11140 [00:00<02:21, 78.15it/s]
-apple/turicreate                        57 stars    (1.8/day)   :   1%|          | 57/10648 [00:00<01:30, 116.69it/s]
-apple/coremltools                       42 stars    (1.3/day)   :   2%|▏         | 42/2608 [00:00<00:29, 88.18it/s]
-Tencent/ncnn                            300 stars   (9.5/day)   :   2%|▏         | 300/14175 [00:02<01:49, 126.88it/s]
-Megvii-BaseDetection/YOLOX              285 stars   (9.1/day)   :   5%|▍         | 285/6021 [00:02<00:42, 133.68it/s]
-PaddlePaddle/Paddle                     216 stars   (6.9/day)   :   1%|          | 216/17874 [00:01<02:26, 120.36it/s]
-rwightman/pytorch-image-models          759 stars   (24.1/day)  :   4%|▍         | 759/17404 [00:05<02:11, 126.54it/s]
-streamlit/streamlit                     673 stars   (21.4/day)  :   4%|▎         | 673/18486 [00:05<02:36, 113.52it/s]
-explosion/spaCy                         556 stars   (17.7/day)  :   2%|▏         | 556/23048 [00:04<03:19, 112.54it/s]
-PyTorchLightning/pytorch-lightning      432 stars   (13.7/day)  :   2%|▏         | 432/17868 [00:03<02:17, 126.56it/s]
-ray-project/ray                         418 stars   (13.3/day)  :   2%|▏         | 418/19706 [00:03<02:42, 118.41it/s]
-fastai/fastai                           160 stars   (5.1/day)   :   1%|          | 160/22108 [00:01<03:37, 100.89it/s]
-google/automl                           45 stars    (1.4/day)   :   1%|          | 45/4941 [00:00<00:45, 106.84it/s]
-AlexeyAB/darknet                        288 stars   (9.2/day)   :   2%|▏         | 288/18777 [00:02<02:24, 128.33it/s]
-pjreddie/darknet                        283 stars   (9.0/day)   :   1%|▏         | 283/22486 [00:02<02:56, 125.59it/s]
-WongKinYiu/yolor                        80 stars    (2.5/day)   :   5%|▌         | 80/1472 [00:00<00:14, 99.01it/s]
-wandb/client                            72 stars    (2.3/day)   :   2%|▏         | 72/3791 [00:00<00:43, 86.35it/s]
-Deci-AI/super-gradients                 19 stars    (0.6/day)   :   6%|▌         | 19/312 [00:00<00:06, 47.65it/s]
+ultralytics/yolov5                      1596 stars  (53.2/day)  :   7% 1596/24203 [00:09<02:20, 160.51it/s]
+facebookresearch/detectron2             372 stars   (12.4/day)  :   2% 372/20380 [00:02<02:20, 141.93it/s]
+deepmind/deepmind-research              205 stars   (6.8/day)   :   2% 205/9932 [00:01<01:06, 145.76it/s]
+aws/amazon-sagemaker-examples           128 stars   (4.3/day)   :   2% 128/6729 [00:00<00:44, 150.01it/s]
+awslabs/autogluon                       149 stars   (5.0/day)   :   3% 149/4316 [00:01<00:28, 143.74it/s]
+microsoft/LightGBM                      126 stars   (4.2/day)   :   1% 126/13622 [00:01<02:08, 105.21it/s]
+openai/gpt-3                            73 stars    (2.4/day)   :   1% 73/11149 [00:00<01:18, 141.94it/s]
+apple/turicreate                        57 stars    (1.9/day)   :   1% 57/10651 [00:00<01:41, 104.59it/s]
+apple/coremltools                       39 stars    (1.3/day)   :   1% 39/2607 [00:00<00:22, 115.67it/s]
+NVlabs/stylegan3                        163 stars   (5.4/day)   :   4% 163/3901 [00:01<00:27, 136.62it/s]
+Tencent/ncnn                            277 stars   (9.2/day)   :   2% 277/14185 [00:01<01:28, 157.73it/s]
+Megvii-BaseDetection/YOLOX              274 stars   (9.1/day)   :   5% 274/6034 [00:02<00:59, 96.40it/s]
+PaddlePaddle/Paddle                     201 stars   (6.7/day)   :   1% 201/17877 [00:01<01:51, 158.78it/s]
+rwightman/pytorch-image-models          724 stars   (24.1/day)  :   4% 724/17452 [00:04<01:42, 163.86it/s]
+streamlit/streamlit                     617 stars   (20.6/day)  :   3% 617/18498 [00:03<01:50, 162.51it/s]
+explosion/spaCy                         551 stars   (18.4/day)  :   2% 551/23052 [00:03<02:25, 154.51it/s]
+PyTorchLightning/pytorch-lightning      409 stars   (13.6/day)  :   2% 409/17883 [00:02<01:56, 149.61it/s]
+ray-project/ray                         390 stars   (13.0/day)  :   2% 390/19722 [00:02<02:04, 155.03it/s]
+fastai/fastai                           137 stars   (4.6/day)   :   1% 137/22107 [00:00<02:31, 145.06it/s]
+google/automl                           45 stars    (1.5/day)   :   1% 45/4941 [00:00<00:37, 130.84it/s]
+AlexeyAB/darknet                        268 stars   (8.9/day)   :   1% 268/18786 [00:01<02:07, 144.91it/s]
+pjreddie/darknet                        269 stars   (9.0/day)   :   1% 269/22496 [00:01<02:35, 143.38it/s]
+WongKinYiu/yolor                        73 stars    (2.4/day)   :   5% 73/1475 [00:00<00:12, 114.79it/s]
+wandb/client                            71 stars    (2.4/day)   :   2% 71/3794 [00:00<00:27, 134.94it/s]
+Deci-AI/super-gradients                 19 stars    (0.6/day)   :   6% 19/312 [00:00<00:05, 57.68it/s]
+Done in 62.2s
 ```
