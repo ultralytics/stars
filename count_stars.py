@@ -30,6 +30,7 @@ repos = [
     'openai/gpt-3',
     'apple/turicreate',
     'apple/coremltools',
+    'NVlabs/stylegan3',
 
     'tencent/ncnn',  # Chinese companies
     'Megvii-BaseDetection/YOLOX',
