@@ -30,6 +30,10 @@ repos = [
     'openai/gpt-3',
     'apple/turicreate',
     'apple/coremltools',
+    'google/automl',
+    'google-research/google-research',
+    'google-research/vision_transformer',
+    'google-research/bert',
     'NVlabs/stylegan3',
 
     'tencent/ncnn',  # Chinese companies
@@ -42,12 +46,14 @@ repos = [
     'PyTorchLightning/pytorch-lightning',
     'ray-project/ray',
     'fastai/fastai',
-    'google/automl',
     'alexeyab/darknet',
     'pjreddie/darknet',
     'WongKinYiu/yolor',
     'wandb/client',
     'Deci-AI/super-gradients',
+    'neuralmagic/sparseml',
+    # edgeimpulse  # not open-source
+    # octoml  # not open-source
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
 ]
 save = False  # save user info
