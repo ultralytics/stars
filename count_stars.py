@@ -57,6 +57,7 @@ repos = [
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
 ]
 save = False  # save user info
+sleep = 1.5  # sleep time between requests
 
 # Parameters
 g = Github(TOKEN)  # create a Github instance
@@ -78,6 +79,7 @@ for repo in repos:
             if dt < days:
                 dates.append([x.starred_at, 1])
                 if save:
+                    time.sleep(sleep)
                     u = x.user
                     if u.email is not None:
                         users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers,
