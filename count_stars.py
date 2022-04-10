@@ -61,7 +61,7 @@ sleep = 1.5  # sleep time between requests
 
 # Parameters
 g = Github(TOKEN)  # create a Github instance
-print(f'Counting stars for last {days:.1f} days\n')
+print(f'Counting stars for last {days:.1f} days from {datetime.now():%d %B %Y}\n')
 pd.options.display.max_columns = None
 
 # Run
