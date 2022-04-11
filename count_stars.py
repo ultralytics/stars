@@ -52,6 +52,8 @@ repos = [
     'wandb/client',
     'Deci-AI/super-gradients',
     'neuralmagic/sparseml',
+    'MosaicML/composer',
+    'nebuly-ai/nebullvm',
     # edgeimpulse  # not open-source
     # octoml  # not open-source
     # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
