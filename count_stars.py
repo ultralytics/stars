@@ -18,6 +18,7 @@ from tqdm import tqdm
 def run(
         token="ghp_YEKVmKSn1Z9...",  # GitHub access token
         days=30,  # trailing days to analyze
+        save=False  # save user info
 ):
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
@@ -63,7 +64,6 @@ def run(
         # octoml  # not open-source
         # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
     ]
-    save = False  # save user info
     sleep = 1.5  # sleep time between requests
 
     # Parameters
@@ -118,6 +118,7 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--token', type=str, default='ghp_YEKVmKSn1Z9...', help='GitHub access token')
     parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
+    parser.add_argument('--save', action='store_true', help='Save user info')
     opt = parser.parse_args()
     return opt
 
