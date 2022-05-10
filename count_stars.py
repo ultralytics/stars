@@ -60,6 +60,7 @@ def run(
         'neuralmagic/sparseml',
         'MosaicML/composer',
         'nebuly-ai/nebullvm',
+        'commaai/openpilot',
         # edgeimpulse  # not open-source
         # octoml  # not open-source
         # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
