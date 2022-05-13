@@ -56,11 +56,15 @@ def run(
         'pjreddie/darknet',
         'WongKinYiu/yolor',
         'wandb/client',
+        'allegroai/clearml',
         'Deci-AI/super-gradients',
         'neuralmagic/sparseml',
         'MosaicML/composer',
         'nebuly-ai/nebullvm',
         'commaai/openpilot',
+        'CorentinJ/Real-Time-Voice-Cloning',
+        'iperov/DeepFaceLab',
+        # 'ageitgey/face_recognition',  # known issue over 40k stars
         # edgeimpulse  # not open-source
         # octoml  # not open-source
         # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
