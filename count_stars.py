@@ -115,7 +115,7 @@ def run(
     print(f'Done in {time.time() - t:.1f}s')
     if save:
         x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers', 'Date'])
-        x.to_csv(f'users.csv')
+        x.to_csv('users.csv')
         print(f'{len(x)} users saved to users.csv')
 
 
@@ -124,8 +124,7 @@ def parse_opt():
     parser.add_argument('--token', type=str, default='ghp_YEKVmKSn1Z9...', help='GitHub access token')
     parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
     parser.add_argument('--save', action='store_true', help='Save user info')
-    opt = parser.parse_args()
-    return opt
+    return parser.parse_args()
 
 
 def main(opt):
