@@ -10,7 +10,7 @@ Track GitHub stars per day over a date range to measure the open-source populari
 [GitHub]: https://github.com
 
 ```bash
-pip install PyGithub
+pip install -r requirements.txt  # install
 ```
 
 ### Usage
