@@ -1,53 +1,53 @@
 repositories:
   # Ultralytics
-  - ultralytics/ultralytics,
-  - ultralytics/yolov5,
-  - ultralytics/yolov3,
+  - ultralytics/ultralytics
+  - ultralytics/yolov5
+  - ultralytics/yolov3
 
   # YOLO
-  - meituan/yolov6,
-  - WongKinYiu/yolov7,
-  - Megvii-BaseDetection/YOLOX,
-  - PaddlePaddle/Paddle,
-  - open-mmlab/mmdetection,
-  - deci-AI/super_gradients,
+  - meituan/yolov6
+  - WongKinYiu/yolov7
+  - Megvii-BaseDetection/YOLOX
+  - PaddlePaddle/Paddle
+  - open-mmlab/mmdetection
+  - deci-AI/super_gradients
 
   # FAANG companies
-  - facebookresearch/detectron2,
-  - facebookresearch/segment-anything,
-  - deepmind/deepmind-research,
-  - aws/amazon-sagemaker-examples,
-  - awslabs/autogluon,
-  - microsoft/lightgbm,
-  - microsoft/deepspeed,
-  - openai/gpt-3,
-  - apple/turicreate,
-  - apple/coremltools,
-  - google/automl,
-  - google-research/google-research,
-  - google-research/vision_transformer,
-  - google-research/bert,
-  - NVlabs/stylegan3,
+  - facebookresearch/detectron2
+  - facebookresearch/segment-anything
+  - deepmind/deepmind-research
+  - aws/amazon-sagemaker-examples
+  - awslabs/autogluon
+  - microsoft/lightgbm
+  - microsoft/deepspeed
+  - openai/gpt-3
+  - apple/turicreate
+  - apple/coremltools
+  - google/automl
+  - google-research/google-research
+  - google-research/vision_transformer
+  - google-research/bert
+  - NVlabs/stylegan3
 
   # Chinese companies
-  - tencent/ncnn,
+  - tencent/ncnn
 
   # Startups/architectures
-  - rwightman/pytorch-image-models,
-  - streamlit/streamlit,
-  - explosion/spaCy,
-  - PyTorchLightning/pytorch-lightning,
-  - ray-project/ray,
-  - fastai/fastai,
-  - alexeyab/darknet,
-  - pjreddie/darknet,
-  - wandb/client,
-  - allegroai/clearml,
-  - neuralmagic/sparseml,
-  - MosaicML/composer,
-  - nebuly-ai/nebullvm,
-  - commaai/openpilot,
-  - CorentinJ/Real-Time-Voice-Cloning,
-  - iperov/DeepFaceLab,
-  - ageitgey/face_recognition,
-  - huggingface/transformers,
+  - rwightman/pytorch-image-models
+  - streamlit/streamlit
+  - explosion/spaCy
+  - PyTorchLightning/pytorch-lightning
+  - ray-project/ray
+  - fastai/fastai
+  - alexeyab/darknet
+  - pjreddie/darknet
+  - wandb/client
+  - allegroai/clearml
+  - neuralmagic/sparseml
+  - MosaicML/composer
+  - nebuly-ai/nebullvm
+  - commaai/openpilot
+  - CorentinJ/Real-Time-Voice-Cloning
+  - iperov/DeepFaceLab
+  - ageitgey/face_recognition
+  - huggingface/transformers
