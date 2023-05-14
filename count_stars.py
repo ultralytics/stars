@@ -15,6 +15,8 @@ import pandas as pd
 from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
+# Replace with your GitHub personal access token
+TOKEN = "ghp_1Gw..."
 
 def run(
         token="ghp_YEKVmKSn1Z9...",  # GitHub access token
@@ -81,7 +83,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--token', type=str, default='ghp_bVg...', help='GitHub PAT')
+    parser.add_argument('--token', type=str, default=TOKEN, help='GitHub Personal Access Token')
     parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
     parser.add_argument('--save', action='store_true', help='Save user info')
     return parser.parse_args()
