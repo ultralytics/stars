@@ -19,7 +19,7 @@ from tqdm import tqdm
 TOKEN = "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"
 
 def run(
-        token="ghp_YEKVmKSn1Z9...",  # GitHub access token
+        token="",  # GitHub access token
         days=3,  # trailing days to analyze
         save=False  # save user info
 ):
