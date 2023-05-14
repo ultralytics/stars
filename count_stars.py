@@ -9,20 +9,20 @@ Usage:
 import argparse
 import time
 from datetime import datetime
-import yaml
 
 import pandas as pd
+import yaml
 from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
 # Replace with your GitHub personal access token
-TOKEN = "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"
+GITHUB_TOKEN = ''  # i.e. 'ghp_1gwB...'
 
-def run(
-        token="",  # GitHub access token
+
+def run(token="",  # GitHub access token
         days=3,  # trailing days to analyze
         save=False  # save user info
-):
+        ):
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
@@ -83,7 +83,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--token', type=str, default=TOKEN, help='GitHub Personal Access Token')
+    parser.add_argument('--token', type=str, default=GITHUB_TOKEN, help='GitHub Personal Access Token')
     parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
     parser.add_argument('--save', action='store_true', help='Save user info')
     return parser.parse_args()
