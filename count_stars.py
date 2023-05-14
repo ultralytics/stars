@@ -9,6 +9,7 @@ Usage:
 import argparse
 import time
 from datetime import datetime
+import yaml
 
 import pandas as pd
 from github import Github  # pip install PyGithub
@@ -25,51 +26,9 @@ def run(
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
     # days = 30  # specify days directly, i.e. last 30 days
 
-    repos = [
-        'ultralytics/yolov5',  # YOLOv5 🚀
-
-        'facebookresearch/detectron2',  # FAANG companies
-        'deepmind/deepmind-research',
-        'aws/amazon-sagemaker-examples',
-        'awslabs/autogluon',
-        'microsoft/lightgbm',
-        'openai/gpt-3',
-        'apple/turicreate',
-        'apple/coremltools',
-        'google/automl',
-        'google-research/google-research',
-        'google-research/vision_transformer',
-        'google-research/bert',
-        'NVlabs/stylegan3',
-
-        'tencent/ncnn',  # Chinese companies
-        'Megvii-BaseDetection/YOLOX',
-        'PaddlePaddle/Paddle',
-
-        'rwightman/pytorch-image-models',  # Startups/architectures
-        'streamlit/streamlit',
-        'explosion/spaCy',
-        'PyTorchLightning/pytorch-lightning',
-        'ray-project/ray',
-        'fastai/fastai',
-        'alexeyab/darknet',
-        'pjreddie/darknet',
-        'WongKinYiu/yolor',
-        'wandb/client',
-        'allegroai/clearml',
-        'Deci-AI/super-gradients',
-        'neuralmagic/sparseml',
-        'MosaicML/composer',
-        'nebuly-ai/nebullvm',
-        'commaai/openpilot',
-        'CorentinJ/Real-Time-Voice-Cloning',
-        'iperov/DeepFaceLab',
-        # 'ageitgey/face_recognition',  # known issue over 40k stars
-        # edgeimpulse  # not open-source
-        # octoml  # not open-source
-        # 'huggingface/transformers',  # known issue over 40k stars https://github.com/PyGithub/PyGithub/issues/1876
-    ]
-    sleep = 1.5  # sleep time between requests
+    # Get repos
+    with open("repos.yml", "r") as f:
+        repos = yaml.safe_load(f)["repositories"]
 
     # Parameters
     g = Github(token)  # create a GitHub instance
@@ -78,6 +37,7 @@ def run(
 
     # Run
     t, users = time.time(), []
+    sleep = 1.39  # sleep seconds between requests (5000/hr limit)
     for repo in repos:
         r = g.get_repo(repo)
         s = r.get_stargazers_with_dates().reversed
@@ -121,7 +81,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--token', type=str, default='ghp_YEKVmKSn1Z9...', help='GitHub access token')
+    parser.add_argument('--token', type=str, default='ghp_bVg...', help='GitHub PAT')
     parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
     parser.add_argument('--save', action='store_true', help='Save user info')
     return parser.parse_args()
