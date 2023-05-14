@@ -16,11 +16,11 @@ from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
 # Replace with your GitHub personal access token
-TOKEN = "ghp_1Gw..."
+TOKEN = "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"
 
 def run(
         token="ghp_YEKVmKSn1Z9...",  # GitHub access token
-        days=30,  # trailing days to analyze
+        days=3,  # trailing days to analyze
         save=False  # save user info
 ):
     # Settings
@@ -29,7 +29,7 @@ def run(
     # days = 30  # specify days directly, i.e. last 30 days
 
     # Get repos
-    with open("repos.yml", "r") as f:
+    with open("repos.yaml", "r") as f:
         repos = yaml.safe_load(f)["repositories"]
 
     # Parameters
