@@ -43,7 +43,6 @@ repositories:
   - pjreddie/darknet,
   - wandb/client,
   - allegroai/clearml,
-  - Deci-AI/super-gradients,
   - neuralmagic/sparseml,
   - MosaicML/composer,
   - nebuly-ai/nebullvm,
