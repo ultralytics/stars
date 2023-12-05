@@ -1,32 +1,34 @@
 <br>
 <img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320">
 
-# Count GitHub Stars per Day ⭐
+# Count GitHub Stars per Day ⭐️
 
-Track GitHub stars per day over a date range to measure the open-source popularity of different repositories.
+Track the daily growth of GitHub stars over a time period to gauge the open-source popularity of various repositories.
 
-# Requirements
+## 📌 Requirements
 
-`PyGitHub` is required to access the [GitHub REST API] via Python. This library enables you to manage [GitHub] resources such as repositories, user profiles, and organizations in your Python applications.
+To interface with the [GitHub REST API](https://docs.github.com/en/rest) using Python, the `PyGitHub` library is required. Utilize this library to interact with GitHub resources such as repositories, user profiles, and organizations within your Python applications.
 
-[GitHub REST API]: https://docs.github.com/en/rest
-[GitHub]: https://github.com
+### Installation
+
+Run the following command to install dependencies listed in `requirements.txt`:
 
 ```bash
-pip install -r requirements.txt  # install
+pip install -r requirements.txt  # Install required libraries
 ```
 
-# Usage
+## 🚀 Usage
 
-Update `TOKEN` to a valid [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) in `count_stars.py` L15 and then run:
+First, update the `TOKEN` in `count_stars.py` on line 15 with your valid [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). Then execute the script:
 
 ```python
+# Before running, ensure TOKEN is set to your GitHub access token.
 python count_stars.py
 ```
 
-# Result
+## 📈 Result
 
-When run on April 10th, 2022 result is:
+The output below shows the star count for various repositories on April 10th, 2022, over the last 30 days since May 2nd, 2022:
 
 ```python
 Counting stars for last 30.0 days from 02 May 2022
@@ -65,24 +67,24 @@ nebuly-ai/nebullvm                      205 stars   (6.8/day)   :  20%|█▉   
 Done in 125.7s
 ```
 
-# Contribute
+## 💡 Contribute
 
-We love your input! Ultralytics open-source efforts would not be possible without help from our community. Please see our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started, and fill out our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to send us feedback on your experience. Thank you 🙏 to all our contributors!
+Contributions are what make the open-source community thrive. We value your ideas and input! Refer to our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started and complete our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to give us feedback on your experience. A big thank you 🙏 to all our contributors!
 
-<!-- SVG image from https://opencollective.com/ultralytics/contributors.svg?width=990 -->
+<!-- Always showcase the community's effort with an image link to contributors. -->
 <a href="https://github.com/ultralytics/yolov5/graphs/contributors">
-<img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/image-contributors.png" alt="Ultralytics open-source contributors"></a>
+<img width="100%" src="https://opencollective.com/ultralytics/contributors.svg?width=890" alt="Ultralytics open-source contributors"></a>
 
-# License
+## 📝 License
 
-Ultralytics offers two licensing options to accommodate diverse use cases:
+Ultralytics offers two types of licensing options:
 
-- **AGPL-3.0 License**: This [OSI-approved](https://opensource.org/licenses/) open-source license is ideal for students and enthusiasts, promoting open collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for more details.
-- **Enterprise License**: Designed for commercial use, this license permits seamless integration of Ultralytics software and AI models into commercial goods and services, bypassing the open-source requirements of AGPL-3.0. If your scenario involves embedding our solutions into a commercial offering, reach out through [Ultralytics Licensing](https://ultralytics.com/license).
+- **AGPL-3.0 License**: This [Open Source Initiative (OSI)-approved](https://opensource.org/licenses/agpl-3.0) license is fit for students, hobbyists, and enthusiasts, promoting collaborative open-source development. Consult the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for complete details.
+- **Enterprise License**: Tailored for commercial uses, this licensing option allows the seamless integration of Ultralytics software and AI models into commercial products and services without the obligations typically associated with AGPL-3.0. If you are looking to incorporate our solutions into your commercial products, please reach out via [Ultralytics Licensing](https://ultralytics.com/license).
 
-# Contact
+## 📬 Contact Us
 
-For Ultralytics bug reports and feature requests please visit [GitHub Issues](https://github.com/ultralytics/stars/issues), and join our [Discord](https://ultralytics.com/discord) community for questions and discussions!
+For bug reports, feature requests, and contributions, head to [GitHub Issues](https://github.com/ultralytics/stars/issues). For questions and discussions about this project and other Ultralytics endeavors, join us on [Discord](https://ultralytics.com/discord)!
 
 <br>
 <div align="center">
