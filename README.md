@@ -5,6 +5,8 @@
 
 Track the daily growth of GitHub stars over a time period to gauge the open-source popularity of various repositories.
 
+[![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
+
 ## 📌 Requirements
 
 To interface with the [GitHub REST API](https://docs.github.com/en/rest) using Python, the `PyGitHub` library is required. Utilize this library to interact with GitHub resources such as repositories, user profiles, and organizations within your Python applications.
