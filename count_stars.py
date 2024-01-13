@@ -16,13 +16,14 @@ from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
 # Replace with your GitHub personal access token
-GITHUB_TOKEN = ''  # i.e. 'ghp_1gwB...'
+GITHUB_TOKEN = ""  # i.e. 'ghp_1gwB...'
 
 
-def run(token="",  # GitHub access token
-        days=30,  # trailing days to analyze
-        save=False  # save user info
-        ):
+def run(
+    token="",  # GitHub access token
+    days=30,  # trailing days to analyze
+    save=False,  # save user info
+):
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
@@ -93,9 +94,9 @@ def run(token="",  # GitHub access token
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--token', type=str, default=GITHUB_TOKEN, help='GitHub Personal Access Token')
-    parser.add_argument('--days', type=int, default=30, help='Trailing days to analyze')
-    parser.add_argument('--save', action='store_true', help='Save user info')
+    parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
+    parser.add_argument("--days", type=int, default=30, help="Trailing days to analyze")
+    parser.add_argument("--save", action="store_true", help="Save user info")
     return parser.parse_args()
 
 
