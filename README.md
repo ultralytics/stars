@@ -5,6 +5,8 @@
 
 Track the daily growth of GitHub stars over a time period to gauge the open-source popularity of various repositories.
 
+[![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
+
 ## 📌 Requirements
 
 To interface with the [GitHub REST API](https://docs.github.com/en/rest) using Python, the `PyGitHub` library is required. Utilize this library to interact with GitHub resources such as repositories, user profiles, and organizations within your Python applications.
@@ -72,6 +74,7 @@ Done in 125.7s
 Contributions are what make the open-source community thrive. We value your ideas and input! Refer to our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started and complete our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to give us feedback on your experience. A big thank you 🙏 to all our contributors!
 
 <!-- Always showcase the community's effort with an image link to contributors. -->
+
 <a href="https://github.com/ultralytics/yolov5/graphs/contributors">
 <img width="100%" src="https://opencollective.com/ultralytics/contributors.svg?width=890" alt="Ultralytics open-source contributors"></a>
 

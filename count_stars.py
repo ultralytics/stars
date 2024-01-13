@@ -1,6 +1,6 @@
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
-Count GitHub repository stars over a time period
+Count GitHub repository stars over a time period.
 
 Usage:
     $ python path/to/count_stars.py
@@ -20,7 +20,7 @@ GITHUB_TOKEN = ''  # i.e. 'ghp_1gwB...'
 
 
 def run(token="",  # GitHub access token
-        days=3,  # trailing days to analyze
+        days=30,  # trailing days to analyze
         save=False  # save user info
         ):
     # Settings
@@ -34,7 +34,7 @@ def run(token="",  # GitHub access token
 
     # Parameters
     g = Github(token)  # create a GitHub instance
-    print(f'Counting stars for last {days:.1f} days from {datetime.now():%d %B %Y}\n')
+    print(f"Counting stars for last {days:.1f} days from {datetime.now():%d %B %Y}\n")
     pd.options.display.max_columns = None
 
     # Run
@@ -56,29 +56,39 @@ def run(token="",  # GitHub access token
                         time.sleep(sleep)
                         u = x.user
                         if u.email is not None:
-                            users.append([r.full_name, u.name, u.company, u.email, u.location, u.html_url, u.followers,
-                                          x.starred_at])
+                            users.append(
+                                [
+                                    r.full_name,
+                                    u.name,
+                                    u.company,
+                                    u.email,
+                                    u.location,
+                                    u.html_url,
+                                    u.followers,
+                                    x.starred_at,
+                                ]
+                            )
                 else:
                     n = len(dates)
-                    s1 = f'{n} stars'
-                    s2 = f'({n / days:.1f}/day)'
-                    pbar.desc = f'{r.full_name:40s}{s1:12s}{s2:12s}'
+                    s1 = f"{n} stars"
+                    s2 = f"({n / days:.1f}/day)"
+                    pbar.desc = f"{r.full_name:40s}{s1:12s}{s2:12s}"
                     break
 
         except Exception as e:
             print(e)
 
-        df = pd.DataFrame(dates, columns=['date', 'stars'])
+        df = pd.DataFrame(dates, columns=["date", "stars"])
         df.date = pd.to_datetime(df.date)
         # df.to_csv(f'dates_{r.name}.csv')
         # dg = df.groupby(pd.Grouper(key='date', freq='1M')).sum()  # group by month
         # dg = df.groupby(pd.Grouper(key='date', freq='1D')).sum()  # group by day
 
-    print(f'Done in {time.time() - t:.1f}s')
+    print(f"Done in {time.time() - t:.1f}s")
     if save:
-        x = pd.DataFrame(users, columns=['Repo', 'Name', 'Company', 'Email', 'Location', 'GitHub', 'Followers', 'Date'])
-        x.to_csv('users.csv')
-        print(f'{len(x)} users saved to users.csv')
+        x = pd.DataFrame(users, columns=["Repo", "Name", "Company", "Email", "Location", "GitHub", "Followers", "Date"])
+        x.to_csv("users.csv")
+        print(f"{len(x)} users saved to users.csv")
 
 
 def parse_opt():
