@@ -9,15 +9,18 @@ Usage:
 import argparse
 import time
 from datetime import datetime
-import yaml
 
 import pandas as pd
+import yaml
 from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
+# Replace with your GitHub personal access token
+GITHUB_TOKEN = ""  # i.e. 'ghp_1gwB...'
+
 
 def run(
-    token="ghp_YEKVmKSn1Z9...",  # GitHub access token
+    token="",  # GitHub access token
     days=30,  # trailing days to analyze
     save=False,  # save user info
 ):
@@ -27,7 +30,7 @@ def run(
     # days = 30  # specify days directly, i.e. last 30 days
 
     # Get repos
-    with open("repos.yml", "r") as f:
+    with open("repos.yaml", "r") as f:
         repos = yaml.safe_load(f)["repositories"]
 
     # Parameters
@@ -91,7 +94,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--token", type=str, default="ghp_bVg...", help="GitHub PAT")
+    parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
     parser.add_argument("--days", type=int, default=30, help="Trailing days to analyze")
     parser.add_argument("--save", action="store_true", help="Save user info")
     return parser.parse_args()
