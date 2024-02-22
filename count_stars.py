@@ -93,6 +93,7 @@ def run(
 
 
 def parse_opt():
+    """Parses command-line options and returns the arguments."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
     parser.add_argument("--days", type=int, default=30, help="Trailing days to analyze")
@@ -101,6 +102,7 @@ def parse_opt():
 
 
 def main(opt):
+    """Executes the main process with parsed command-line options."""
     run(**vars(opt))
 
 
