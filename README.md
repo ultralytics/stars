@@ -89,6 +89,7 @@ Ultralytics offers two types of licensing options:
 
 For bug reports, feature requests, and contributions, head to [GitHub Issues](https://github.com/ultralytics/stars/issues). For questions and discussions about this project and other Ultralytics endeavors, join us on [Discord](https://ultralytics.com/discord)!
 
+
 <br>
 <div align="center">
   <a href="https://github.com/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="3%" alt="Ultralytics GitHub"></a>
