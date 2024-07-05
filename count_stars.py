@@ -24,6 +24,7 @@ def run(
     days=30,  # trailing days to analyze
     save=False,  # save user info
 ):
+    """Counts GitHub stars for specified repositories over a given period and optionally saves user information."""
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
