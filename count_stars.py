@@ -29,6 +29,7 @@ def run(
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
     # days = 30  # specify days directly, i.e. last 30 days
 
+    """Counts GitHub stars for specified repositories over a given period and optionally saves user information."""
     # Get repos
     with open("repos.yaml", "r") as f:
         repos = yaml.safe_load(f)["repositories"]
