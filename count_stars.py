@@ -24,7 +24,32 @@ def run(
     days=30,  # trailing days to analyze
     save=False,  # save user info
 ):
-    """Counts GitHub stars for specified repositories over a given period and optionally saves user information."""
+    """
+    Counts GitHub stars for specified repositories over a given period and optionally saves user information.
+
+    Args:
+        token (str): GitHub personal access token. Default is an empty string which means no authentication.
+        days (int): Number of trailing days to analyze. Default is 30.
+        save (bool): Whether to save user information to a CSV file. Default is False.
+
+    Returns:
+        None
+
+    Notes:
+        - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid rate limits. You can generate one at https://github.com/settings/tokens.
+        - Requires 'repos.yaml' file in the same directory with a list of repositories to analyze, in the format:
+          ```yaml
+          repositories:
+              - 'repository_owner/repository_name'
+              - 'another_owner/another_repository'
+          ```
+
+    Example:
+        ```python
+        from path.to.module import run
+        run(token='your_github_token', days=30, save=True)
+        ```
+    """
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
@@ -94,7 +119,24 @@ def run(
 
 
 def parse_opt():
-    """Parses command-line options and returns the arguments."""
+    """
+    Parses command-line options and returns the arguments.
+
+    Args:
+        None
+
+    Returns:
+        Namespace: Parsed command-line arguments including:
+            - token (str): GitHub Personal Access Token.
+            - days (int): Trailing days to analyze.
+            - save (bool): Flag to save user information.
+
+    Example:
+        ```python
+        args = parse_opt()
+        run(token=args.token, days=args.days, save=args.save)
+        ```
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
     parser.add_argument("--days", type=int, default=30, help="Trailing days to analyze")
@@ -103,7 +145,26 @@ def parse_opt():
 
 
 def main(opt):
-    """Executes the main process with parsed command-line options."""
+    """
+    Executes the main process of counting GitHub repository stars over a specified time period with optional user
+    information saving.
+
+    Args:
+        opt (argparse.Namespace): Command-line arguments parsed by `parse_opt()`, which include:
+            token (str): GitHub personal access token to authenticate API requests.
+            days (int): Number of trailing days to analyze for star counts. Defaults to 30.
+            save (bool): Flag to save user information of those who starred the repositories. Defaults to False.
+
+    Returns:
+        None
+
+    Example:
+        To count stars over the last 30 days and save user info:
+
+        ```python
+        $ python path/to/script.py --token YOUR_GITHUB_TOKEN --days 30 --save
+        ```
+    """
     run(**vars(opt))
 
 
