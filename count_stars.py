@@ -36,7 +36,8 @@ def run(
         None
 
     Notes:
-        - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid rate limits. You can generate one at https://github.com/settings/tokens.
+        - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid
+          rate limits. You can generate one at https://github.com/settings/tokens.
         - Requires 'repos.yaml' file in the same directory with a list of repositories to analyze, in the format:
           ```yaml
           repositories:
@@ -126,7 +127,7 @@ def parse_opt():
         None
 
     Returns:
-        Namespace: Parsed command-line arguments including:
+        argparse.Namespace: Parsed command-line arguments including:
             - token (str): GitHub Personal Access Token.
             - days (int): Trailing days to analyze.
             - save (bool): Flag to save user information.
