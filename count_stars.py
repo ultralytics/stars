@@ -57,7 +57,7 @@ def run(
     # days = 30  # specify days directly, i.e. last 30 days
 
     # Get repos
-    with open("repos.yaml", "r") as f:
+    with open("repos.yaml") as f:
         repos = yaml.safe_load(f)["repositories"]
 
     # Parameters
