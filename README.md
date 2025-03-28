@@ -1,19 +1,21 @@
-<br>
-<a href="https://www.ultralytics.com/" target="_blank"><img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320" alt="Ultralytics logo"></a>
+<a href="https://www.ultralytics.com/"><img src="https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg" width="320" alt="Ultralytics logo"></a>
 
 # Count GitHub Stars per Day ⭐️
 
-Track the daily growth of GitHub stars over a time period to gauge the open-source popularity of various repositories.
+Track the daily growth of [GitHub](https://github.com/) stars over a specified time period to gauge the popularity and engagement trends of various open-source repositories.
 
-[![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml) <a href="https://discord.com/invite/ultralytics"><img alt="Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a> <a href="https://community.ultralytics.com/"><img alt="Ultralytics Forums" src="https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue"></a> <a href="https://reddit.com/r/ultralytics"><img alt="Ultralytics Reddit" src="https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue"></a>
+[![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
+[![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
+[![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
+[![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
 
 ## 📌 Requirements
 
-To interface with the [GitHub REST API](https://docs.github.com/en/rest) using Python, the `PyGitHub` library is required. Utilize this library to interact with GitHub resources such as repositories, user profiles, and organizations within your Python applications.
+This script utilizes the [PyGitHub](https://pygithub.readthedocs.io/en/latest/) library to interface with the [GitHub REST API](https://docs.github.com/en/rest). This allows interaction with GitHub resources like [repositories](https://docs.ultralytics.com/models/), user profiles, and organizations directly within your [Python](https://docs.ultralytics.com/usage/python/) applications.
 
 ### Installation
 
-Run the following command to install dependencies listed in `requirements.txt`:
+Run the following command in your terminal to install the necessary dependencies listed in the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt  # Install required libraries
@@ -21,16 +23,16 @@ pip install -r requirements.txt  # Install required libraries
 
 ## 🚀 Usage
 
-First, update the `TOKEN` in `count_stars.py` on line 15 with your valid [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Then execute the script:
+Before running the script, you need to update the `TOKEN` variable in `count_stars.py` (line 15) with your personal [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). Once the token is set, execute the script using Python:
 
 ```python
-# Before running, ensure TOKEN is set to your GitHub access token.
+# Ensure your GitHub access token is set in the TOKEN variable before running.
 python count_stars.py
 ```
 
 ## 📈 Result
 
-The output below shows the star count for various repositories on April 10th, 2022, over the last 30 days since May 2nd, 2022:
+The script outputs the star count for the specified repositories over the defined period. Below is example output showing the star count increase over 30 days ending May 2nd, 2022:
 
 ```python
 Counting stars for last 30.0 days from 02 May 2022
@@ -71,23 +73,22 @@ Done in 125.7s
 
 ## 💡 Contribute
 
-Contributions are what make the open-source community thrive. We value your ideas and input! Refer to our [Contributing Guide](https://docs.ultralytics.com/help/contributing/) to get started and complete our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to give us feedback on your experience. A big thank you 🙏 to all our contributors!
+Contributions are the lifeblood of the [open-source](https://www.ultralytics.com/blog/tips-to-start-contributing-to-ultralytics-open-source-projects) community, and we greatly appreciate your input! Whether it's bug fixes, feature suggestions, or documentation improvements, every contribution helps.
 
-<!-- Always showcase the community's effort with an image link to contributors. -->
+Please see our [Contributing Guide](https://docs.ultralytics.com/help/contributing/) for detailed instructions on how to get involved. We also encourage you to fill out our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to share your feedback. Thank you 🙏 to everyone who contributes!
 
-<a href="https://github.com/ultralytics/yolov5/graphs/contributors">
-<img width="100%" src="https://opencollective.com/ultralytics/contributors.svg?width=890" alt="Ultralytics open-source contributors"></a>
+[![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
 
 ## 📝 License
 
-Ultralytics offers two types of licensing options:
+Ultralytics provides two licensing options to accommodate different use cases:
 
-- **AGPL-3.0 License**: This [Open Source Initiative (OSI)-approved](https://opensource.org/license/agpl-v3) license is fit for students, hobbyists, and enthusiasts, promoting collaborative open-source development. Consult the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for complete details.
-- **Enterprise License**: Tailored for commercial uses, this licensing option allows the seamless integration of Ultralytics software and AI models into commercial products and services without the obligations typically associated with AGPL-3.0. If you are looking to incorporate our solutions into your commercial products, please reach out via [Ultralytics Licensing](https://www.ultralytics.com/license).
+-   **AGPL-3.0 License**: Ideal for students and enthusiasts, this [OSI-approved](https://opensource.org/license/agpl-v3) open-source license promotes collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/stars/blob/main/LICENSE) file for details.
+-   **Enterprise License**: Designed for commercial applications, this license allows for the integration of Ultralytics software and AI models into commercial products and services. For more information, visit [Ultralytics Licensing](https://www.ultralytics.com/license).
 
 ## 📬 Contact Us
 
-For bug reports, feature requests, and contributions, head to [GitHub Issues](https://github.com/ultralytics/stars/issues). For questions and discussions about this project and other Ultralytics endeavors, join us on [Discord](https://discord.com/invite/ultralytics)!
+If you encounter bugs, have feature requests, or wish to contribute, please visit [GitHub Issues](https://github.com/ultralytics/stars/issues). For broader discussions and questions about Ultralytics projects, join our vibrant community on [Discord](https://discord.com/invite/ultralytics)!
 
 <br>
 <div align="center">
