@@ -18,7 +18,7 @@ This script utilizes the [PyGitHub](https://pygithub.readthedocs.io/en/latest/) 
 Run the following command in your terminal to install the necessary dependencies listed in the `requirements.txt` file:
 
 ```bash
-pip install -r requirements.txt  # Install required libraries
+pip install -r requirements.txt # Install required libraries
 ```
 
 ## 🚀 Usage
@@ -83,8 +83,8 @@ Please see our [Contributing Guide](https://docs.ultralytics.com/help/contributi
 
 Ultralytics provides two licensing options to accommodate different use cases:
 
--   **AGPL-3.0 License**: Ideal for students and enthusiasts, this [OSI-approved](https://opensource.org/license/agpl-v3) open-source license promotes collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/stars/blob/main/LICENSE) file for details.
--   **Enterprise License**: Designed for commercial applications, this license allows for the integration of Ultralytics software and AI models into commercial products and services. For more information, visit [Ultralytics Licensing](https://www.ultralytics.com/license).
+- **AGPL-3.0 License**: Ideal for students and enthusiasts, this [OSI-approved](https://opensource.org/license/agpl-v3) open-source license promotes collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/stars/blob/main/LICENSE) file for details.
+- **Enterprise License**: Designed for commercial applications, this license allows for the integration of Ultralytics software and AI models into commercial products and services. For more information, visit [Ultralytics Licensing](https://www.ultralytics.com/license).
 
 ## 📬 Contact Us
 
