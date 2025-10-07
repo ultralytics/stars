@@ -36,9 +36,9 @@ jobs:
             git config user.email "web@ultralytics.com"
             git checkout -b "$BRANCH"
             git add data/org_stars.json
-            git commit -m "Update Ultralytics org stars"
+            git commit -m "Update org stars"
             git push origin "$BRANCH"
-            gh pr create --title "chore: update org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
+            gh pr create --title "Update Ultralytics org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
             sleep 90
             gh pr merge "$BRANCH" --auto --squash --delete-branch
           fi

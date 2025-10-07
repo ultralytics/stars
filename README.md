@@ -9,6 +9,8 @@ Track the daily growth of [GitHub](https://github.com/) stars over a specified t
 [![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
 [![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
 
+[![Org Stars Daily](https://github.com/ultralytics/stars/actions/workflows/org-stars.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/org-stars.yml)
+
 ## 📊 Org Stars API
 
 Get the total GitHub stars for the Ultralytics organization via a simple JSON endpoint:
