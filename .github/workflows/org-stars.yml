@@ -39,6 +39,7 @@ jobs:
             git commit -m "Update org stars"
             git push origin "$BRANCH"
             gh pr create --title "Update Ultralytics org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
-            sleep 90
-            gh pr merge "$BRANCH" --auto --squash --delete-branch
+            PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
+            gh pr review "$PR_NUMBER" --approve
+            gh pr merge "$PR_NUMBER" --auto --squash --delete-branch
           fi
