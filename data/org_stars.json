@@ -1,10 +1,10 @@
 {
   "org": "ultralytics",
-  "total_stars": 116243,
+  "total_stars": 116240,
   "public_repos": 41,
   "timestamp": "2025-10-07T12:00:50.040230Z",
   "repos": [
-    { "name": "yolov5", "stars": 55568 },
+    { "name": "yolov5", "stars": 55565 },
     { "name": "ultralytics", "stars": 46940 },
     { "name": "yolov3", "stars": 10464 },
     { "name": "JSON2YOLO", "stars": 1091 },
