@@ -38,8 +38,7 @@ jobs:
             git add data/org_stars.json
             git commit -m "Update org stars"
             git push origin "$BRANCH"
-            gh pr create --title "Update Ultralytics org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
-            PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
-            gh pr review "$PR_NUMBER" --approve
-            gh pr merge "$PR_NUMBER" --auto --squash --delete-branch
+            PR_URL=$(gh pr create --title "Update Ultralytics org stars" --body "Automated daily star count update" --base main --head "$BRANCH")
+            PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
+            gh pr merge "$PR_NUMBER" --auto --squash --delete-branch --admin
           fi
