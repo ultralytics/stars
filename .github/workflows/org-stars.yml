@@ -1,0 +1,44 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+name: Org Stars Daily
+
+on:
+  schedule:
+    - cron: "7 2 * * *" # daily at 02:07 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  stars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - uses: astral-sh/setup-uv@v6
+      - run: uv pip install --system requests
+      - name: Count stars
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT: data/org_stars.json
+        run: python org_stars.py
+      - name: Create PR and merge
+        env:
+          GH_TOKEN: ${{ secrets._GITHUB_TOKEN }}
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            BRANCH="org-stars-$(date +%s)"
+            git config user.name "UltralyticsAssistant"
+            git config user.email "web@ultralytics.com"
+            git checkout -b "$BRANCH"
+            git add data/org_stars.json
+            git commit -m "Update Ultralytics org stars"
+            git push origin "$BRANCH"
+            gh pr create --title "chore: update org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
+            sleep 90
+            gh pr merge "$BRANCH" --auto --squash --delete-branch
+          fi
