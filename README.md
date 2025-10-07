@@ -18,6 +18,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
 ```
 
 This data updates automatically every day at 02:07 UTC via GitHub Actions. The JSON includes:
+
 - `total_stars`: Total stars across all public repos
 - `public_repos`: Number of public repositories
 - `timestamp`: Last update time (ISO 8601)
