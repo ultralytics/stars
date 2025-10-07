@@ -40,6 +40,6 @@ jobs:
             git push origin "$BRANCH"
             gh pr create --title "Update Ultralytics org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
             PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
-            gh pr checks "$PR_NUMBER" --watch
+            sleep 90
             gh pr merge "$PR_NUMBER" --squash --delete-branch --admin
           fi
