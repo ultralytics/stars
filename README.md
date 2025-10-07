@@ -9,6 +9,20 @@ Track the daily growth of [GitHub](https://github.com/) stars over a specified t
 [![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
 [![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
 
+## 📊 Org Stars API
+
+Get the total GitHub stars for the Ultralytics organization via a simple JSON endpoint:
+
+```
+https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
+```
+
+This data updates automatically every day at 02:07 UTC via GitHub Actions. The JSON includes:
+- `total_stars`: Total stars across all public repos
+- `public_repos`: Number of public repositories
+- `timestamp`: Last update time (ISO 8601)
+- `repos`: Array of repos with their star counts
+
 ## 📌 Requirements
 
 This script utilizes the [PyGitHub](https://pygithub.readthedocs.io/en/latest/) library to interface with the [GitHub REST API](https://docs.github.com/en/rest). This allows interaction with GitHub resources like [repositories](https://docs.ultralytics.com/models/), user profiles, and organizations directly within your [Python](https://docs.ultralytics.com/usage/python/) applications.
