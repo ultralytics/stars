@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   stars:
@@ -24,12 +25,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OUTPUT: data/org_stars.json
         run: python org_stars.py
-      - name: Commit changes
+      - name: Create PR and merge
+        env:
+          GH_TOKEN: ${{ secrets._GITHUB_TOKEN }}
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
+            BRANCH="org-stars-$(date +%s)"
             git config user.name "UltralyticsAssistant"
             git config user.email "web@ultralytics.com"
+            git checkout -b "$BRANCH"
             git add data/org_stars.json
-            git commit -m "Update org stars"
-            git push
+            git commit -m "Update Ultralytics org stars"
+            git push origin "$BRANCH"
+            gh pr create --title "chore: update org stars" --body "Automated daily star count update" --base main --head "$BRANCH"
+            sleep 90
+            gh pr merge "$BRANCH" --auto --squash --delete-branch
           fi
