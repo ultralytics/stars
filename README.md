@@ -38,6 +38,7 @@ Python:
 
 ```python
 import requests
+
 data = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json").json()
 print(f"Total stars: {data['total_stars']:,}")
 ```
@@ -139,4 +140,3 @@ If you encounter bugs, have feature requests, or wish to contribute, please visi
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
   <a href="https://discord.com/invite/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
 </div>
-
