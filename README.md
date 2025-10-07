@@ -26,6 +26,23 @@ This data updates automatically every day at 02:07 UTC via GitHub Actions. The J
 - `timestamp`: Last update time (ISO 8601)
 - `repos`: Array of repos with their star counts
 
+### Example Usage
+
+REST API:
+
+```bash
+curl https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
+```
+
+Python:
+
+```python
+import requests
+
+data = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json").json()
+print(f"Total stars: {data['total_stars']:,}")
+```
+
 ## 📌 Requirements
 
 This script utilizes the [PyGitHub](https://pygithub.readthedocs.io/en/latest/) library to interface with the [GitHub REST API](https://docs.github.com/en/rest). This allows interaction with GitHub resources like [repositories](https://docs.ultralytics.com/models/), user profiles, and organizations directly within your [Python](https://docs.ultralytics.com/usage/python/) applications.
