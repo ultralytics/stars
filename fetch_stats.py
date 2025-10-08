@@ -103,6 +103,45 @@ def fetch_pypi_package_stats(package: str, pepy_api_key: str = None) -> dict:
     return stats
 
 
+def fetch_google_analytics_stats(property_id: str, credentials_json: str, output: Path) -> dict:
+    """Fetch Google Analytics stats for a property."""
+    import json
+
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    from google.analytics.data_v1beta.types import DateRange, Metric, RunReportRequest
+    from google.oauth2 import service_account
+
+    credentials_info = json.loads(credentials_json)
+    credentials = service_account.Credentials.from_service_account_info(credentials_info)
+    client = BetaAnalyticsDataClient(credentials=credentials)
+
+    metrics = [
+        Metric(name="activeUsers"),
+        Metric(name="sessions"),
+        Metric(name="eventCount"),
+        Metric(name="averageSessionDuration"),
+    ]
+
+    data = {"property_id": property_id, "timestamp": get_timestamp()}
+
+    for days, suffix in [(1, "1d"), (30, "30d"), (90, "90d"), (365, "365d")]:
+        request = RunReportRequest(
+            property=f"properties/{property_id}",
+            date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
+            metrics=metrics,
+        )
+        response = client.run_report(request)
+        row = response.rows[0] if response.rows else None
+
+        data[f"active_users_{suffix}"] = int(row.metric_values[0].value) if row else 0
+        data[f"sessions_{suffix}"] = int(row.metric_values[1].value) if row else 0
+        data[f"events_{suffix}"] = int(row.metric_values[2].value) if row else 0
+        data[f"avg_session_duration_{suffix}"] = float(row.metric_values[3].value) if row else 0.0
+
+    write_json(output, data)
+    return data
+
+
 def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str = None) -> dict:
     """Fetch and write PyPI stats to JSON."""
     stats = [fetch_pypi_package_stats(pkg, pepy_api_key) for pkg in packages]
@@ -151,3 +190,13 @@ if __name__ == "__main__":
     print(
         f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)"
     )
+
+    # Google Analytics stats
+    ga_property_id = os.getenv("GA_PROPERTY_ID")
+    ga_credentials_json = os.getenv("GA_CREDENTIALS_JSON")
+    if ga_property_id and ga_credentials_json:
+        ga_output = Path(os.getenv("GA_STATS_OUTPUT", "data/google_analytics.json"))
+        ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
+        print(
+            f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/30d/90d/365d)"
+        )

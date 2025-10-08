@@ -15,6 +15,10 @@
 #   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
 #     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
 #
+# Google Analytics Data (data/google_analytics.json):
+#   - Active users, sessions, and page views (30-day window)
+#   - Requires GA_PROPERTY_ID and GA_CREDENTIALS_JSON secrets
+#
 # All data is publicly available via GitHub API, pypistats.org API, and pepy.tech API.
 # Note: pepy.tech requires API key (set PEPY_API_KEY secret in repo settings).
 # Results are committed daily to main branch via automated PR.
@@ -39,11 +43,13 @@ jobs:
         with:
           python-version: "3.x"
       - uses: astral-sh/setup-uv@v6
-      - run: uv pip install --system requests
+      - run: uv pip install --system -r requirements.txt
       - name: Fetch analytics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PEPY_API_KEY: ${{ secrets.PEPY_API_KEY }}
+          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+          GA_CREDENTIALS_JSON: ${{ secrets.GA_CREDENTIALS_JSON }}
         run: python fetch_stats.py
       - name: Create PR and merge
         env:
