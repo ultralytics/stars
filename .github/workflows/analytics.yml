@@ -1,0 +1,62 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# Update Ultralytics Analytics
+#
+# This workflow collects public analytics data for the Ultralytics organization:
+#
+# GitHub Data (data/org_stars.json):
+#   - Repository star counts across all public repos
+#   - Contributor counts per repository
+#   - Organization-wide totals and timestamps
+#
+# PyPI Data (data/pypi_downloads.json):
+#   - Download statistics for Ultralytics Python packages
+#   - Daily, weekly, and monthly download counts
+#   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
+#     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
+#
+# All data is publicly available via GitHub API and PyPI Stats API.
+# Results are committed daily to main branch via automated PR.
+
+name: Update Analytics
+
+on:
+  schedule:
+    - cron: "7 2 * * *" # daily at 02:07 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - uses: astral-sh/setup-uv@v6
+      - run: uv pip install --system requests
+      - name: Fetch analytics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python fetch_stats.py
+      - name: Create PR and merge
+        env:
+          GH_TOKEN: ${{ secrets._GITHUB_TOKEN }}
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            BRANCH="analytics-$(date +%s)"
+            git config user.name "UltralyticsAssistant"
+            git config user.email "web@ultralytics.com"
+            git checkout -b "$BRANCH"
+            git add data/
+            git commit -m "Update analytics data"
+            git push origin "$BRANCH"
+            gh pr create --title "Update Ultralytics analytics" --body "Automated daily analytics update" --base main --head "$BRANCH"
+            PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
+            sleep 90
+            gh pr merge "$PR_NUMBER" --squash --delete-branch --admin
+          fi
