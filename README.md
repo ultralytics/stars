@@ -46,9 +46,10 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.jso
 
 **Fields:**
 
+- `total_downloads`: Combined all-time downloads across all packages
 - `total_last_month`: Combined downloads across all packages (last 30 days)
 - `timestamp`: Last update time (ISO 8601)
-- `packages`: Array with per-package `last_day`, `last_week`, and `last_month` downloads
+- `packages`: Array with per-package `last_day`, `last_week`, `last_month`, and `total` downloads
 
 ### Example Usage
 
@@ -68,6 +69,7 @@ stars = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/d
 downloads = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.json").json()
 print(f"Total stars: {stars['total_stars']:,}")
 print(f"Total contributors: {stars['total_contributors']:,}")
+print(f"PyPI downloads (total): {downloads['total_downloads']:,}")
 print(f"PyPI downloads (30d): {downloads['total_last_month']:,}")
 ```
 
