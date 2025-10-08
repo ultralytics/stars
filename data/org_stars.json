@@ -1,12 +1,12 @@
 {
   "org": "ultralytics",
-  "total_stars": 116286,
+  "total_stars": 116287,
   "total_contributors": 909,
   "public_repos": 41,
-  "timestamp": "2025-10-08T12:20:34.469264Z",
+  "timestamp": "2025-10-08T12:25:56.317595Z",
   "repos": [
     { "name": "yolov5", "stars": 55574, "contributors": 346 },
-    { "name": "ultralytics", "stars": 46971, "contributors": 305 },
+    { "name": "ultralytics", "stars": 46972, "contributors": 305 },
     { "name": "yolov3", "stars": 10465, "contributors": 54 },
     { "name": "JSON2YOLO", "stars": 1091, "contributors": 7 },
     { "name": "assets", "stars": 368, "contributors": 8 },
