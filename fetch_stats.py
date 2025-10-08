@@ -107,7 +107,7 @@ if __name__ == "__main__":
     token = os.getenv("GITHUB_TOKEN")
     if not token:
         sys.exit("Set GITHUB_TOKEN in env")
-    github_output = Path(os.getenv("GITHUB_OUTPUT", "data/org_stars.json"))
+    github_output = Path(os.getenv("GITHUB_STATS_OUTPUT", "data/org_stars.json"))
     github_data = fetch_github_stats(org, token, github_output)
     print(
         f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors"
@@ -122,6 +122,6 @@ if __name__ == "__main__":
         "mkdocs-ultralytics-plugin",
         "ultralytics-autoimport",
     ]
-    pypi_output = Path(os.getenv("PYPI_OUTPUT", "data/pypi_downloads.json"))
+    pypi_output = Path(os.getenv("PYPI_STATS_OUTPUT", "data/pypi_downloads.json"))
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output)
     print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_last_month']:,} downloads (30d)")
