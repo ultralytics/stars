@@ -124,7 +124,7 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
     data = {"property_id": property_id, "timestamp": get_timestamp()}
 
-    for days, suffix in [(30, "30d"), (90, "90d"), (365, "365d")]:
+    for days, suffix in [(1, "1d"), (30, "30d"), (90, "90d"), (365, "365d")]:
         request = RunReportRequest(
             property=f"properties/{property_id}",
             date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
@@ -198,5 +198,5 @@ if __name__ == "__main__":
         ga_output = Path(os.getenv("GA_STATS_OUTPUT", "data/google_analytics.json"))
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
         print(
-            f"✅ GA: {ga_data['active_users_30d']:,} users, {ga_data['sessions_30d']:,} sessions, {ga_data['events_30d']:,} events (30d/90d/365d)"
+            f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/30d/90d/365d)"
         )
