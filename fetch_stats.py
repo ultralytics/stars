@@ -25,17 +25,11 @@ def fetch_github_repos(org: str, token: str) -> list[dict]:
     headers = {"Authorization": f"Bearer {token}"}
     cursor, repos = None, []
     while True:
-        data = post_json(
-            "https://api.github.com/graphql", headers, {"query": query, "variables": {"org": org, "cursor": cursor}}
-        )
+        data = post_json("https://api.github.com/graphql", headers, {"query": query, "variables": {"org": org, "cursor": cursor}})
         if "errors" in data:
             sys.exit(f"GraphQL errors: {data['errors']}")
         repo_block = data["data"]["organization"]["repositories"]
-        nodes = [
-            n
-            for n in repo_block["nodes"] or []
-            if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])
-        ]
+        nodes = [n for n in repo_block["nodes"] or [] if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])]
         repos.extend(nodes)
         if not repo_block["pageInfo"]["hasNextPage"]:
             break
@@ -75,37 +69,47 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
     return data
 
 
-def fetch_pypi_package_stats(package: str) -> dict:
-    """Fetch PyPI download statistics for a package."""
+def fetch_pypi_package_stats(package: str, pepy_api_key: str = None) -> dict:
+    """Fetch PyPI download statistics from pypistats.org (recent) and pepy.tech (total)."""
     stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
     try:
-        # Recent stats
+        # Recent stats from pypistats.org
         r = requests.get(f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
         if r.status_code == 200:
             data = r.json()["data"]
-            stats.update(
-                {
-                    "last_day": data.get("last_day", 0),
-                    "last_week": data.get("last_week", 0),
-                    "last_month": data.get("last_month", 0),
-                }
-            )
-        # Overall stats
-        r = requests.get(f"https://pypistats.org/api/packages/{package}/overall", timeout=30)
+            stats["last_day"] = data.get("last_day", 0)
+            stats["last_week"] = data.get("last_week", 0)
+            stats["last_month"] = data.get("last_month", 0)
+    except Exception as e:
+        print(f"Warning: Failed to fetch recent stats for {package}: {e}")
+    
+    try:
+        # All-time total from pepy.tech
+        headers = {"X-API-Key": pepy_api_key} if pepy_api_key else {}
+        r = requests.get(f"https://api.pepy.tech/api/v2/projects/{package}", headers=headers, timeout=30)
         if r.status_code == 200:
-            data = r.json()["data"]
-            stats["total"] = sum(item.get("downloads", 0) for item in data)
-    except Exception:
-        pass
+            data = r.json()
+            stats["total"] = data.get("total_downloads", 0)
+    except Exception as e:
+        print(f"Warning: Failed to fetch total stats for {package}: {e}")
+    
     return stats
 
 
-def fetch_pypi_stats(packages: list[str], output: Path) -> dict:
+def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str = None) -> dict:
     """Fetch and write PyPI stats to JSON."""
-    stats = [fetch_pypi_package_stats(pkg) for pkg in packages]
+    stats = [fetch_pypi_package_stats(pkg, pepy_api_key) for pkg in packages]
+    total_downloads = sum(s["total"] for s in stats)
+    total_last_month = sum(s["last_month"] for s in stats)
+    
+    # Validate data - don't write if we got all zeros (API errors)
+    if total_downloads == 0 and total_last_month == 0:
+        print("Warning: All PyPI stats are zero, skipping write (possible API errors)")
+        return {"total_downloads": 0, "total_last_month": 0, "timestamp": get_timestamp(), "packages": stats}
+    
     data = {
-        "total_downloads": sum(s["total"] for s in stats),
-        "total_last_month": sum(s["last_month"] for s in stats),
+        "total_downloads": total_downloads,
+        "total_last_month": total_last_month,
         "timestamp": get_timestamp(),
         "packages": stats,
     }
@@ -121,21 +125,11 @@ if __name__ == "__main__":
         sys.exit("Set GITHUB_TOKEN in env")
     github_output = Path(os.getenv("GITHUB_STATS_OUTPUT", "data/org_stars.json"))
     github_data = fetch_github_stats(org, token, github_output)
-    print(
-        f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors"
-    )
+    print(f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors")
 
     # PyPI stats
-    pypi_packages = [
-        "ultralytics",
-        "ultralytics-actions",
-        "ultralytics-thop",
-        "hub-sdk",
-        "mkdocs-ultralytics-plugin",
-        "ultralytics-autoimport",
-    ]
+    pypi_packages = ["ultralytics", "ultralytics-actions", "ultralytics-thop", "hub-sdk", "mkdocs-ultralytics-plugin", "ultralytics-autoimport"]
     pypi_output = Path(os.getenv("PYPI_STATS_OUTPUT", "data/pypi_downloads.json"))
-    pypi_data = fetch_pypi_stats(pypi_packages, pypi_output)
-    print(
-        f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)"
-    )
+    pepy_api_key = os.getenv("PEPY_API_KEY")
+    pypi_data = fetch_pypi_stats(pypi_packages, pypi_output, pepy_api_key)
+    print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)")

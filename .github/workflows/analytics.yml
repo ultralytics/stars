@@ -10,13 +10,13 @@
 #   - Organization-wide totals and timestamps
 #
 # PyPI Data (data/pypi_downloads.json):
-#   - Download statistics for Ultralytics Python packages
-#   - All-time total downloads per package and org-wide
-#   - Daily, weekly, and monthly download counts
+#   - All-time total downloads per package and org-wide (via pepy.tech API with auth)
+#   - Daily, weekly, and monthly download counts (via pypistats.org API)
 #   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
 #     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
 #
-# All data is publicly available via GitHub API and PyPI Stats API.
+# All data is publicly available via GitHub API, pypistats.org API, and pepy.tech API.
+# Note: pepy.tech requires API key (set PEPY_API_KEY secret in repo settings).
 # Results are committed daily to main branch via automated PR.
 
 name: Update Analytics
@@ -43,6 +43,7 @@ jobs:
       - name: Fetch analytics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PEPY_API_KEY: ${{ secrets.PEPY_API_KEY }}
         run: python fetch_stats.py
       - name: Create PR and merge
         env:
