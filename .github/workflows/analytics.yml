@@ -11,6 +11,7 @@
 #
 # PyPI Data (data/pypi_downloads.json):
 #   - Download statistics for Ultralytics Python packages
+#   - All-time total downloads per package and org-wide
 #   - Daily, weekly, and monthly download counts
 #   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
 #     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
