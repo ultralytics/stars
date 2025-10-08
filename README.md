@@ -5,10 +5,11 @@
 Track GitHub stars, contributors, and PyPI downloads for [Ultralytics](https://github.com/ultralytics) projects.
 
 [![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
-[![Update Analytics](https://github.com/ultralytics/stars/actions/workflows/analytics.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/analytics.yml)
 [![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
 [![Ultralytics Forums](https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue)](https://community.ultralytics.com/)
 [![Ultralytics Reddit](https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue)](https://reddit.com/r/ultralytics)
+
+[![Update Analytics](https://github.com/ultralytics/stars/actions/workflows/analytics.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/analytics.yml)
 
 ## 📊 Analytics API
 
