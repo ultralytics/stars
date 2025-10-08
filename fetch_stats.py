@@ -99,6 +99,7 @@ def fetch_pypi_package_stats(package: str, pepy_api_key: str = None) -> dict:
     except Exception as e:
         print(f"Warning: Failed to fetch total stats for {package}: {e}")
 
+    time.sleep(1.0)  # Rate limiting: 10 calls/min for free pepy.tech
     return stats
 
 
