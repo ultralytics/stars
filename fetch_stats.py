@@ -83,7 +83,13 @@ def fetch_pypi_package_stats(package: str) -> dict:
         r = requests.get(f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
         if r.status_code == 200:
             data = r.json()["data"]
-            stats.update({"last_day": data.get("last_day", 0), "last_week": data.get("last_week", 0), "last_month": data.get("last_month", 0)})
+            stats.update(
+                {
+                    "last_day": data.get("last_day", 0),
+                    "last_week": data.get("last_week", 0),
+                    "last_month": data.get("last_month", 0),
+                }
+            )
         # Overall stats
         r = requests.get(f"https://pypistats.org/api/packages/{package}/overall", timeout=30)
         if r.status_code == 200:
@@ -130,4 +136,6 @@ if __name__ == "__main__":
     ]
     pypi_output = Path(os.getenv("PYPI_STATS_OUTPUT", "data/pypi_downloads.json"))
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output)
-    print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)")
+    print(
+        f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)"
+    )
