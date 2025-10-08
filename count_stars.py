@@ -3,7 +3,7 @@
 Count GitHub repository stars over a time period.
 
 Usage:
-    $ python path/to/count_stars.py
+    $ python count_stars.py --token YOUR_GITHUB_TOKEN --days 30
 """
 
 import argparse
@@ -11,12 +11,63 @@ import time
 from datetime import datetime
 
 import pandas as pd
-import yaml
 from github import Github  # pip install PyGithub
 from tqdm import tqdm
 
-# Replace with your GitHub personal access token
+# GitHub Personal Access Token
 GITHUB_TOKEN = ""  # i.e. 'ghp_1gwB...'
+
+# Repositories to track
+REPOS = [
+    # Ultralytics
+    "ultralytics/ultralytics",
+    "ultralytics/yolov5",
+    "ultralytics/yolov3",
+    # YOLO
+    "meituan/yolov6",
+    "WongKinYiu/yolov7",
+    "Megvii-BaseDetection/YOLOX",
+    "PaddlePaddle/Paddle",
+    "open-mmlab/mmdetection",
+    "deci-AI/super_gradients",
+    # FAANG companies
+    "facebookresearch/detectron2",
+    "facebookresearch/segment-anything",
+    "deepmind/deepmind-research",
+    "aws/amazon-sagemaker-examples",
+    "awslabs/autogluon",
+    "microsoft/lightgbm",
+    "microsoft/deepspeed",
+    "openai/gpt-3",
+    "apple/turicreate",
+    "apple/coremltools",
+    "google/automl",
+    "google-research/google-research",
+    "google-research/vision_transformer",
+    "google-research/bert",
+    "NVlabs/stylegan3",
+    # Chinese companies
+    "tencent/ncnn",
+    # Startups/architectures
+    "rwightman/pytorch-image-models",
+    "streamlit/streamlit",
+    "explosion/spaCy",
+    "PyTorchLightning/pytorch-lightning",
+    "ray-project/ray",
+    "fastai/fastai",
+    "alexeyab/darknet",
+    "pjreddie/darknet",
+    "wandb/client",
+    "allegroai/clearml",
+    "neuralmagic/sparseml",
+    "MosaicML/composer",
+    "nebuly-ai/nebullvm",
+    "commaai/openpilot",
+    "CorentinJ/Real-Time-Voice-Cloning",
+    "iperov/DeepFaceLab",
+    "ageitgey/face_recognition",
+    "huggingface/transformers",
+]
 
 
 def run(
@@ -56,19 +107,13 @@ def run(
     # days = (datetime.now() - date).total_seconds() / 86400  # compute number of days
     # days = 30  # specify days directly, i.e. last 30 days
 
-    # Get repos
-    with open("repos.yaml") as f:
-        repos = yaml.safe_load(f)["repositories"]
-
     # Parameters
     g = Github(token)  # create a GitHub instance
     print(f"Counting stars for last {days:.1f} days from {datetime.now():%d %B %Y}\n")
     pd.options.display.max_columns = None
 
-    # Run
-    t, users = time.time(), []
-    sleep = 1.39  # sleep seconds between requests (5000/hr limit)
-    for repo in repos:
+    t, users, sleep = time.time(), [], 1.39
+    for repo in REPOS:
         r = g.get_repo(repo)
         s = r.get_stargazers_with_dates().reversed
         total = s.totalCount
@@ -141,7 +186,7 @@ def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
     parser.add_argument("--days", type=int, default=30, help="Trailing days to analyze")
-    parser.add_argument("--save", action="store_true", help="Save user info")
+    parser.add_argument("--save", action="store_true", help="Save user info to CSV")
     return parser.parse_args()
 
 

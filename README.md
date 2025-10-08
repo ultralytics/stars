@@ -77,7 +77,6 @@ stars/
 ├── fetch_stats.py          # Unified analytics fetcher (GitHub + PyPI)
 ├── count_stars.py          # Historical star tracking script
 ├── utils.py                # Shared utilities
-├── repos.yaml              # Repositories to track
 ├── data/
 │   ├── org_stars.json     # GitHub analytics (updated daily)
 │   └── pypi_downloads.json # PyPI analytics (updated daily)
@@ -108,7 +107,15 @@ python count_stars.py --token YOUR_GITHUB_TOKEN --days 30 --save
 - `--days`: Number of trailing days to analyze (default: 30)
 - `--save`: Save user information to CSV (optional)
 
-Edit `repos.yaml` to customize which repositories to track.
+**Tracked repositories** are defined in `count_stars.py` and include:
+
+- Ultralytics projects (ultralytics, yolov5, yolov3)
+- YOLO variants (yolov6, yolov7, YOLOX)
+- FAANG repos (detectron2, segment-anything, deepmind-research)
+- ML frameworks (PyTorch Lightning, fastai, ray)
+- And 30+ more popular CV/ML repositories
+
+Edit the `REPOS` list in `count_stars.py` to customize tracked repositories.
 
 ### Example Output
 
