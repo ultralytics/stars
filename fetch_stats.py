@@ -7,7 +7,7 @@ from pathlib import Path
 
 import requests
 
-from utils import fetch_json, get_timestamp, post_json, write_json
+from utils import get_timestamp, post_json, write_json
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -25,11 +25,17 @@ def fetch_github_repos(org: str, token: str) -> list[dict]:
     headers = {"Authorization": f"Bearer {token}"}
     cursor, repos = None, []
     while True:
-        data = post_json("https://api.github.com/graphql", headers, {"query": query, "variables": {"org": org, "cursor": cursor}})
+        data = post_json(
+            "https://api.github.com/graphql", headers, {"query": query, "variables": {"org": org, "cursor": cursor}}
+        )
         if "errors" in data:
             sys.exit(f"GraphQL errors: {data['errors']}")
         repo_block = data["data"]["organization"]["repositories"]
-        nodes = [n for n in repo_block["nodes"] or [] if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])]
+        nodes = [
+            n
+            for n in repo_block["nodes"] or []
+            if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])
+        ]
         repos.extend(nodes)
         if not repo_block["pageInfo"]["hasNextPage"]:
             break
@@ -76,7 +82,12 @@ def fetch_pypi_package_stats(package: str) -> dict:
         r = requests.get(url, timeout=30)
         if r.status_code == 200:
             data = r.json()["data"]
-            return {"package": package, "last_day": data.get("last_day", 0), "last_week": data.get("last_week", 0), "last_month": data.get("last_month", 0)}
+            return {
+                "package": package,
+                "last_day": data.get("last_day", 0),
+                "last_week": data.get("last_week", 0),
+                "last_month": data.get("last_month", 0),
+            }
     except Exception:
         pass
     return {"package": package, "last_day": 0, "last_week": 0, "last_month": 0}
@@ -98,10 +109,19 @@ if __name__ == "__main__":
         sys.exit("Set GITHUB_TOKEN in env")
     github_output = Path(os.getenv("GITHUB_OUTPUT", "data/org_stars.json"))
     github_data = fetch_github_stats(org, token, github_output)
-    print(f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors")
+    print(
+        f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors"
+    )
 
     # PyPI stats
-    pypi_packages = ["ultralytics", "ultralytics-actions", "ultralytics-thop", "hub-sdk", "mkdocs-ultralytics-plugin", "ultralytics-autoimport"]
+    pypi_packages = [
+        "ultralytics",
+        "ultralytics-actions",
+        "ultralytics-thop",
+        "hub-sdk",
+        "mkdocs-ultralytics-plugin",
+        "ultralytics-autoimport",
+    ]
     pypi_output = Path(os.getenv("PYPI_OUTPUT", "data/pypi_downloads.json"))
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output)
     print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_last_month']:,} downloads (30d)")

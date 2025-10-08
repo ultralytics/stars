@@ -21,6 +21,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
 ```
 
 **Fields:**
+
 - `total_stars`: Total stars across all public repos
 - `total_contributors`: Sum of contributors across all repos (may include duplicates)
 - `public_repos`: Number of public repositories
@@ -34,6 +35,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.jso
 ```
 
 **Packages tracked:**
+
 - `ultralytics` - Main YOLO11 package
 - `ultralytics-actions` - GitHub Actions
 - `ultralytics-thop` - PyTorch ops profiling
@@ -42,6 +44,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.jso
 - `ultralytics-autoimport` - Auto-import utilities
 
 **Fields:**
+
 - `total_last_month`: Combined downloads across all packages (last 30 days)
 - `timestamp`: Last update time (ISO 8601)
 - `packages`: Array with per-package `last_day`, `last_week`, and `last_month` downloads
@@ -100,6 +103,7 @@ python count_stars.py --token YOUR_GITHUB_TOKEN --days 30 --save
 ```
 
 **Arguments:**
+
 - `--token`: GitHub Personal Access Token ([create one](https://github.com/settings/tokens))
 - `--days`: Number of trailing days to analyze (default: 30)
 - `--save`: Save user information to CSV (optional)
