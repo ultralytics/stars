@@ -1,5 +1,23 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
+# Update Ultralytics Analytics
+#
+# This workflow collects public analytics data for the Ultralytics organization:
+#
+# GitHub Data (data/org_stars.json):
+#   - Repository star counts across all public repos
+#   - Contributor counts per repository
+#   - Organization-wide totals and timestamps
+#
+# PyPI Data (data/pypi_downloads.json):
+#   - Download statistics for Ultralytics Python packages
+#   - Daily, weekly, and monthly download counts
+#   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
+#     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
+#
+# All data is publicly available via GitHub API and PyPI Stats API.
+# Results are committed daily to main branch via automated PR.
+
 name: Update Analytics
 
 on:
