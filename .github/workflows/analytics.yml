@@ -59,6 +59,6 @@ jobs:
             git push origin "$BRANCH"
             gh pr create --title "Update Ultralytics analytics" --body "Automated daily analytics update" --base main --head "$BRANCH"
             PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
-            sleep 90
+            sleep 300
             gh pr merge "$PR_NUMBER" --squash --delete-branch --admin
           fi
