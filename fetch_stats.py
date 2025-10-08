@@ -77,26 +77,32 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
 
 def fetch_pypi_package_stats(package: str) -> dict:
     """Fetch PyPI download statistics for a package."""
-    url = f"https://pypistats.org/api/packages/{package}/recent"
+    stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
     try:
-        r = requests.get(url, timeout=30)
+        # Recent stats
+        r = requests.get(f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
         if r.status_code == 200:
             data = r.json()["data"]
-            return {
-                "package": package,
-                "last_day": data.get("last_day", 0),
-                "last_week": data.get("last_week", 0),
-                "last_month": data.get("last_month", 0),
-            }
+            stats.update({"last_day": data.get("last_day", 0), "last_week": data.get("last_week", 0), "last_month": data.get("last_month", 0)})
+        # Overall stats
+        r = requests.get(f"https://pypistats.org/api/packages/{package}/overall", timeout=30)
+        if r.status_code == 200:
+            data = r.json()["data"]
+            stats["total"] = sum(item.get("downloads", 0) for item in data)
     except Exception:
         pass
-    return {"package": package, "last_day": 0, "last_week": 0, "last_month": 0}
+    return stats
 
 
 def fetch_pypi_stats(packages: list[str], output: Path) -> dict:
     """Fetch and write PyPI stats to JSON."""
     stats = [fetch_pypi_package_stats(pkg) for pkg in packages]
-    data = {"total_last_month": sum(s["last_month"] for s in stats), "timestamp": get_timestamp(), "packages": stats}
+    data = {
+        "total_downloads": sum(s["total"] for s in stats),
+        "total_last_month": sum(s["last_month"] for s in stats),
+        "timestamp": get_timestamp(),
+        "packages": stats,
+    }
     write_json(output, data)
     return data
 
@@ -124,4 +130,4 @@ if __name__ == "__main__":
     ]
     pypi_output = Path(os.getenv("PYPI_STATS_OUTPUT", "data/pypi_downloads.json"))
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output)
-    print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_last_month']:,} downloads (30d)")
+    print(f"✅ PyPI: {len(pypi_data['packages'])} packages, {pypi_data['total_downloads']:,} total downloads, {pypi_data['total_last_month']:,} downloads (30d)")
