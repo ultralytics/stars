@@ -201,7 +201,7 @@ if __name__ == "__main__":
     if ga_credentials_json:
         ga_output = BASE_DIR / "data/google_analytics.json"
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
-        day = ga_data['periods']['1d']
+        day = ga_data["periods"]["1d"]
         print(
             f"✅ GA: {day['active_users']:,} users, {day['sessions']:,} sessions, {day['events']:,} events (1d/7d/30d/90d/365d)"
         )
