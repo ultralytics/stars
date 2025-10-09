@@ -124,7 +124,7 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
     data = {"property_id": property_id, "timestamp": get_timestamp()}
 
-    for days, suffix in [(1, "1d"), (30, "30d"), (90, "90d"), (365, "365d")]:
+    for days, suffix in [(1, "1d"), (7, "7d"), (30, "30d"), (90, "90d"), (365, "365d")]:
         request = RunReportRequest(
             property=f"properties/{property_id}",
             date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
