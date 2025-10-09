@@ -198,5 +198,21 @@ if __name__ == "__main__":
         ga_output = Path(os.getenv("GA_STATS_OUTPUT", "data/google_analytics.json"))
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
         print(
-            f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/30d/90d/365d)"
+            f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/7d/30d/90d/365d)"
         )
+    else:
+        ga_data = None
+
+    # Create summary
+    summary = {
+        "total_stars": github_data["total_stars"],
+        "total_downloads": pypi_data["total_downloads"],
+        "events_30d": ga_data["events_30d"] if ga_data else 0,
+        "total_contributors": github_data["total_contributors"],
+        "timestamp": get_timestamp(),
+    }
+    summary_output = Path(os.getenv("SUMMARY_OUTPUT", "data/summary.json"))
+    write_json(summary_output, summary)
+    print(
+        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_30d']:,} events (30d), {summary['total_contributors']:,} contributors"
+    )
