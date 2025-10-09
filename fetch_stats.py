@@ -164,12 +164,14 @@ def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str = None
 
 
 if __name__ == "__main__":
+    BASE_DIR = Path(__file__).parent
+
     # GitHub stats
     org = os.getenv("ORG", "ultralytics")
     token = os.getenv("GITHUB_TOKEN")
     if not token:
         sys.exit("Set GITHUB_TOKEN in env")
-    github_output = Path(os.getenv("GITHUB_STATS_OUTPUT", "data/org_stars.json"))
+    github_output = BASE_DIR / "data/org_stars.json"
     github_data = fetch_github_stats(org, token, github_output)
     print(
         f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors"
@@ -184,7 +186,7 @@ if __name__ == "__main__":
         "mkdocs-ultralytics-plugin",
         "ultralytics-autoimport",
     ]
-    pypi_output = Path(os.getenv("PYPI_STATS_OUTPUT", "data/pypi_downloads.json"))
+    pypi_output = BASE_DIR / "data/pypi_downloads.json"
     pepy_api_key = os.getenv("PEPY_API_KEY")
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output, pepy_api_key)
     print(
@@ -195,7 +197,7 @@ if __name__ == "__main__":
     ga_property_id = "371754141"
     ga_credentials_json = os.getenv("GA_CREDENTIALS_JSON")
     if ga_credentials_json:
-        ga_output = Path(os.getenv("GA_STATS_OUTPUT", "data/google_analytics.json"))
+        ga_output = BASE_DIR / "data/google_analytics.json"
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
         print(
             f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/7d/30d/90d/365d)"
@@ -211,7 +213,7 @@ if __name__ == "__main__":
         "total_contributors": github_data["total_contributors"],
         "timestamp": get_timestamp(),
     }
-    summary_output = Path(os.getenv("SUMMARY_OUTPUT", "data/summary.json"))
+    summary_output = BASE_DIR / "data/summary.json"
     write_json(summary_output, summary)
     print(
         f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_30d']:,} events (30d), {summary['total_contributors']:,} contributors"
