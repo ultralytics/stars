@@ -17,7 +17,7 @@
 #
 # Google Analytics Data (data/google_analytics.json):
 #   - Active users, sessions, and page views (30-day window)
-#   - Requires GA_PROPERTY_ID and GA_CREDENTIALS_JSON secrets
+#   - Requires GA_CREDENTIALS_JSON secret
 #
 # All data is publicly available via GitHub API, pypistats.org API, and pepy.tech API.
 # Note: pepy.tech requires API key (set PEPY_API_KEY secret in repo settings).
@@ -48,7 +48,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PEPY_API_KEY: ${{ secrets.PEPY_API_KEY }}
-          GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
           GA_CREDENTIALS_JSON: ${{ secrets.GA_CREDENTIALS_JSON }}
         run: python fetch_stats.py
       - name: Create PR and merge
