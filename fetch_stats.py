@@ -122,7 +122,7 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
         Metric(name="averageSessionDuration"),
     ]
 
-    data = {"property_id": property_id, "timestamp": get_timestamp()}
+    data = {"property_id": property_id, "timestamp": get_timestamp(), "periods": {}}
 
     for days, suffix in [(1, "1d"), (7, "7d"), (30, "30d"), (90, "90d"), (365, "365d")]:
         request = RunReportRequest(
@@ -133,10 +133,12 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
         response = client.run_report(request)
         row = response.rows[0] if response.rows else None
 
-        data[f"active_users_{suffix}"] = int(row.metric_values[0].value) if row else 0
-        data[f"sessions_{suffix}"] = int(row.metric_values[1].value) if row else 0
-        data[f"events_{suffix}"] = int(row.metric_values[2].value) if row else 0
-        data[f"avg_session_duration_{suffix}"] = float(row.metric_values[3].value) if row else 0.0
+        data["periods"][suffix] = {
+            "active_users": int(row.metric_values[0].value) if row else 0,
+            "sessions": int(row.metric_values[1].value) if row else 0,
+            "events": int(row.metric_values[2].value) if row else 0,
+            "avg_session_duration": float(row.metric_values[3].value) if row else 0.0,
+        }
 
     write_json(output, data)
     return data
@@ -199,8 +201,9 @@ if __name__ == "__main__":
     if ga_credentials_json:
         ga_output = BASE_DIR / "data/google_analytics.json"
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
+        day = ga_data['periods']['1d']
         print(
-            f"✅ GA: {ga_data['active_users_1d']:,} users, {ga_data['sessions_1d']:,} sessions, {ga_data['events_1d']:,} events (1d/7d/30d/90d/365d)"
+            f"✅ GA: {day['active_users']:,} users, {day['sessions']:,} sessions, {day['events']:,} events (1d/7d/30d/90d/365d)"
         )
     else:
         ga_data = None
@@ -209,7 +212,7 @@ if __name__ == "__main__":
     summary = {
         "total_stars": github_data["total_stars"],
         "total_downloads": pypi_data["total_downloads"],
-        "events_30d": ga_data["events_30d"] if ga_data else 0,
+        "events_30d": ga_data["periods"]["30d"]["events"] if ga_data else 0,
         "total_contributors": github_data["total_contributors"],
         "timestamp": get_timestamp(),
     }
