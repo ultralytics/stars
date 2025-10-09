@@ -192,9 +192,9 @@ if __name__ == "__main__":
     )
 
     # Google Analytics stats
-    ga_property_id = os.getenv("GA_PROPERTY_ID")
+    ga_property_id = "371754141"
     ga_credentials_json = os.getenv("GA_CREDENTIALS_JSON")
-    if ga_property_id and ga_credentials_json:
+    if ga_credentials_json:
         ga_output = Path(os.getenv("GA_STATS_OUTPUT", "data/google_analytics.json"))
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
         print(
