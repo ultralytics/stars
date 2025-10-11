@@ -1,0 +1,49 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# List Open PRs across Ultralytics repositories
+# This workflow scans all public repos in the Ultralytics organization and lists open PRs
+# For repos with >5 open PRs, only the 5 most recent are shown
+
+name: List Open PRs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  list-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List open PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "# 🔍 Open Pull Requests - Ultralytics Organization" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Get all public repos
+          REPOS=$(gh repo list ultralytics --limit 1000 --json name,url --visibility public)
+          
+          # Process each repo
+          echo "$REPOS" | jq -r '.[] | "\(.name)|\(.url)"' | while IFS='|' read -r name url; do
+            # Get all open PRs to count them
+            ALL_PRS=$(gh pr list --repo "ultralytics/$name" --limit 1000 --json number --state open 2>/dev/null || echo "[]")
+            PR_COUNT=$(echo "$ALL_PRS" | jq '. | length')
+            
+            if [ "$PR_COUNT" -gt 0 ]; then
+              # Limit to 5 most recent if >5 open PRs
+              LIMIT=1000
+              if [ "$PR_COUNT" -gt 5 ]; then
+                LIMIT=5
+              fi
+              
+              # Get PRs to display
+              PRS=$(gh pr list --repo "ultralytics/$name" --limit "$LIMIT" --json number,title,url --state open 2>/dev/null)
+              
+              echo "## 📦 [$name]($url) - $PR_COUNT open PR(s)" >> $GITHUB_STEP_SUMMARY
+              echo "$PRS" | jq -r '.[] | "- 🔀 [#\(.number)](\(.url)) \(.title)"' >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
