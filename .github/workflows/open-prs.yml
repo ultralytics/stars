@@ -20,7 +20,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "# Open Pull Requests - Ultralytics Organization" >> $GITHUB_STEP_SUMMARY
+          echo "# 🔍 Open Pull Requests - Ultralytics Organization" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           # Get all public repos
@@ -42,8 +42,8 @@ jobs:
               # Get PRs to display
               PRS=$(gh pr list --repo "ultralytics/$name" --limit "$LIMIT" --json number,title,url --state open 2>/dev/null)
               
-              echo "## [$name]($url) - $PR_COUNT open PR(s)" >> $GITHUB_STEP_SUMMARY
-              echo "$PRS" | jq -r '.[] | "- [#\(.number)](\(.url)) \(.title)"' >> $GITHUB_STEP_SUMMARY
+              echo "## 📦 [$name]($url) - $PR_COUNT open PR(s)" >> $GITHUB_STEP_SUMMARY
+              echo "$PRS" | jq -r '.[] | "- 🔀 [#\(.number)](\(.url)) \(.title)"' >> $GITHUB_STEP_SUMMARY
               echo "" >> $GITHUB_STEP_SUMMARY
             fi
           done
