@@ -219,5 +219,5 @@ if __name__ == "__main__":
     summary_output = BASE_DIR / "data/summary.json"
     write_json(summary_output, summary)
     print(
-        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_30d']:,} events (30d), {summary['total_contributors']:,} contributors"
+        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors"
     )
