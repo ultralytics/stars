@@ -212,7 +212,7 @@ if __name__ == "__main__":
     summary = {
         "total_stars": github_data["total_stars"],
         "total_downloads": pypi_data["total_downloads"],
-        "events_30d": ga_data["periods"]["30d"]["events"] if ga_data else 0,
+        "events_per_day": round(float(ga_data["periods"]["90d"]["events"]) / 90.0) if ga_data else 0,  # 90-day mean
         "total_contributors": github_data["total_contributors"],
         "timestamp": get_timestamp(),
     }
