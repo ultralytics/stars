@@ -1,5 +1,7 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
 
+from __future__ import annotations
+
 import json
 import sys
 from datetime import datetime, timezone
@@ -8,7 +10,7 @@ from pathlib import Path
 import requests
 
 
-def fetch_json(url: str, headers: dict = None, timeout: int = 60) -> dict:
+def fetch_json(url: str, headers: dict | None = None, timeout: int = 60) -> dict:
     """Fetch JSON from URL with error handling."""
     r = requests.get(url, headers=headers, timeout=timeout)
     if r.status_code != 200:
