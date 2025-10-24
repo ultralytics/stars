@@ -1,4 +1,5 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+from __future__ import annotations
 
 import os
 import sys
@@ -75,7 +76,7 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
     return data
 
 
-def fetch_pypi_package_stats(package: str, pepy_api_key: str = None) -> dict:
+def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> dict:
     """Fetch PyPI download statistics from pypistats.org (recent) and pepy.tech (total)."""
     stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
     try:
@@ -144,7 +145,7 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
     return data
 
 
-def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str = None) -> dict:
+def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None = None) -> dict:
     """Fetch and write PyPI stats to JSON."""
     stats = [fetch_pypi_package_stats(pkg, pepy_api_key) for pkg in packages]
     total_downloads = sum(s["total"] for s in stats)

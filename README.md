@@ -2,8 +2,6 @@
 
 # Ultralytics Analytics & Star Tracking ⭐️
 
-
-
 Track GitHub stars, contributors, and PyPI downloads for [Ultralytics](https://github.com/ultralytics) projects.
 
 [![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
