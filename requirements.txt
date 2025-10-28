@@ -5,4 +5,5 @@ tqdm>=4.63.1
 requests>=2.28.0
 
 # For Google Analytics
+packaging  # Python 3.13.7 does not bundle by default with setuptools
 google-analytics-data
