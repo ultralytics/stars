@@ -86,6 +86,11 @@ def run(
     Returns:
         None
 
+    Examples:
+        >>> from path.to.module import run
+        >>> run(token='your_github_token', days=30, save=True)
+
+
     Notes:
         - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid
           rate limits. You can generate one at https://github.com/settings/tokens.
@@ -95,12 +100,6 @@ def run(
               - 'repository_owner/repository_name'
               - 'another_owner/another_repository'
           ```
-
-    Example:
-        ```python
-        from path.to.module import run
-        run(token='your_github_token', days=30, save=True)
-        ```
     """
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
@@ -177,11 +176,9 @@ def parse_opt():
             - days (int): Trailing days to analyze.
             - save (bool): Flag to save user information.
 
-    Example:
-        ```python
-        args = parse_opt()
-        run(token=args.token, days=args.days, save=args.save)
-        ```
+    Examples:
+        >>> args = parse_opt()
+        >>> run(token=args.token, days=args.days, save=args.save)
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("--token", type=str, default=GITHUB_TOKEN, help="GitHub Personal Access Token")
@@ -197,19 +194,16 @@ def main(opt):
 
     Args:
         opt (argparse.Namespace): Command-line arguments parsed by `parse_opt()`, which include:
-            token (str): GitHub personal access token to authenticate API requests.
-            days (int): Number of trailing days to analyze for star counts. Defaults to 30.
-            save (bool): Flag to save user information of those who starred the repositories. Defaults to False.
+        token (str): GitHub personal access token to authenticate API requests.
+        days (int): Number of trailing days to analyze for star counts. Defaults to 30.
+        save (bool): Flag to save user information of those who starred the repositories. Defaults to False.
 
     Returns:
         None
 
-    Example:
+    Examples:
         To count stars over the last 30 days and save user info:
-
-        ```python
         $ python path/to/script.py --token YOUR_GITHUB_TOKEN --days 30 --save
-        ```
     """
     run(**vars(opt))
 
