@@ -75,8 +75,7 @@ def run(
     days=30,  # trailing days to analyze
     save=False,  # save user info
 ):
-    """
-    Counts GitHub stars for specified repositories over a given period and optionally saves user information.
+    """Counts GitHub stars for specified repositories over a given period and optionally saves user information.
 
     Args:
         token (str): GitHub personal access token. Default is an empty string which means no authentication.
@@ -89,7 +88,6 @@ def run(
     Examples:
         >>> from path.to.module import run
         >>> run(token='your_github_token', days=30, save=True)
-
 
     Notes:
         - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid
@@ -164,8 +162,7 @@ def run(
 
 
 def parse_opt():
-    """
-    Parses command-line options and returns the arguments.
+    """Parses command-line options and returns the arguments.
 
     Args:
         None
@@ -188,8 +185,7 @@ def parse_opt():
 
 
 def main(opt):
-    """
-    Executes the main process of counting GitHub repository stars over a specified time period with optional user
+    """Executes the main process of counting GitHub repository stars over a specified time period with optional user
     information saving.
 
     Args:

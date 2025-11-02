@@ -11,8 +11,6 @@ Track GitHub stars, contributors, and PyPI downloads for [Ultralytics](https://g
 
 [![Update Analytics](https://github.com/ultralytics/stars/actions/workflows/analytics.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/analytics.yml)
 
-
-
 ## 📊 Analytics API
 
 Real-time analytics updated daily at 02:07 UTC via GitHub Actions.
