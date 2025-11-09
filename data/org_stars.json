@@ -1,16 +1,16 @@
 {
   "org": "ultralytics",
-  "total_stars": 118236,
-  "total_contributors": 922,
-  "public_repos": 42,
-  "timestamp": "2025-11-08T02:37:13.951444Z",
+  "total_stars": 118272,
+  "total_contributors": 923,
+  "public_repos": 43,
+  "timestamp": "2025-11-09T02:41:01.967494Z",
   "repos": [
-    { "name": "yolov5", "stars": 55952, "contributors": 345 },
-    { "name": "ultralytics", "stars": 48406, "contributors": 309 },
+    { "name": "yolov5", "stars": 55960, "contributors": 345 },
+    { "name": "ultralytics", "stars": 48431, "contributors": 309 },
     { "name": "yolov3", "stars": 10473, "contributors": 54 },
     { "name": "JSON2YOLO", "stars": 1107, "contributors": 7 },
     { "name": "assets", "stars": 393, "contributors": 8 },
-    { "name": "yolo-ios-app", "stars": 345, "contributors": 11 },
+    { "name": "yolo-ios-app", "stars": 348, "contributors": 11 },
     { "name": "yolo-flutter-app", "stars": 295, "contributors": 19 },
     { "name": "xview-yolov3", "stars": 279, "contributors": 5 },
     { "name": "flickr_scraper", "stars": 227, "contributors": 4 },
@@ -46,6 +46,7 @@
     { "name": "sandd", "stars": 2, "contributors": 3 },
     { "name": "ultralytics-ios-podspecs", "stars": 1, "contributors": 4 },
     { "name": "profile", "stars": 1, "contributors": 1 },
-    { "name": "yoloe_data_engine", "stars": 0, "contributors": 1 }
+    { "name": "yoloe_data_engine", "stars": 0, "contributors": 1 },
+    { "name": "llm", "stars": 0, "contributors": 1 }
   ]
 }
