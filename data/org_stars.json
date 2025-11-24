@@ -1,13 +1,13 @@
 {
   "org": "ultralytics",
-  "total_stars": 119619,
+  "total_stars": 119654,
   "total_contributors": 925,
   "public_repos": 43,
-  "timestamp": "2025-11-23T02:48:25.749278Z",
+  "timestamp": "2025-11-24T02:44:58.049034Z",
   "repos": [
-    { "name": "yolov5", "stars": 56110, "contributors": 345 },
-    { "name": "ultralytics", "stars": 49004, "contributors": 309 },
-    { "name": "yolov3", "stars": 10486, "contributors": 54 },
+    { "name": "yolov5", "stars": 56117, "contributors": 345 },
+    { "name": "ultralytics", "stars": 49031, "contributors": 309 },
+    { "name": "yolov3", "stars": 10487, "contributors": 54 },
     { "name": "JSON2YOLO", "stars": 1126, "contributors": 7 },
     { "name": "assets", "stars": 418, "contributors": 8 },
     { "name": "yolo-ios-app", "stars": 377, "contributors": 11 },
