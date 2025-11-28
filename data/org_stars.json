@@ -1,21 +1,21 @@
 {
   "org": "ultralytics",
-  "total_stars": 119941,
-  "total_contributors": 927,
+  "total_stars": 119999,
+  "total_contributors": 928,
   "public_repos": 44,
-  "timestamp": "2025-11-27T02:40:29.956138Z",
+  "timestamp": "2025-11-28T02:40:26.921995Z",
   "repos": [
-    { "name": "yolov5", "stars": 56170, "contributors": 345 },
-    { "name": "ultralytics", "stars": 49208, "contributors": 310 },
-    { "name": "yolov3", "stars": 10491, "contributors": 54 },
-    { "name": "JSON2YOLO", "stars": 1127, "contributors": 7 },
-    { "name": "assets", "stars": 423, "contributors": 8 },
-    { "name": "yolo-ios-app", "stars": 381, "contributors": 11 },
+    { "name": "yolov5", "stars": 56177, "contributors": 345 },
+    { "name": "ultralytics", "stars": 49249, "contributors": 310 },
+    { "name": "yolov3", "stars": 10493, "contributors": 54 },
+    { "name": "JSON2YOLO", "stars": 1128, "contributors": 7 },
+    { "name": "assets", "stars": 425, "contributors": 8 },
+    { "name": "yolo-ios-app", "stars": 382, "contributors": 11 },
     { "name": "yolo-flutter-app", "stars": 316, "contributors": 19 },
     { "name": "xview-yolov3", "stars": 293, "contributors": 5 },
     { "name": "flickr_scraper", "stars": 245, "contributors": 4 },
     { "name": "hub", "stars": 188, "contributors": 10 },
-    { "name": "notebooks", "stars": 148, "contributors": 5 },
+    { "name": "notebooks", "stars": 149, "contributors": 5 },
     { "name": "velocity", "stars": 84, "contributors": 3 },
     { "name": "docs", "stars": 78, "contributors": 8 },
     { "name": "actions", "stars": 64, "contributors": 11 },
@@ -48,6 +48,6 @@
     { "name": "ultralytics-ios-podspecs", "stars": 17, "contributors": 4 },
     { "name": "profile", "stars": 17, "contributors": 1 },
     { "name": "yoloe_data_engine", "stars": 16, "contributors": 1 },
-    { "name": "template-rust", "stars": 1, "contributors": 1 }
+    { "name": "template-rust", "stars": 4, "contributors": 2 }
   ]
 }
