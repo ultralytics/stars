@@ -146,37 +146,32 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
     return data
 
 
+def parse_abbreviated_number(value: str) -> int:
+    """Parse abbreviated numbers like '1.4k' or '2.5M' to integers."""
+    value = value.strip().lower()
+    multipliers = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000}
+    for suffix, mult in multipliers.items():
+        if value.endswith(suffix):
+            return int(float(value[:-1]) * mult)
+    return int(float(value.replace(",", "")))
+
+
 def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
-    """Fetch Reddit subreddit subscriber count."""
-    endpoints = [
-        f"https://api.reddit.com/r/{subreddit}/about",
-        f"https://www.reddit.com/r/{subreddit}/about.json",
-        f"https://old.reddit.com/r/{subreddit}/about.json",
-    ]
-    headers = {
-        "User-Agent": "Mozilla/5.0 (compatible; Ultralytics/1.0; +https://ultralytics.com)",
-        "Accept": "application/json",
-    }
+    """Fetch Reddit subreddit subscriber count via shields.io (Reddit blocks most IPs)."""
+    try:
+        # Use shields.io JSON endpoint - they have special Reddit API access
+        r = requests.get(f"https://img.shields.io/reddit/subreddit-subscribers/{subreddit}.json", timeout=30)
+        if r.status_code == 200:
+            data = r.json()
+            subscribers = parse_abbreviated_number(data.get("value", "0"))
+            if subscribers > 0:
+                result = {"subreddit": subreddit, "subscribers": subscribers, "timestamp": get_timestamp()}
+                write_json(output, result)
+                return result
+    except Exception as e:
+        print(f"Warning: shields.io Reddit endpoint failed: {e}")
 
-    for url in endpoints:
-        try:
-            r = requests.get(url, headers=headers, timeout=30)
-            if r.status_code == 200:
-                data = r.json()
-                subscribers = data.get("data", {}).get("subscribers", 0)
-                if subscribers > 0:
-                    result = {
-                        "subreddit": subreddit,
-                        "subscribers": subscribers,
-                        "timestamp": get_timestamp(),
-                    }
-                    write_json(output, result)
-                    return result
-        except Exception as e:
-            print(f"Warning: Reddit endpoint {url} failed: {e}")
-            continue
-
-    print(f"Warning: All Reddit endpoints failed for r/{subreddit}")
+    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}")
     return {"subreddit": subreddit, "subscribers": 0, "timestamp": get_timestamp()}
 
 
