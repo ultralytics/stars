@@ -146,6 +146,40 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
     return data
 
 
+def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
+    """Fetch Reddit subreddit subscriber count."""
+    endpoints = [
+        f"https://api.reddit.com/r/{subreddit}/about",
+        f"https://www.reddit.com/r/{subreddit}/about.json",
+        f"https://old.reddit.com/r/{subreddit}/about.json",
+    ]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; Ultralytics/1.0; +https://ultralytics.com)",
+        "Accept": "application/json",
+    }
+
+    for url in endpoints:
+        try:
+            r = requests.get(url, headers=headers, timeout=30)
+            if r.status_code == 200:
+                data = r.json()
+                subscribers = data.get("data", {}).get("subscribers", 0)
+                if subscribers > 0:
+                    result = {
+                        "subreddit": subreddit,
+                        "subscribers": subscribers,
+                        "timestamp": get_timestamp(),
+                    }
+                    write_json(output, result)
+                    return result
+        except Exception as e:
+            print(f"Warning: Reddit endpoint {url} failed: {e}")
+            continue
+
+    print(f"Warning: All Reddit endpoints failed for r/{subreddit}")
+    return {"subreddit": subreddit, "subscribers": 0, "timestamp": get_timestamp()}
+
+
 def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None = None) -> dict:
     """Fetch and write PyPI stats to JSON."""
     stats = [fetch_pypi_package_stats(pkg, pepy_api_key) for pkg in packages]
@@ -210,16 +244,22 @@ if __name__ == "__main__":
     else:
         ga_data = None
 
+    # Reddit stats
+    reddit_output = BASE_DIR / "data/reddit.json"
+    reddit_data = fetch_reddit_stats("ultralytics", reddit_output)
+    print(f"✅ Reddit: {reddit_data['subscribers']:,} subscribers")
+
     # Create summary
     summary = {
         "total_stars": github_data["total_stars"],
         "total_downloads": pypi_data["total_downloads"],
         "events_per_day": round(float(ga_data["periods"]["90d"]["events"]) / 90.0) if ga_data else 0,  # 90-day mean
         "total_contributors": github_data["total_contributors"],
+        "reddit_subscribers": reddit_data["subscribers"],
         "timestamp": get_timestamp(),
     }
     summary_output = BASE_DIR / "data/summary.json"
     write_json(summary_output, summary)
     print(
-        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors"
+        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
     )
