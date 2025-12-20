@@ -1,15 +1,15 @@
 {
   "org": "ultralytics",
-  "total_stars": 121908,
+  "total_stars": 121961,
   "total_contributors": 943,
   "public_repos": 45,
-  "timestamp": "2025-12-19T02:44:34.076661Z",
+  "timestamp": "2025-12-20T02:41:03.125142Z",
   "repos": [
-    { "name": "yolov5", "stars": 56401, "contributors": 345 },
-    { "name": "ultralytics", "stars": 50087, "contributors": 314 },
+    { "name": "yolov5", "stars": 56413, "contributors": 345 },
+    { "name": "ultralytics", "stars": 50126, "contributors": 314 },
     { "name": "yolov3", "stars": 10527, "contributors": 54 },
     { "name": "JSON2YOLO", "stars": 1155, "contributors": 7 },
-    { "name": "assets", "stars": 453, "contributors": 8 },
+    { "name": "assets", "stars": 454, "contributors": 8 },
     { "name": "yolo-ios-app", "stars": 408, "contributors": 11 },
     { "name": "yolo-flutter-app", "stars": 346, "contributors": 20 },
     { "name": "xview-yolov3", "stars": 311, "contributors": 5 },
@@ -49,6 +49,6 @@
     { "name": "ultralytics-ios-podspecs", "stars": 35, "contributors": 4 },
     { "name": "yoloe_data_engine", "stars": 35, "contributors": 1 },
     { "name": "template-rust", "stars": 32, "contributors": 3 },
-    { "name": "inference", "stars": 4, "contributors": 4 }
+    { "name": "inference", "stars": 5, "contributors": 4 }
   ]
 }
