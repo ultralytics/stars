@@ -12,11 +12,21 @@ import requests
 
 
 def retry_request(func, *args, retries: int = 3, backoff: float = 2.0, **kwargs):
-    """Retry a request function with exponential backoff."""
+    """Retry a request function with exponential backoff on exceptions and 5xx/429 errors."""
     last_error = None
+    retries = max(1, retries)  # Ensure at least one attempt
     for attempt in range(retries):
         try:
-            return func(*args, **kwargs)
+            response = func(*args, **kwargs)
+            # Retry on server errors (5xx) and rate limits (429)
+            if response.status_code >= 500 or response.status_code == 429:
+                last_error = requests.RequestException(f"HTTP {response.status_code}: {response.text[:200]}")
+                if attempt < retries - 1:
+                    wait = backoff * (2**attempt)
+                    print(f"Retry {attempt + 1}/{retries} after {wait}s: HTTP {response.status_code}")
+                    time.sleep(wait)
+                continue
+            return response
         except (requests.RequestException, requests.Timeout) as e:
             last_error = e
             if attempt < retries - 1:
