@@ -147,7 +147,11 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
     try:
         from google.analytics.data_v1beta import BetaAnalyticsDataClient
-        from google.analytics.data_v1beta.types import DateRange, Metric, RunReportRequest
+        from google.analytics.data_v1beta.types import (
+            DateRange,
+            Metric,
+            RunReportRequest,
+        )
         from google.oauth2 import service_account
 
         credentials_info = json.loads(credentials_json)
