@@ -63,14 +63,16 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
     repo_data = []
     for r in sorted(repos, key=lambda x: -x["stargazerCount"]):
         contributors = fetch_github_contributors(org, r["name"], token)
-        repo_data.append({
-            "name": r["name"],
-            "stars": r["stargazerCount"],
-            "forks": r["forkCount"],
-            "issues": r["issues"]["totalCount"],
-            "pull_requests": r["pullRequests"]["totalCount"],
-            "contributors": contributors,
-        })
+        repo_data.append(
+            {
+                "name": r["name"],
+                "stars": r["stargazerCount"],
+                "forks": r["forkCount"],
+                "issues": r["issues"]["totalCount"],
+                "pull_requests": r["pullRequests"]["totalCount"],
+                "contributors": contributors,
+            }
+        )
         time.sleep(0.1)
     data = {
         "org": org,
