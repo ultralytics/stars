@@ -4,10 +4,26 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+
+
+def retry_request(func, *args, retries: int = 3, backoff: float = 2.0, **kwargs):
+    """Retry a request function with exponential backoff."""
+    last_error = None
+    for attempt in range(retries):
+        try:
+            return func(*args, **kwargs)
+        except (requests.RequestException, requests.Timeout) as e:
+            last_error = e
+            if attempt < retries - 1:
+                wait = backoff * (2**attempt)
+                print(f"Retry {attempt + 1}/{retries} after {wait}s: {e}")
+                time.sleep(wait)
+    raise last_error
 
 
 def fetch_json(url: str, headers: dict | None = None, timeout: int = 60) -> dict:
