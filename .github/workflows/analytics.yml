@@ -4,12 +4,12 @@
 #
 # This workflow collects public analytics data for the Ultralytics organization:
 #
-# GitHub Data (data/org_stars.json):
-#   - Repository star counts across all public repos
+# GitHub Data (data/github.json):
+#   - Repository star counts, fork counts, issues, and PRs across all public repos
 #   - Contributor counts per repository
 #   - Organization-wide totals and timestamps
 #
-# PyPI Data (data/pypi_downloads.json):
+# PyPI Data (data/pypi.json):
 #   - All-time total downloads per package and org-wide (via pepy.tech API with auth)
 #   - Daily, weekly, and monthly download counts (via pypistats.org API)
 #   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,

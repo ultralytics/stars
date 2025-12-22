@@ -19,7 +19,7 @@ def fetch_github_repos(org: str, token: str) -> list[dict]:
       organization(login: $org) {
         repositories(first: 100, after: $cursor, isFork: false, privacy: PUBLIC) {
           pageInfo { hasNextPage endCursor }
-          nodes { name stargazerCount isArchived isDisabled isLocked isMirror }
+          nodes { name stargazerCount forkCount issues { totalCount } pullRequests { totalCount } isArchived isDisabled isLocked isMirror }
         }
       }
     }
@@ -63,11 +63,21 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
     repo_data = []
     for r in sorted(repos, key=lambda x: -x["stargazerCount"]):
         contributors = fetch_github_contributors(org, r["name"], token)
-        repo_data.append({"name": r["name"], "stars": r["stargazerCount"], "contributors": contributors})
+        repo_data.append({
+            "name": r["name"],
+            "stars": r["stargazerCount"],
+            "forks": r["forkCount"],
+            "issues": r["issues"]["totalCount"],
+            "pull_requests": r["pullRequests"]["totalCount"],
+            "contributors": contributors,
+        })
         time.sleep(0.1)
     data = {
         "org": org,
         "total_stars": sum(r["stars"] for r in repo_data),
+        "total_forks": sum(r["forks"] for r in repo_data),
+        "total_issues": sum(r["issues"] for r in repo_data),
+        "total_pull_requests": sum(r["pull_requests"] for r in repo_data),
         "total_contributors": sum(r["contributors"] for r in repo_data),
         "public_repos": len(repo_data),
         "timestamp": get_timestamp(),
@@ -204,10 +214,10 @@ if __name__ == "__main__":
     token = os.getenv("GITHUB_TOKEN")
     if not token:
         sys.exit("Set GITHUB_TOKEN in env")
-    github_output = BASE_DIR / "data/org_stars.json"
+    github_output = BASE_DIR / "data/github.json"
     github_data = fetch_github_stats(org, token, github_output)
     print(
-        f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_contributors']:,} contributors"
+        f"✅ GitHub: {len(github_data['repos'])} repos, {github_data['total_stars']:,} stars, {github_data['total_forks']:,} forks, {github_data['total_issues']:,} issues, {github_data['total_pull_requests']:,} PRs, {github_data['total_contributors']:,} contributors"
     )
 
     # PyPI stats
@@ -219,7 +229,7 @@ if __name__ == "__main__":
         "mkdocs-ultralytics-plugin",
         "ultralytics-autoimport",
     ]
-    pypi_output = BASE_DIR / "data/pypi_downloads.json"
+    pypi_output = BASE_DIR / "data/pypi.json"
     pepy_api_key = os.getenv("PEPY_API_KEY")
     pypi_data = fetch_pypi_stats(pypi_packages, pypi_output, pepy_api_key)
     print(
@@ -247,6 +257,9 @@ if __name__ == "__main__":
     # Create summary
     summary = {
         "total_stars": github_data["total_stars"],
+        "total_forks": github_data["total_forks"],
+        "total_issues": github_data["total_issues"],
+        "total_pull_requests": github_data["total_pull_requests"],
         "total_downloads": pypi_data["total_downloads"],
         "events_per_day": round(float(ga_data["periods"]["90d"]["events"]) / 90.0) if ga_data else 0,  # 90-day mean
         "total_contributors": github_data["total_contributors"],
@@ -256,5 +269,5 @@ if __name__ == "__main__":
     summary_output = BASE_DIR / "data/summary.json"
     write_json(summary_output, summary)
     print(
-        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
+        f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_forks']:,} forks, {summary['total_issues']:,} issues, {summary['total_pull_requests']:,} PRs, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
     )
