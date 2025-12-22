@@ -18,21 +18,24 @@ Real-time analytics updated daily at 02:07 UTC via GitHub Actions.
 ### GitHub Stars & Contributors
 
 ```
-https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
+https://raw.githubusercontent.com/ultralytics/stars/main/data/github.json
 ```
 
 **Fields:**
 
 - `total_stars`: Total stars across all public repos
+- `total_forks`: Total forks across all public repos
+- `total_issues`: Total issues across all public repos (all-time)
+- `total_pull_requests`: Total pull requests across all public repos (all-time)
 - `total_contributors`: Sum of contributors across all repos (may include duplicates)
 - `public_repos`: Number of public repositories
 - `timestamp`: Last update time (ISO 8601)
-- `repos`: Array with per-repo `name`, `stars`, and `contributors`
+- `repos`: Array with per-repo `name`, `stars`, `forks`, `issues`, `pull_requests`, and `contributors`
 
 ### PyPI Downloads
 
 ```
-https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.json
+https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi.json
 ```
 
 **Packages tracked:**
@@ -56,8 +59,8 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.jso
 **REST API:**
 
 ```bash
-curl https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json
-curl https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.json
+curl https://raw.githubusercontent.com/ultralytics/stars/main/data/github.json
+curl https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi.json
 ```
 
 **Python:**
@@ -65,9 +68,12 @@ curl https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_download
 ```python
 import requests
 
-stars = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/org_stars.json").json()
-downloads = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi_downloads.json").json()
+stars = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/github.json").json()
+downloads = requests.get("https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi.json").json()
 print(f"Total stars: {stars['total_stars']:,}")
+print(f"Total forks: {stars['total_forks']:,}")
+print(f"Total issues: {stars['total_issues']:,}")
+print(f"Total PRs: {stars['total_pull_requests']:,}")
 print(f"Total contributors: {stars['total_contributors']:,}")
 print(f"PyPI downloads (total): {downloads['total_downloads']:,}")
 print(f"PyPI downloads (30d): {downloads['total_last_month']:,}")
@@ -81,8 +87,11 @@ stars/
 ├── count_stars.py          # Historical star tracking script
 ├── utils.py                # Shared utilities
 ├── data/
-│   ├── org_stars.json     # GitHub analytics (updated daily)
-│   └── pypi_downloads.json # PyPI analytics (updated daily)
+│   ├── github.json        # GitHub analytics (updated daily)
+│   ├── pypi.json          # PyPI analytics (updated daily)
+│   ├── google_analytics.json  # Google Analytics (updated daily)
+│   ├── reddit.json        # Reddit stats (updated daily)
+│   └── summary.json       # Combined summary (updated daily)
 └── .github/workflows/
     ├── analytics.yml       # Daily analytics update
     └── format.yml         # Code formatting
