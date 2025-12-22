@@ -1,8 +1,11 @@
 {
-  "total_stars": 122036,
-  "total_downloads": 201291847,
-  "events_per_day": 2310187437,
+  "total_stars": 122072,
+  "total_forks": 31376,
+  "total_issues": 24856,
+  "total_pull_requests": 12235,
+  "total_downloads": 201576316,
+  "events_per_day": 2281504851,
   "total_contributors": 946,
   "reddit_subscribers": 1400,
-  "timestamp": "2025-12-22T02:50:43.741542Z"
+  "timestamp": "2025-12-22T15:34:26.175870Z"
 }
