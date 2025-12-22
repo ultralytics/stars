@@ -34,12 +34,30 @@ def fetch_json(url: str, headers: dict | None = None, timeout: int = 60) -> dict
     return r.json()
 
 
-def post_json(url: str, headers: dict, payload: dict, timeout: int = 60) -> dict:
-    """POST JSON to URL with error handling."""
-    r = requests.post(url, headers=headers, json=payload, timeout=timeout)
-    if r.status_code != 200:
-        sys.exit(f"HTTP {r.status_code}: {r.text[:200]}")
-    return r.json()
+def post_json(url: str, headers: dict, payload: dict, timeout: int = 60, retries: int = 3) -> dict:
+    """POST JSON to URL with retry and error handling."""
+    last_error = None
+    for attempt in range(retries):
+        try:
+            r = requests.post(url, headers=headers, json=payload, timeout=timeout)
+            if r.status_code == 200:
+                return r.json()
+            # Retry on server errors (5xx), fail immediately on client errors (4xx)
+            if r.status_code >= 500:
+                last_error = f"HTTP {r.status_code}: {r.text[:200]}"
+                if attempt < retries - 1:
+                    wait = 2.0 * (2**attempt)
+                    print(f"Retry {attempt + 1}/{retries} after {wait}s: {last_error}")
+                    time.sleep(wait)
+                continue
+            sys.exit(f"HTTP {r.status_code}: {r.text[:200]}")
+        except (requests.RequestException, requests.Timeout) as e:
+            last_error = str(e)
+            if attempt < retries - 1:
+                wait = 2.0 * (2**attempt)
+                print(f"Retry {attempt + 1}/{retries} after {wait}s: {e}")
+                time.sleep(wait)
+    sys.exit(f"Failed after {retries} retries: {last_error}")
 
 
 def write_json(path: Path, data: dict) -> None:

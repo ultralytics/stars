@@ -32,16 +32,23 @@ def fetch_github_repos(org: str, token: str) -> list[dict]:
         )
         if "errors" in data:
             sys.exit(f"GraphQL errors: {data['errors']}")
-        repo_block = data["data"]["organization"]["repositories"]
-        nodes = [
-            n
-            for n in repo_block["nodes"] or []
-            if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])
-        ]
-        repos.extend(nodes)
-        if not repo_block["pageInfo"]["hasNextPage"]:
+
+        # Safely navigate nested response structure
+        org_data = data.get("data", {}).get("organization")
+        if not org_data:
+            sys.exit(f"Organization '{org}' not found or inaccessible")
+        repo_block = org_data.get("repositories", {})
+        nodes = repo_block.get("nodes") or []
+
+        # Filter out archived/disabled/locked/mirror repos
+        for n in nodes:
+            if n and not (n.get("isArchived") or n.get("isDisabled") or n.get("isLocked") or n.get("isMirror")):
+                repos.append(n)
+
+        page_info = repo_block.get("pageInfo", {})
+        if not page_info.get("hasNextPage"):
             break
-        cursor = repo_block["pageInfo"]["endCursor"]
+        cursor = page_info.get("endCursor")
         time.sleep(0.3)
     return repos
 
@@ -56,7 +63,12 @@ def fetch_github_contributors(org: str, repo: str, token: str) -> int:
             print(f"Warning: Failed to fetch contributors for {repo}: HTTP {r.status_code}")
             return 0
         link = r.headers.get("Link", "")
-        return int(link.split("page=")[-1].split(">")[0]) if "last" in link else len(r.json())
+        if "last" in link:
+            # Parse last page number from Link header
+            return int(link.split("page=")[-1].split(">")[0])
+        # No pagination - count items in response
+        data = r.json()
+        return len(data) if isinstance(data, list) else 0
     except Exception as e:
         print(f"Warning: Failed to fetch contributors for {repo}: {e}")
         return 0
@@ -103,24 +115,25 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
 def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> dict:
     """Fetch PyPI download statistics from pypistats.org (recent) and pepy.tech (total)."""
     stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
+
+    # Recent stats from pypistats.org (with retry)
     try:
-        # Recent stats from pypistats.org
-        r = requests.get(f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
+        r = retry_request(requests.get, f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
         if r.status_code == 200:
-            data = r.json()["data"]
-            stats["last_day"] = data.get("last_day", 0)
-            stats["last_week"] = data.get("last_week", 0)
-            stats["last_month"] = data.get("last_month", 0)
+            data = r.json().get("data", {})
+            stats["last_day"] = data.get("last_day", 0) or 0
+            stats["last_week"] = data.get("last_week", 0) or 0
+            stats["last_month"] = data.get("last_month", 0) or 0
     except Exception as e:
         print(f"Warning: Failed to fetch recent stats for {package}: {e}")
 
+    # All-time total from pepy.tech (with retry)
     try:
-        # All-time total from pepy.tech
         headers = {"X-API-Key": pepy_api_key} if pepy_api_key else {}
-        r = requests.get(f"https://api.pepy.tech/api/v2/projects/{package}", headers=headers, timeout=30)
+        r = retry_request(requests.get, f"https://api.pepy.tech/api/v2/projects/{package}", headers=headers, timeout=30)
         if r.status_code == 200:
             data = r.json()
-            stats["total"] = data.get("total_downloads", 0)
+            stats["total"] = data.get("total_downloads", 0) or 0
     except Exception as e:
         print(f"Warning: Failed to fetch total stats for {package}: {e}")
 
@@ -181,19 +194,26 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
 def parse_abbreviated_number(value: str) -> int:
     """Parse abbreviated numbers like '1.4k' or '2.5M' to integers."""
-    value = value.strip().lower()
-    multipliers = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000}
-    for suffix, mult in multipliers.items():
-        if value.endswith(suffix):
-            return int(float(value[:-1]) * mult)
-    return int(float(value.replace(",", "")))
+    try:
+        value = value.strip().lower()
+        if not value:
+            return 0
+        multipliers = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000}
+        for suffix, mult in multipliers.items():
+            if value.endswith(suffix):
+                return int(float(value[:-1]) * mult)
+        return int(float(value.replace(",", "")))
+    except (ValueError, AttributeError):
+        return 0
 
 
 def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
     """Fetch Reddit subreddit subscriber count via shields.io (Reddit blocks most IPs)."""
     try:
-        # Use shields.io JSON endpoint - they have special Reddit API access
-        r = requests.get(f"https://img.shields.io/reddit/subreddit-subscribers/{subreddit}.json", timeout=30)
+        # Use shields.io JSON endpoint with retry - they have special Reddit API access
+        r = retry_request(
+            requests.get, f"https://img.shields.io/reddit/subreddit-subscribers/{subreddit}.json", timeout=30
+        )
         if r.status_code == 200:
             data = r.json()
             subscribers = parse_abbreviated_number(data.get("value", "0"))
@@ -204,7 +224,7 @@ def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
     except Exception as e:
         print(f"Warning: shields.io Reddit endpoint failed: {e}")
 
-    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}")
+    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}, skipping write")
     return {"subreddit": subreddit, "subscribers": 0, "timestamp": get_timestamp()}
 
 
@@ -290,7 +310,12 @@ if __name__ == "__main__":
         "timestamp": get_timestamp(),
     }
     summary_output = BASE_DIR / "data/summary.json"
-    write_json(summary_output, summary)
+
+    # Validate summary - don't write if critical fields are zero (API errors)
+    if summary["total_stars"] == 0:
+        print("Warning: Summary has zero stars, skipping write (possible API errors)")
+    else:
+        write_json(summary_output, summary)
     print(
         f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_forks']:,} forks, {summary['total_issues']:,} issues, {summary['total_pull_requests']:,} PRs, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
     )
