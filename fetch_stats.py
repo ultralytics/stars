@@ -9,7 +9,7 @@ from pathlib import Path
 
 import requests
 
-from utils import get_timestamp, post_json, write_json
+from utils import get_timestamp, post_json, retry_request, write_json
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -32,29 +32,46 @@ def fetch_github_repos(org: str, token: str) -> list[dict]:
         )
         if "errors" in data:
             sys.exit(f"GraphQL errors: {data['errors']}")
-        repo_block = data["data"]["organization"]["repositories"]
-        nodes = [
-            n
-            for n in repo_block["nodes"] or []
-            if not (n["isArchived"] or n["isDisabled"] or n["isLocked"] or n["isMirror"])
-        ]
-        repos.extend(nodes)
-        if not repo_block["pageInfo"]["hasNextPage"]:
+
+        # Safely navigate nested response structure
+        org_data = data.get("data", {}).get("organization")
+        if not org_data:
+            sys.exit(f"Organization '{org}' not found or inaccessible")
+        repo_block = org_data.get("repositories", {})
+        nodes = repo_block.get("nodes") or []
+
+        # Filter out archived/disabled/locked/mirror repos
+        for n in nodes:
+            if n and not (n.get("isArchived") or n.get("isDisabled") or n.get("isLocked") or n.get("isMirror")):
+                repos.append(n)
+
+        page_info = repo_block.get("pageInfo", {})
+        if not page_info.get("hasNextPage"):
             break
-        cursor = repo_block["pageInfo"]["endCursor"]
+        cursor = page_info.get("endCursor")
         time.sleep(0.3)
     return repos
 
 
 def fetch_github_contributors(org: str, repo: str, token: str) -> int:
-    """Fetch contributor count for a repo using Link header pagination."""
+    """Fetch contributor count for a repo using Link header pagination with retry."""
     headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}
     url = f"https://api.github.com/repos/{org}/{repo}/contributors"
-    r = requests.get(url, headers=headers, params={"per_page": 1, "anon": "true"}, timeout=60)
-    if r.status_code != 200:
+    try:
+        r = retry_request(requests.get, url, headers=headers, params={"per_page": 1, "anon": "true"}, timeout=60)
+        if r.status_code != 200:
+            print(f"Warning: Failed to fetch contributors for {repo}: HTTP {r.status_code}")
+            return 0
+        link = r.headers.get("Link", "")
+        if "last" in link:
+            # Parse last page number from Link header
+            return int(link.split("page=")[-1].split(">")[0])
+        # No pagination - count items in response
+        data = r.json()
+        return len(data) if isinstance(data, list) else 0
+    except Exception as e:
+        print(f"Warning: Failed to fetch contributors for {repo}: {e}")
         return 0
-    link = r.headers.get("Link", "")
-    return int(link.split("page=")[-1].split(">")[0]) if "last" in link else len(r.json())
 
 
 def fetch_github_stats(org: str, token: str, output: Path) -> dict:
@@ -85,6 +102,12 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
         "timestamp": get_timestamp(),
         "repos": repo_data,
     }
+
+    # Validate data - don't write if we got no repos or zero stars (API errors)
+    if len(repo_data) == 0 or data["total_stars"] == 0:
+        print("Warning: GitHub stats are empty/zero, skipping write (possible API errors)")
+        return data
+
     write_json(output, data)
     return data
 
@@ -92,24 +115,25 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
 def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> dict:
     """Fetch PyPI download statistics from pypistats.org (recent) and pepy.tech (total)."""
     stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
+
+    # Recent stats from pypistats.org (with retry)
     try:
-        # Recent stats from pypistats.org
-        r = requests.get(f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
+        r = retry_request(requests.get, f"https://pypistats.org/api/packages/{package}/recent", timeout=30)
         if r.status_code == 200:
-            data = r.json()["data"]
-            stats["last_day"] = data.get("last_day", 0)
-            stats["last_week"] = data.get("last_week", 0)
-            stats["last_month"] = data.get("last_month", 0)
+            data = r.json().get("data", {})
+            stats["last_day"] = data.get("last_day", 0) or 0
+            stats["last_week"] = data.get("last_week", 0) or 0
+            stats["last_month"] = data.get("last_month", 0) or 0
     except Exception as e:
         print(f"Warning: Failed to fetch recent stats for {package}: {e}")
 
+    # All-time total from pepy.tech (with retry)
     try:
-        # All-time total from pepy.tech
         headers = {"X-API-Key": pepy_api_key} if pepy_api_key else {}
-        r = requests.get(f"https://api.pepy.tech/api/v2/projects/{package}", headers=headers, timeout=30)
+        r = retry_request(requests.get, f"https://api.pepy.tech/api/v2/projects/{package}", headers=headers, timeout=30)
         if r.status_code == 200:
             data = r.json()
-            stats["total"] = data.get("total_downloads", 0)
+            stats["total"] = data.get("total_downloads", 0) or 0
     except Exception as e:
         print(f"Warning: Failed to fetch total stats for {package}: {e}")
 
@@ -117,62 +141,83 @@ def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> d
     return stats
 
 
-def fetch_google_analytics_stats(property_id: str, credentials_json: str, output: Path) -> dict:
-    """Fetch Google Analytics stats for a property."""
+def fetch_google_analytics_stats(property_id: str, credentials_json: str, output: Path) -> dict | None:
+    """Fetch Google Analytics stats for a property with error handling."""
     import json
 
-    from google.analytics.data_v1beta import BetaAnalyticsDataClient
-    from google.analytics.data_v1beta.types import DateRange, Metric, RunReportRequest
-    from google.oauth2 import service_account
-
-    credentials_info = json.loads(credentials_json)
-    credentials = service_account.Credentials.from_service_account_info(credentials_info)
-    client = BetaAnalyticsDataClient(credentials=credentials)
-
-    metrics = [
-        Metric(name="activeUsers"),
-        Metric(name="sessions"),
-        Metric(name="eventCount"),
-        Metric(name="averageSessionDuration"),
-    ]
-
-    data = {"property_id": property_id, "timestamp": get_timestamp(), "periods": {}}
-
-    for days, suffix in [(1, "1d"), (7, "7d"), (30, "30d"), (90, "90d"), (365, "365d")]:
-        request = RunReportRequest(
-            property=f"properties/{property_id}",
-            date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
-            metrics=metrics,
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient
+        from google.analytics.data_v1beta.types import (
+            DateRange,
+            Metric,
+            RunReportRequest,
         )
-        response = client.run_report(request)
-        row = response.rows[0] if response.rows else None
+        from google.oauth2 import service_account
 
-        data["periods"][suffix] = {
-            "active_users": int(row.metric_values[0].value) if row else 0,
-            "sessions": int(row.metric_values[1].value) if row else 0,
-            "events": int(row.metric_values[2].value) if row else 0,
-            "avg_session_duration": float(row.metric_values[3].value) if row else 0.0,
-        }
+        credentials_info = json.loads(credentials_json)
+        credentials = service_account.Credentials.from_service_account_info(credentials_info)
+        client = BetaAnalyticsDataClient(credentials=credentials)
 
-    write_json(output, data)
-    return data
+        metrics = [
+            Metric(name="activeUsers"),
+            Metric(name="sessions"),
+            Metric(name="eventCount"),
+            Metric(name="averageSessionDuration"),
+        ]
+
+        data = {"property_id": property_id, "timestamp": get_timestamp(), "periods": {}}
+
+        for days, suffix in [(1, "1d"), (7, "7d"), (30, "30d"), (90, "90d"), (365, "365d")]:
+            request = RunReportRequest(
+                property=f"properties/{property_id}",
+                date_ranges=[DateRange(start_date=f"{days}daysAgo", end_date="today")],
+                metrics=metrics,
+            )
+            response = client.run_report(request)
+            row = response.rows[0] if response.rows else None
+
+            data["periods"][suffix] = {
+                "active_users": int(row.metric_values[0].value) if row else 0,
+                "sessions": int(row.metric_values[1].value) if row else 0,
+                "events": int(row.metric_values[2].value) if row else 0,
+                "avg_session_duration": float(row.metric_values[3].value) if row else 0.0,
+            }
+
+        # Validate data - don't write if we got all zeros (API errors)
+        if all(p["events"] == 0 for p in data["periods"].values()):
+            print("Warning: Google Analytics stats are all zero, skipping write (possible API errors)")
+            return None
+
+        write_json(output, data)
+        return data
+
+    except Exception as e:
+        print(f"Warning: Failed to fetch Google Analytics stats: {e}")
+        return None
 
 
 def parse_abbreviated_number(value: str) -> int:
     """Parse abbreviated numbers like '1.4k' or '2.5M' to integers."""
-    value = value.strip().lower()
-    multipliers = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000}
-    for suffix, mult in multipliers.items():
-        if value.endswith(suffix):
-            return int(float(value[:-1]) * mult)
-    return int(float(value.replace(",", "")))
+    try:
+        value = value.strip().lower()
+        if not value:
+            return 0
+        multipliers = {"k": 1_000, "m": 1_000_000, "b": 1_000_000_000}
+        for suffix, mult in multipliers.items():
+            if value.endswith(suffix):
+                return int(float(value[:-1]) * mult)
+        return int(float(value.replace(",", "")))
+    except (ValueError, AttributeError):
+        return 0
 
 
 def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
     """Fetch Reddit subreddit subscriber count via shields.io (Reddit blocks most IPs)."""
     try:
-        # Use shields.io JSON endpoint - they have special Reddit API access
-        r = requests.get(f"https://img.shields.io/reddit/subreddit-subscribers/{subreddit}.json", timeout=30)
+        # Use shields.io JSON endpoint with retry - they have special Reddit API access
+        r = retry_request(
+            requests.get, f"https://img.shields.io/reddit/subreddit-subscribers/{subreddit}.json", timeout=30
+        )
         if r.status_code == 200:
             data = r.json()
             subscribers = parse_abbreviated_number(data.get("value", "0"))
@@ -183,7 +228,7 @@ def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
     except Exception as e:
         print(f"Warning: shields.io Reddit endpoint failed: {e}")
 
-    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}")
+    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}, skipping write")
     return {"subreddit": subreddit, "subscribers": 0, "timestamp": get_timestamp()}
 
 
@@ -241,15 +286,15 @@ if __name__ == "__main__":
     # Google Analytics stats
     ga_property_id = "371754141"
     ga_credentials_json = os.getenv("GA_CREDENTIALS_JSON")
+    ga_data = None
     if ga_credentials_json:
         ga_output = BASE_DIR / "data/google_analytics.json"
         ga_data = fetch_google_analytics_stats(ga_property_id, ga_credentials_json, ga_output)
-        day = ga_data["periods"]["1d"]
-        print(
-            f"✅ GA: {day['active_users']:,} users, {day['sessions']:,} sessions, {day['events']:,} events (1d/7d/30d/90d/365d)"
-        )
-    else:
-        ga_data = None
+        if ga_data:
+            day = ga_data["periods"]["1d"]
+            print(
+                f"✅ GA: {day['active_users']:,} users, {day['sessions']:,} sessions, {day['events']:,} events (1d/7d/30d/90d/365d)"
+            )
 
     # Reddit stats
     reddit_output = BASE_DIR / "data/reddit.json"
@@ -269,7 +314,12 @@ if __name__ == "__main__":
         "timestamp": get_timestamp(),
     }
     summary_output = BASE_DIR / "data/summary.json"
-    write_json(summary_output, summary)
+
+    # Validate summary - don't write if critical fields are zero (API errors)
+    if summary["total_stars"] == 0:
+        print("Warning: Summary has zero stars, skipping write (possible API errors)")
+    else:
+        write_json(summary_output, summary)
     print(
         f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_forks']:,} forks, {summary['total_issues']:,} issues, {summary['total_pull_requests']:,} PRs, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
     )
