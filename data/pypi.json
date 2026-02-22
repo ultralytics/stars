@@ -1,1 +1,25 @@
-{"total_downloads":224275857,"total_last_month":4575606,"timestamp":"2026-02-22T03:11:47.817363Z","packages":[{"package":"ultralytics","last_day":0,"last_week":0,"last_month":0,"total":158639247},{"package":"ultralytics-actions","last_day":224,"last_week":925,"last_month":3307,"total":238263},{"package":"ultralytics-thop","last_day":119547,"last_week":1021800,"last_month":4525904,"total":64057271},{"package":"hub-sdk","last_day":1160,"last_week":9402,"last_month":38169,"total":1094262},{"package":"mkdocs-ultralytics-plugin","last_day":1551,"last_week":4589,"last_month":8167,"total":242343},{"package":"ultralytics-autoimport","last_day":2,"last_week":19,"last_month":59,"total":4471}]}
+{
+  "total_downloads": 224275857,
+  "total_last_month": 4575606,
+  "timestamp": "2026-02-22T03:11:47.817363Z",
+  "packages": [
+    { "package": "ultralytics", "last_day": 0, "last_week": 0, "last_month": 0, "total": 158639247 },
+    { "package": "ultralytics-actions", "last_day": 224, "last_week": 925, "last_month": 3307, "total": 238263 },
+    {
+      "package": "ultralytics-thop",
+      "last_day": 119547,
+      "last_week": 1021800,
+      "last_month": 4525904,
+      "total": 64057271
+    },
+    { "package": "hub-sdk", "last_day": 1160, "last_week": 9402, "last_month": 38169, "total": 1094262 },
+    {
+      "package": "mkdocs-ultralytics-plugin",
+      "last_day": 1551,
+      "last_week": 4589,
+      "last_month": 8167,
+      "total": 242343
+    },
+    { "package": "ultralytics-autoimport", "last_day": 2, "last_week": 19, "last_month": 59, "total": 4471 }
+  ]
+}
