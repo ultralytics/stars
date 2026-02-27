@@ -9,7 +9,14 @@ from pathlib import Path
 
 import requests
 
-from utils import get_timestamp, post_json, read_json, retry_request, safe_merge, write_json
+from utils import (
+    get_timestamp,
+    post_json,
+    read_json,
+    retry_request,
+    safe_merge,
+    write_json,
+)
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -91,7 +98,12 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
             "pull_requests": r["pullRequests"]["totalCount"],
             "contributors": contributors,
         }
-        safe_merge(new_repo, old_repos.get(r["name"], {}), ("stars", "forks", "issues", "pull_requests", "contributors"), r["name"])
+        safe_merge(
+            new_repo,
+            old_repos.get(r["name"], {}),
+            ("stars", "forks", "issues", "pull_requests", "contributors"),
+            r["name"],
+        )
         repo_data.append(new_repo)
         time.sleep(0.1)
 
@@ -190,7 +202,12 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
         old_periods = existing.get("periods", {})
         for suffix, period in data["periods"].items():
-            safe_merge(period, old_periods.get(suffix, {}), ("active_users", "sessions", "events", "avg_session_duration"), f"GA {suffix}")
+            safe_merge(
+                period,
+                old_periods.get(suffix, {}),
+                ("active_users", "sessions", "events", "avg_session_duration"),
+                f"GA {suffix}",
+            )
 
         write_json(output, data)
         return data
