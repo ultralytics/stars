@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import sys
 import time
 from datetime import datetime, timezone
@@ -70,10 +71,29 @@ def post_json(url: str, headers: dict, payload: dict, timeout: int = 60, retries
     sys.exit(f"Failed after {retries} retries: {last_error}")
 
 
+def read_json(path: Path) -> dict:
+    """Read JSON file, return empty dict if not found or invalid."""
+    try:
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
 def write_json(path: Path, data: dict) -> None:
     """Write compact JSON with trailing newline."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
+def is_valid(value) -> bool:
+    """Check if a numeric value is valid (positive and finite, not 0/NaN/None/negative)."""
+    if value is None:
+        return False
+    if isinstance(value, float):
+        return math.isfinite(value) and value > 0
+    if isinstance(value, int):
+        return value > 0
+    return True  # non-numeric types (str, list, dict) are always valid
 
 
 def get_timestamp() -> str:
