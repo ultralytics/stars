@@ -262,7 +262,7 @@ def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None
         old_pkg = old_packages.get(pkg, {})
         safe_merge(new_pkg, old_pkg, ("total",), pkg, allow_zero=False)
         # If all recent stats are 0, likely API failure — keep existing values
-        if new_pkg["last_day"] == 0 and new_pkg["last_week"] == 0 and new_pkg["last_month"] == 0:
+        if all(new_pkg.get(k, 0) == 0 for k in ("last_day", "last_week", "last_month")):
             for k in ("last_day", "last_week", "last_month"):
                 new_pkg[k] = old_pkg.get(k, 0)
         else:
