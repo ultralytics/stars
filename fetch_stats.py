@@ -9,7 +9,14 @@ from pathlib import Path
 
 import requests
 
-from utils import get_timestamp, post_json, read_json, retry_request, safe_merge, write_json
+from utils import (
+    get_timestamp,
+    post_json,
+    read_json,
+    retry_request,
+    safe_merge,
+    write_json,
+)
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -192,7 +199,12 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
         old_periods = existing.get("periods", {})
         for suffix, period in data["periods"].items():
-            safe_merge(period, old_periods.get(suffix, {}), ("active_users", "sessions", "events", "avg_session_duration"), f"GA {suffix}")
+            safe_merge(
+                period,
+                old_periods.get(suffix, {}),
+                ("active_users", "sessions", "events", "avg_session_duration"),
+                f"GA {suffix}",
+            )
 
         write_json(output, data)
         return data
