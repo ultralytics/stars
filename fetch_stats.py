@@ -91,7 +91,9 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
             "pull_requests": r["pullRequests"]["totalCount"],
             "contributors": contributors,
         }
-        safe_merge(new_repo, old_repos.get(r["name"], {}), ("stars", "forks", "issues", "pull_requests", "contributors"), r["name"])
+        old_repo = old_repos.get(r["name"], {})
+        safe_merge(new_repo, old_repo, ("stars", "forks", "contributors"), r["name"])
+        safe_merge(new_repo, old_repo, ("issues", "pull_requests"), r["name"], allow_zero=True)
         repo_data.append(new_repo)
         time.sleep(0.1)
 
@@ -190,7 +192,7 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
 
         old_periods = existing.get("periods", {})
         for suffix, period in data["periods"].items():
-            safe_merge(period, old_periods.get(suffix, {}), ("active_users", "sessions", "events", "avg_session_duration"), f"GA {suffix}")
+            safe_merge(period, old_periods.get(suffix, {}), ("active_users", "sessions", "events", "avg_session_duration"), f"GA {suffix}", allow_zero=True)
 
         write_json(output, data)
         return data
@@ -245,7 +247,9 @@ def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None
     stats = []
     for pkg in packages:
         new_pkg = fetch_pypi_package_stats(pkg, pepy_api_key)
-        safe_merge(new_pkg, old_packages.get(pkg, {}), ("last_day", "last_week", "last_month", "total"), pkg)
+        old_pkg = old_packages.get(pkg, {})
+        safe_merge(new_pkg, old_pkg, ("total",), pkg)
+        safe_merge(new_pkg, old_pkg, ("last_day", "last_week", "last_month"), pkg, allow_zero=True)
         stats.append(new_pkg)
 
     data = {
