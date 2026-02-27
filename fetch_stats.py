@@ -9,7 +9,14 @@ from pathlib import Path
 
 import requests
 
-from utils import get_timestamp, post_json, retry_request, write_json
+from utils import (
+    get_timestamp,
+    post_json,
+    read_json,
+    retry_request,
+    safe_merge,
+    write_json,
+)
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -75,22 +82,33 @@ def fetch_github_contributors(org: str, repo: str, token: str) -> int:
 
 
 def fetch_github_stats(org: str, token: str, output: Path) -> dict:
-    """Fetch and write GitHub org stats to JSON."""
+    """Fetch GitHub org stats, merge with existing data, and write to JSON."""
+    existing = read_json(output)
+    old_repos = {r["name"]: r for r in existing.get("repos", [])}
+
     repos = fetch_github_repos(org, token)
     repo_data = []
     for r in sorted(repos, key=lambda x: -x["stargazerCount"]):
         contributors = fetch_github_contributors(org, r["name"], token)
-        repo_data.append(
-            {
-                "name": r["name"],
-                "stars": r["stargazerCount"],
-                "forks": r["forkCount"],
-                "issues": r["issues"]["totalCount"],
-                "pull_requests": r["pullRequests"]["totalCount"],
-                "contributors": contributors,
-            }
-        )
+        new_repo = {
+            "name": r["name"],
+            "stars": r["stargazerCount"],
+            "forks": r["forkCount"],
+            "issues": r["issues"]["totalCount"],
+            "pull_requests": r["pullRequests"]["totalCount"],
+            "contributors": contributors,
+        }
+        old_repo = old_repos.get(r["name"], {})
+        safe_merge(new_repo, old_repo, ("stars", "forks", "contributors"), r["name"], allow_zero=False)
+        safe_merge(new_repo, old_repo, ("issues", "pull_requests"), r["name"])
+        repo_data.append(new_repo)
         time.sleep(0.1)
+
+    # If API returned no repos, keep existing repos
+    if not repo_data and existing.get("repos"):
+        print("Warning: GitHub API returned no repos, keeping existing data")
+        repo_data = existing["repos"]
+
     data = {
         "org": org,
         "total_stars": sum(r["stars"] for r in repo_data),
@@ -102,12 +120,6 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
         "timestamp": get_timestamp(),
         "repos": repo_data,
     }
-
-    # Validate data - don't write if we got no repos or zero stars (API errors)
-    if len(repo_data) == 0 or data["total_stars"] == 0:
-        print("Warning: GitHub stats are empty/zero, skipping write (possible API errors)")
-        return data
-
     write_json(output, data)
     return data
 
@@ -142,8 +154,10 @@ def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> d
 
 
 def fetch_google_analytics_stats(property_id: str, credentials_json: str, output: Path) -> dict | None:
-    """Fetch Google Analytics stats for a property with error handling."""
+    """Fetch Google Analytics stats, merge with existing data, and write to JSON."""
     import json
+
+    existing = read_json(output)
 
     try:
         from google.analytics.data_v1beta import BetaAnalyticsDataClient
@@ -183,17 +197,21 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
                 "avg_session_duration": float(row.metric_values[3].value) if row else 0.0,
             }
 
-        # Validate data - don't write if we got all zeros (API errors)
-        if all(p["events"] == 0 for p in data["periods"].values()):
-            print("Warning: Google Analytics stats are all zero, skipping write (possible API errors)")
-            return None
+        old_periods = existing.get("periods", {})
+        for suffix, period in data["periods"].items():
+            safe_merge(
+                period,
+                old_periods.get(suffix, {}),
+                ("active_users", "sessions", "events", "avg_session_duration"),
+                f"GA {suffix}",
+            )
 
         write_json(output, data)
         return data
 
     except Exception as e:
         print(f"Warning: Failed to fetch Google Analytics stats: {e}")
-        return None
+        return existing if existing.get("periods") else None
 
 
 def parse_abbreviated_number(value: str) -> int:
@@ -212,7 +230,10 @@ def parse_abbreviated_number(value: str) -> int:
 
 
 def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
-    """Fetch Reddit subreddit subscriber count via shields.io (Reddit blocks most IPs)."""
+    """Fetch Reddit subscriber count, merge with existing data, and write to JSON."""
+    existing = read_json(output)
+    subscribers = 0
+
     try:
         # Use shields.io JSON endpoint with retry - they have special Reddit API access
         r = retry_request(
@@ -221,31 +242,31 @@ def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
         if r.status_code == 200:
             data = r.json()
             subscribers = parse_abbreviated_number(data.get("value", "0"))
-            if subscribers > 0:
-                result = {"subreddit": subreddit, "subscribers": subscribers, "timestamp": get_timestamp()}
-                write_json(output, result)
-                return result
     except Exception as e:
         print(f"Warning: shields.io Reddit endpoint failed: {e}")
 
-    print(f"Warning: Failed to fetch Reddit stats for r/{subreddit}, skipping write")
-    return {"subreddit": subreddit, "subscribers": 0, "timestamp": get_timestamp()}
+    result = {"subreddit": subreddit, "subscribers": subscribers, "timestamp": get_timestamp()}
+    safe_merge(result, existing, ("subscribers",), "Reddit", allow_zero=False)
+    write_json(output, result)
+    return result
 
 
 def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None = None) -> dict:
-    """Fetch and write PyPI stats to JSON."""
-    stats = [fetch_pypi_package_stats(pkg, pepy_api_key) for pkg in packages]
-    total_downloads = sum(s["total"] for s in stats)
-    total_last_month = sum(s["last_month"] for s in stats)
+    """Fetch PyPI stats, merge with existing data per-package, and write to JSON."""
+    existing = read_json(output)
+    old_packages = {p["package"]: p for p in existing.get("packages", [])}
 
-    # Validate data - don't write if we got all zeros (API errors)
-    if total_downloads == 0 and total_last_month == 0:
-        print("Warning: All PyPI stats are zero, skipping write (possible API errors)")
-        return {"total_downloads": 0, "total_last_month": 0, "timestamp": get_timestamp(), "packages": stats}
+    stats = []
+    for pkg in packages:
+        new_pkg = fetch_pypi_package_stats(pkg, pepy_api_key)
+        old_pkg = old_packages.get(pkg, {})
+        safe_merge(new_pkg, old_pkg, ("total",), pkg, allow_zero=False)
+        safe_merge(new_pkg, old_pkg, ("last_day", "last_week", "last_month"), pkg)
+        stats.append(new_pkg)
 
     data = {
-        "total_downloads": total_downloads,
-        "total_last_month": total_last_month,
+        "total_downloads": sum(s["total"] for s in stats),
+        "total_last_month": sum(s["last_month"] for s in stats),
         "timestamp": get_timestamp(),
         "packages": stats,
     }
@@ -301,7 +322,8 @@ if __name__ == "__main__":
     reddit_data = fetch_reddit_stats("ultralytics", reddit_output)
     print(f"✅ Reddit: {reddit_data['subscribers']:,} subscribers")
 
-    # Create summary
+    # Create summary with field-level merge from existing
+    existing_summary = read_json(BASE_DIR / "data/summary.json")
     summary = {
         "total_stars": github_data["total_stars"],
         "total_forks": github_data["total_forks"],
@@ -313,13 +335,9 @@ if __name__ == "__main__":
         "reddit_subscribers": reddit_data["subscribers"],
         "timestamp": get_timestamp(),
     }
+    safe_merge(summary, existing_summary, [k for k in summary if k != "timestamp"], "summary", allow_zero=False)
     summary_output = BASE_DIR / "data/summary.json"
-
-    # Validate summary - don't write if critical fields are zero (API errors)
-    if summary["total_stars"] == 0:
-        print("Warning: Summary has zero stars, skipping write (possible API errors)")
-    else:
-        write_json(summary_output, summary)
+    write_json(summary_output, summary)
     print(
         f"✅ Summary: {summary['total_stars']:,} stars, {summary['total_forks']:,} forks, {summary['total_issues']:,} issues, {summary['total_pull_requests']:,} PRs, {summary['total_downloads']:,} downloads, {summary['events_per_day']:,} events/day, {summary['total_contributors']:,} contributors, {summary['reddit_subscribers']:,} reddit"
     )
