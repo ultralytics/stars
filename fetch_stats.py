@@ -9,7 +9,7 @@ from pathlib import Path
 
 import requests
 
-from utils import get_timestamp, is_valid, post_json, read_json, retry_request, write_json
+from utils import get_timestamp, post_json, read_json, retry_request, safe_merge, write_json
 
 
 def fetch_github_repos(org: str, token: str) -> list[dict]:
@@ -91,12 +91,7 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
             "pull_requests": r["pullRequests"]["totalCount"],
             "contributors": contributors,
         }
-        # Per-repo merge: keep old value where new is invalid
-        old_repo = old_repos.get(r["name"], {})
-        for key in ("stars", "forks", "issues", "pull_requests", "contributors"):
-            if not is_valid(new_repo[key]) and is_valid(old_repo.get(key)):
-                print(f"Warning: Keeping existing {r['name']}.{key}: {old_repo[key]} (new: {new_repo[key]})")
-                new_repo[key] = old_repo[key]
+        safe_merge(new_repo, old_repos.get(r["name"], {}), ("stars", "forks", "issues", "pull_requests", "contributors"), r["name"])
         repo_data.append(new_repo)
         time.sleep(0.1)
 
@@ -193,14 +188,9 @@ def fetch_google_analytics_stats(property_id: str, credentials_json: str, output
                 "avg_session_duration": float(row.metric_values[3].value) if row else 0.0,
             }
 
-        # Per-period merge: keep old values where new is invalid
         old_periods = existing.get("periods", {})
         for suffix, period in data["periods"].items():
-            old_period = old_periods.get(suffix, {})
-            for key in ("active_users", "sessions", "events", "avg_session_duration"):
-                if not is_valid(period[key]) and is_valid(old_period.get(key)):
-                    print(f"Warning: Keeping existing GA {suffix}.{key}: {old_period[key]} (new: {period[key]})")
-                    period[key] = old_period[key]
+            safe_merge(period, old_periods.get(suffix, {}), ("active_users", "sessions", "events", "avg_session_duration"), f"GA {suffix}")
 
         write_json(output, data)
         return data
@@ -241,12 +231,8 @@ def fetch_reddit_stats(subreddit: str, output: Path) -> dict:
     except Exception as e:
         print(f"Warning: shields.io Reddit endpoint failed: {e}")
 
-    # Merge: keep old subscribers if new value is invalid
-    if not is_valid(subscribers) and is_valid(existing.get("subscribers")):
-        print(f"Warning: Keeping existing Reddit subscribers: {existing['subscribers']} (new: {subscribers})")
-        subscribers = existing["subscribers"]
-
     result = {"subreddit": subreddit, "subscribers": subscribers, "timestamp": get_timestamp()}
+    safe_merge(result, existing, ("subscribers",), "Reddit")
     write_json(output, result)
     return result
 
@@ -259,12 +245,7 @@ def fetch_pypi_stats(packages: list[str], output: Path, pepy_api_key: str | None
     stats = []
     for pkg in packages:
         new_pkg = fetch_pypi_package_stats(pkg, pepy_api_key)
-        # Per-package merge: keep old value where new is invalid
-        old_pkg = old_packages.get(pkg, {})
-        for key in ("last_day", "last_week", "last_month", "total"):
-            if not is_valid(new_pkg[key]) and is_valid(old_pkg.get(key)):
-                print(f"Warning: Keeping existing {pkg}.{key}: {old_pkg[key]} (new: {new_pkg[key]})")
-                new_pkg[key] = old_pkg[key]
+        safe_merge(new_pkg, old_packages.get(pkg, {}), ("last_day", "last_week", "last_month", "total"), pkg)
         stats.append(new_pkg)
 
     data = {
@@ -338,11 +319,7 @@ if __name__ == "__main__":
         "reddit_subscribers": reddit_data["subscribers"],
         "timestamp": get_timestamp(),
     }
-    for key in summary:
-        if key != "timestamp" and not is_valid(summary[key]) and is_valid(existing_summary.get(key)):
-            print(f"Warning: Keeping existing summary.{key}: {existing_summary[key]} (new: {summary[key]})")
-            summary[key] = existing_summary[key]
-
+    safe_merge(summary, existing_summary, [k for k in summary if k != "timestamp"], "summary")
     summary_output = BASE_DIR / "data/summary.json"
     write_json(summary_output, summary)
     print(

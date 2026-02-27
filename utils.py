@@ -80,20 +80,33 @@ def read_json(path: Path) -> dict:
 
 
 def write_json(path: Path, data: dict) -> None:
-    """Write compact JSON with trailing newline."""
+    """Write compact JSON with trailing newline. Rejects NaN/Inf to prevent invalid JSON."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n", encoding="utf-8"
+    )
 
 
 def is_valid(value) -> bool:
-    """Check if a numeric value is valid (positive and finite, not 0/NaN/None/negative)."""
-    if value is None:
+    """Check if a numeric value is valid (positive and finite, not 0/NaN/None/negative/non-numeric)."""
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
         return False
     if isinstance(value, float):
         return math.isfinite(value) and value > 0
-    if isinstance(value, int):
-        return value > 0
-    return True  # non-numeric types (str, list, dict) are always valid
+    return value > 0
+
+
+def safe_merge(new_data: dict, old_data: dict, keys: tuple | list, label: str = "") -> None:
+    """Merge numeric fields in-place: keep new value if valid, fall back to old, default to 0."""
+    for key in keys:
+        if not is_valid(new_data.get(key)):
+            old_val = old_data.get(key)
+            prefix = f"{label}." if label else ""
+            if is_valid(old_val):
+                print(f"Warning: Keeping existing {prefix}{key}: {old_val} (new: {new_data.get(key)})")
+                new_data[key] = old_val
+            else:
+                new_data[key] = 0
 
 
 def get_timestamp() -> str:
