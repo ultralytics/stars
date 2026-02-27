@@ -101,18 +101,16 @@ def write_json(path: Path, data: dict) -> None:
     path.write_text(text + "\n", encoding="utf-8")
 
 
-def is_valid(value, allow_zero: bool = False) -> bool:
+def is_valid(value, allow_zero: bool = True) -> bool:
     """Check if a numeric value is valid (finite, not NaN/None/negative/non-numeric)."""
     if not isinstance(value, (int, float)) or isinstance(value, bool):
         return False
-    if isinstance(value, float):
-        if not math.isfinite(value):
-            return False
-        return value >= 0 if allow_zero else value > 0
+    if isinstance(value, float) and not math.isfinite(value):
+        return False
     return value >= 0 if allow_zero else value > 0
 
 
-def safe_merge(new_data: dict, old_data: dict, keys: tuple | list, label: str = "", allow_zero: bool = False) -> None:
+def safe_merge(new_data: dict, old_data: dict, keys: tuple | list, label: str = "", allow_zero: bool = True) -> None:
     """Merge numeric fields in-place: keep new value if valid, fall back to old, default to 0."""
     for key in keys:
         if not is_valid(new_data.get(key), allow_zero):
