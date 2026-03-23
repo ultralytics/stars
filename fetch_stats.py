@@ -144,12 +144,12 @@ def fetch_platform_stats(api_url: str, api_key: str, output: Path) -> dict:
 
         data = r.json()
         result = {
-            "platform_projects": data.get("projects", 0),
-            "platform_datasets": data.get("datasets", 0),
-            "platform_images": data.get("images", 0),
-            "platform_models": data.get("models", 0),
-            "platform_exports": data.get("exports", 0),
-            "platform_annotations": (data.get("datasetDeepDive") or {}).get("totalAnnotations", 0),
+            "total_projects": data.get("projects", 0),
+            "total_datasets": data.get("datasets", 0),
+            "total_images": data.get("images", 0),
+            "total_models": data.get("models", 0),
+            "total_exports": data.get("exports", 0),
+            "total_annotations": (data.get("datasetDeepDive") or {}).get("totalAnnotations", 0),
             "timestamp": get_timestamp(),
         }
         safe_merge(result, existing, [k for k in result if k != "timestamp"], "platform", allow_zero=False)
@@ -372,7 +372,7 @@ if __name__ == "__main__":
         platform_data = fetch_platform_stats("https://portal.ultralytics.com", platform_api_key, platform_output)
         if platform_data:
             print(
-                f"✅ Platform: {platform_data.get('platform_datasets', 0):,} datasets, {platform_data.get('platform_annotations', 0):,} annotations, {platform_data.get('platform_images', 0):,} images, {platform_data.get('platform_projects', 0):,} projects, {platform_data.get('platform_models', 0):,} models"
+                f"✅ Platform: {platform_data.get('total_datasets', 0):,} datasets, {platform_data.get('total_annotations', 0):,} annotations, {platform_data.get('total_images', 0):,} images, {platform_data.get('total_projects', 0):,} projects, {platform_data.get('total_models', 0):,} models"
             )
     else:
         print("⚠️ Platform: Skipped (PORTAL_API_KEY not set)")
@@ -388,12 +388,12 @@ if __name__ == "__main__":
         "events_per_day": round(float(ga_data["periods"]["90d"]["events"]) / 90.0) if ga_data else 0,  # 90-day mean
         "total_contributors": github_data["total_contributors"],
         "reddit_subscribers": reddit_data["subscribers"],
-        "platform_datasets": platform_data.get("platform_datasets", 0),
-        "platform_annotations": platform_data.get("platform_annotations", 0),
-        "platform_images": platform_data.get("platform_images", 0),
-        "platform_projects": platform_data.get("platform_projects", 0),
-        "platform_models": platform_data.get("platform_models", 0),
-        "platform_exports": platform_data.get("platform_exports", 0),
+        "platform_datasets": platform_data.get("total_datasets", 0),
+        "platform_annotations": platform_data.get("total_annotations", 0),
+        "platform_images": platform_data.get("total_images", 0),
+        "platform_projects": platform_data.get("total_projects", 0),
+        "platform_models": platform_data.get("total_models", 0),
+        "platform_exports": platform_data.get("total_exports", 0),
         "timestamp": get_timestamp(),
     }
     safe_merge(summary, existing_summary, [k for k in summary if k != "timestamp"], "summary", allow_zero=False)
