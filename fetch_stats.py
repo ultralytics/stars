@@ -132,8 +132,11 @@ def fetch_platform_stats(api_url: str, api_key: str, output: Path) -> dict:
         headers = {"Authorization": f"Bearer {api_key}"}
         # Stats from Jan 13, 2026 (1 day before platform launch), with deep dive for annotations
         r = retry_request(
-            requests.get, f"{api_url.rstrip('/')}/api/analytics/platform-metrics/mongodb",
-            headers=headers, params={"start": "2026-01-13", "deepDive": "true"}, timeout=60,
+            requests.get,
+            f"{api_url.rstrip('/')}/api/analytics/platform-metrics/mongodb",
+            headers=headers,
+            params={"start": "2026-01-13", "deepDive": "true"},
+            timeout=60,
         )
         if r.status_code != 200:
             print(f"Warning: Platform API returned HTTP {r.status_code}: {r.text[:200]}")
