@@ -49,6 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PEPY_API_KEY: ${{ secrets.PEPY_API_KEY }}
           GA_CREDENTIALS_JSON: ${{ secrets.GA_CREDENTIALS_JSON }}
+          PORTAL_API_KEY: ${{ secrets.PORTAL_API_KEY }}
         run: python fetch_stats.py
       - name: Create PR and merge
         env:

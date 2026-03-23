@@ -124,6 +124,43 @@ def fetch_github_stats(org: str, token: str, output: Path) -> dict:
     return data
 
 
+def fetch_platform_stats(api_url: str, api_key: str, output: Path) -> dict:
+    """Fetch Ultralytics Platform stats from portal API, merge with existing data, and write to JSON."""
+    existing = read_json(output)
+
+    try:
+        headers = {"Authorization": f"Bearer {api_key}"}
+        # Stats from Jan 13, 2026 (1 day before platform launch), with deep dive for annotations
+        r = retry_request(
+            requests.get,
+            f"{api_url.rstrip('/')}/api/analytics/platform-metrics/mongodb",
+            headers=headers,
+            params={"start": "2026-01-13", "end": get_timestamp()[:10], "summary": "true"},
+            timeout=60,
+        )
+        if r.status_code != 200:
+            print(f"Warning: Platform API returned HTTP {r.status_code}: {r.text[:200]}")
+            return existing if existing else {}
+
+        data = r.json()
+        result = {
+            "total_projects": data.get("projects", 0),
+            "total_datasets": data.get("datasets", 0),
+            "total_images": data.get("images", 0),
+            "total_models": data.get("models", 0),
+            "total_exports": data.get("exports", 0),
+            "total_annotations": data.get("totalAnnotations", 0),
+            "timestamp": get_timestamp(),
+        }
+        safe_merge(result, existing, [k for k in result if k != "timestamp"], "platform", allow_zero=False)
+        write_json(output, result)
+        return result
+
+    except Exception as e:
+        print(f"Warning: Failed to fetch Platform stats: {e}")
+        return existing if existing else {}
+
+
 def fetch_pypi_package_stats(package: str, pepy_api_key: str | None = None) -> dict:
     """Fetch PyPI download statistics from pypistats.org (recent) and pepy.tech (total)."""
     stats = {"package": package, "last_day": 0, "last_week": 0, "last_month": 0, "total": 0}
@@ -327,6 +364,19 @@ if __name__ == "__main__":
     reddit_data = fetch_reddit_stats("ultralytics", reddit_output)
     print(f"✅ Reddit: {reddit_data['subscribers']:,} subscribers")
 
+    # Platform stats
+    platform_api_key = os.getenv("PORTAL_API_KEY", "")
+    platform_data = {}
+    if platform_api_key:
+        platform_output = BASE_DIR / "data/platform.json"
+        platform_data = fetch_platform_stats("https://portal.ultralytics.com", platform_api_key, platform_output)
+        if platform_data:
+            print(
+                f"✅ Platform: {platform_data.get('total_datasets', 0):,} datasets, {platform_data.get('total_annotations', 0):,} annotations, {platform_data.get('total_images', 0):,} images, {platform_data.get('total_projects', 0):,} projects, {platform_data.get('total_models', 0):,} models"
+            )
+    else:
+        print("⚠️ Platform: Skipped (PORTAL_API_KEY not set)")
+
     # Create summary with field-level merge from existing
     existing_summary = read_json(BASE_DIR / "data/summary.json")
     summary = {
@@ -338,6 +388,12 @@ if __name__ == "__main__":
         "events_per_day": round(float(ga_data["periods"]["90d"]["events"]) / 90.0) if ga_data else 0,  # 90-day mean
         "total_contributors": github_data["total_contributors"],
         "reddit_subscribers": reddit_data["subscribers"],
+        "platform_datasets": platform_data.get("total_datasets", 0),
+        "platform_annotations": platform_data.get("total_annotations", 0),
+        "platform_images": platform_data.get("total_images", 0),
+        "platform_projects": platform_data.get("total_projects", 0),
+        "platform_models": platform_data.get("total_models", 0),
+        "platform_exports": platform_data.get("total_exports", 0),
         "timestamp": get_timestamp(),
     }
     safe_merge(summary, existing_summary, [k for k in summary if k != "timestamp"], "summary", allow_zero=False)
