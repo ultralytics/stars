@@ -62,8 +62,7 @@ jobs:
             git add data/
             git commit -m "Update analytics data"
             git push origin "$BRANCH"
-            gh pr create --title "Update Ultralytics analytics" --body "Automated daily analytics update" --base main --head "$BRANCH"
-            PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
+            PR_URL=$(gh pr create --title "Update Ultralytics analytics" --body "Automated daily analytics update" --base main --head "$BRANCH")
             sleep 300
-            gh pr merge "$PR_NUMBER" --squash --delete-branch --admin
+            gh pr merge "$PR_URL" --squash --delete-branch --admin
           fi
