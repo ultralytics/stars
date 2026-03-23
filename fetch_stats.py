@@ -390,6 +390,7 @@ if __name__ == "__main__":
         "platform_images": platform_data.get("platform_images", 0),
         "platform_projects": platform_data.get("platform_projects", 0),
         "platform_models": platform_data.get("platform_models", 0),
+        "platform_exports": platform_data.get("platform_exports", 0),
         "timestamp": get_timestamp(),
     }
     safe_merge(summary, existing_summary, [k for k in summary if k != "timestamp"], "summary", allow_zero=False)
