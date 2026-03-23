@@ -19,10 +19,6 @@
 #   - Active users, sessions, and page views (30-day window)
 #   - Requires GA_CREDENTIALS_JSON secret
 #
-# Ultralytics Platform Data (data/platform.json):
-#   - Total datasets, annotations, images, projects, models, exports
-#   - Requires PORTAL_API_KEY secret
-#
 # All data is publicly available via GitHub API, pypistats.org API, and pepy.tech API.
 # Note: pepy.tech requires API key (set PEPY_API_KEY secret in repo settings).
 # Results are committed daily to main branch via automated PR.
