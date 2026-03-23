@@ -135,7 +135,7 @@ def fetch_platform_stats(api_url: str, api_key: str, output: Path) -> dict:
             requests.get,
             f"{api_url.rstrip('/')}/api/analytics/platform-metrics/mongodb",
             headers=headers,
-            params={"start": "2026-01-13", "deepDive": "true"},
+            params={"start": "2026-01-13", "end": get_timestamp()[:10], "summary": "true"},
             timeout=60,
         )
         if r.status_code != 200:
@@ -149,7 +149,7 @@ def fetch_platform_stats(api_url: str, api_key: str, output: Path) -> dict:
             "total_images": data.get("images", 0),
             "total_models": data.get("models", 0),
             "total_exports": data.get("exports", 0),
-            "total_annotations": (data.get("datasetDeepDive") or {}).get("totalAnnotations", 0),
+            "total_annotations": data.get("totalAnnotations", 0),
             "timestamp": get_timestamp(),
         }
         safe_merge(result, existing, [k for k in result if k != "timestamp"], "platform", allow_zero=False)
