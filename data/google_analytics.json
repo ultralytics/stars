@@ -1,1 +1,36 @@
-{"property_id":"371754141","timestamp":"2026-04-16T03:17:27.182156Z","periods":{"1d":{"active_users":751001,"sessions":5346553,"events":3266224544,"avg_session_duration":3501.393815593084},"7d":{"active_users":3708552,"sessions":36946528,"events":21958613005,"avg_session_duration":3137.4820628589478},"30d":{"active_users":13978827,"sessions":177908848,"events":88048329967,"avg_session_duration":2973.65519191077},"90d":{"active_users":34922797,"sessions":489717673,"events":238324933268,"avg_session_duration":3037.0106885979008},"365d":{"active_users":103288776,"sessions":3248411333,"events":798973708340,"avg_session_duration":1588.7110977756136}}}
+{
+  "property_id": "371754141",
+  "timestamp": "2026-04-16T03:17:27.182156Z",
+  "periods": {
+    "1d": {
+      "active_users": 751001,
+      "sessions": 5346553,
+      "events": 3266224544,
+      "avg_session_duration": 3501.393815593084
+    },
+    "7d": {
+      "active_users": 3708552,
+      "sessions": 36946528,
+      "events": 21958613005,
+      "avg_session_duration": 3137.4820628589478
+    },
+    "30d": {
+      "active_users": 13978827,
+      "sessions": 177908848,
+      "events": 88048329967,
+      "avg_session_duration": 2973.65519191077
+    },
+    "90d": {
+      "active_users": 34922797,
+      "sessions": 489717673,
+      "events": 238324933268,
+      "avg_session_duration": 3037.0106885979008
+    },
+    "365d": {
+      "active_users": 103288776,
+      "sessions": 3248411333,
+      "events": 798973708340,
+      "avg_session_duration": 1588.7110977756136
+    }
+  }
+}
