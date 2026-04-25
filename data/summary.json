@@ -1,1 +1,17 @@
-{"total_stars":130128,"total_forks":32700,"total_issues":25381,"total_pull_requests":13553,"total_downloads":257402213,"events_per_day":2702695660,"total_contributors":1014,"reddit_subscribers":1600,"platform_datasets":20172,"platform_annotations":544069333,"platform_images":98666354,"platform_projects":8411,"platform_models":16150,"platform_exports":5210,"timestamp":"2026-04-25T03:14:41.275062Z"}
+{
+  "total_stars": 130128,
+  "total_forks": 32700,
+  "total_issues": 25381,
+  "total_pull_requests": 13553,
+  "total_downloads": 257402213,
+  "events_per_day": 2702695660,
+  "total_contributors": 1014,
+  "reddit_subscribers": 1600,
+  "platform_datasets": 20172,
+  "platform_annotations": 544069333,
+  "platform_images": 98666354,
+  "platform_projects": 8411,
+  "platform_models": 16150,
+  "platform_exports": 5210,
+  "timestamp": "2026-04-25T03:14:41.275062Z"
+}
