@@ -57,6 +57,7 @@ jobs:
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             BRANCH="analytics-$(date +%s)"
+            trap 'gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/$BRANCH" --silent 2>/dev/null || true' EXIT # Always delete the branch, even on early exit or failure
             git config user.name "UltralyticsAssistant"
             git config user.email "web@ultralytics.com"
             git checkout -b "$BRANCH"
