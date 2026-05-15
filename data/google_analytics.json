@@ -1,36 +1,36 @@
 {
   "property_id": "371754141",
-  "timestamp": "2026-05-14T03:19:38.139342Z",
+  "timestamp": "2026-05-15T03:22:26.746386Z",
   "periods": {
     "1d": {
-      "active_users": 786908,
-      "sessions": 5885344,
-      "events": 3324079581,
-      "avg_session_duration": 3201.770603642982
+      "active_users": 841748,
+      "sessions": 6958296,
+      "events": 3922577062,
+      "avg_session_duration": 2722.5752196204166
     },
     "7d": {
-      "active_users": 4126759,
-      "sessions": 38365875,
-      "events": 21992844226,
-      "avg_session_duration": 3280.712741306719
+      "active_users": 4213334,
+      "sessions": 39546312,
+      "events": 22831461106,
+      "avg_session_duration": 3202.9553931910655
     },
     "30d": {
-      "active_users": 15500791,
-      "sessions": 158600972,
-      "events": 93653719021,
-      "avg_session_duration": 3370.871550138958
+      "active_users": 15664026,
+      "sessions": 159803764,
+      "events": 94256557791,
+      "avg_session_duration": 3340.007236659162
     },
     "90d": {
-      "active_users": 38831538,
-      "sessions": 470581292,
-      "events": 254900179980,
-      "avg_session_duration": 3242.673792658629
+      "active_users": 39251739,
+      "sessions": 472628710,
+      "events": 256352175806,
+      "avg_session_duration": 3236.942233192629
     },
     "365d": {
-      "active_users": 112502737,
-      "sessions": 3173327312,
-      "events": 847269021516,
-      "avg_session_duration": 1683.5958816390632
+      "active_users": 112784867,
+      "sessions": 3174667406,
+      "events": 849527161585,
+      "avg_session_duration": 1685.021170426448
     }
   }
 }
