@@ -1,1 +1,9 @@
-{"total_projects":12384,"total_datasets":31074,"total_images":145054204,"total_models":26095,"total_exports":8289,"total_annotations":743966737,"timestamp":"2026-05-27T03:23:24.277637Z"}
+{
+  "total_projects": 12384,
+  "total_datasets": 31074,
+  "total_images": 145054204,
+  "total_models": 26095,
+  "total_exports": 8289,
+  "total_annotations": 743966737,
+  "timestamp": "2026-05-27T03:23:24.277637Z"
+}
