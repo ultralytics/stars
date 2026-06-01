@@ -2,7 +2,7 @@
 pandas>=3.0.2
 PyGithub>=2.9.1
 tqdm>=4.67.3
-requests>=2.33.1
+requests>=2.34.2
 
 # For Google Analytics
 packaging  # Python 3.13.7 does not bundle by default with setuptools
