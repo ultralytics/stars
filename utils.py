@@ -91,13 +91,13 @@ def _sanitize_floats(obj):
 
 
 def write_json(path: Path, data: dict) -> None:
-    """Write compact JSON with trailing newline. Sanitizes NaN/Inf to 0 if present."""
+    """Write readable JSON with trailing newline. Sanitizes NaN/Inf to 0 if present."""
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
-        text = json.dumps(data, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+        text = json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False)
     except ValueError:
         print(f"Warning: Sanitizing NaN/Inf values before writing {path.name}")
-        text = json.dumps(_sanitize_floats(data), ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+        text = json.dumps(_sanitize_floats(data), ensure_ascii=False, indent=2, allow_nan=False)
     path.write_text(text + "\n", encoding="utf-8")
 
 
