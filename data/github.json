@@ -1,27 +1,27 @@
 {
   "org": "ultralytics",
-  "total_stars": 132520,
-  "total_forks": 33039,
-  "total_issues": 25501,
-  "total_pull_requests": 14392,
+  "total_stars": 132573,
+  "total_forks": 33049,
+  "total_issues": 25506,
+  "total_pull_requests": 14426,
   "total_contributors": 1033,
   "public_repos": 45,
-  "timestamp": "2026-06-11T03:20:51.500112Z",
+  "timestamp": "2026-06-12T03:23:17.006696Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58259,
-      "forks": 11167,
-      "issues": 12745,
-      "pull_requests": 6351,
+      "stars": 58302,
+      "forks": 11178,
+      "issues": 12748,
+      "pull_requests": 6364,
       "contributors": 366
     },
     {
       "name": "yolov5",
-      "stars": 57506,
+      "stars": 57511,
       "forks": 17465,
-      "issues": 9443,
-      "pull_requests": 2971,
+      "issues": 9444,
+      "pull_requests": 2972,
       "contributors": 347
     },
     {
@@ -29,7 +29,7 @@
       "stars": 10570,
       "forks": 3432,
       "issues": 1825,
-      "pull_requests": 553,
+      "pull_requests": 555,
       "contributors": 55
     },
     {
@@ -50,18 +50,18 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 478,
+      "stars": 479,
       "forks": 92,
       "issues": 51,
-      "pull_requests": 223,
+      "pull_requests": 226,
       "contributors": 11
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 437,
+      "stars": 438,
       "forks": 163,
-      "issues": 234,
-      "pull_requests": 293,
+      "issues": 235,
+      "pull_requests": 299,
       "contributors": 28
     },
     {
@@ -90,8 +90,8 @@
     },
     {
       "name": "notebooks",
-      "stars": 221,
-      "forks": 52,
+      "stars": 222,
+      "forks": 51,
       "issues": 0,
       "pull_requests": 95,
       "contributors": 5
@@ -117,12 +117,12 @@
       "stars": 113,
       "forks": 18,
       "issues": 11,
-      "pull_requests": 754,
+      "pull_requests": 755,
       "contributors": 13
     },
     {
       "name": "llm",
-      "stars": 100,
+      "stars": 101,
       "forks": 4,
       "issues": 1,
       "pull_requests": 98,
@@ -133,7 +133,7 @@
       "stars": 92,
       "forks": 14,
       "issues": 8,
-      "pull_requests": 231,
+      "pull_requests": 236,
       "contributors": 5
     },
     {
@@ -149,7 +149,7 @@
       "stars": 83,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 346,
+      "pull_requests": 348,
       "contributors": 6
     },
     {
@@ -265,20 +265,20 @@
       "contributors": 4
     },
     {
+      "name": "template-rust",
+      "stars": 59,
+      "forks": 3,
+      "issues": 0,
+      "pull_requests": 56,
+      "contributors": 4
+    },
+    {
       "name": "pre-commit",
       "stars": 58,
       "forks": 1,
       "issues": 0,
       "pull_requests": 27,
       "contributors": 3
-    },
-    {
-      "name": "template-rust",
-      "stars": 58,
-      "forks": 3,
-      "issues": 0,
-      "pull_requests": 55,
-      "contributors": 4
     },
     {
       "name": "agm2015",
