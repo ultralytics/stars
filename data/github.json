@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 132837,
-  "total_forks": 33080,
-  "total_issues": 25523,
-  "total_pull_requests": 14532,
+  "total_stars": 132862,
+  "total_forks": 33089,
+  "total_issues": 25524,
+  "total_pull_requests": 14543,
   "total_contributors": 1042,
   "public_repos": 48,
-  "timestamp": "2026-06-18T03:22:44.558341Z",
+  "timestamp": "2026-06-19T03:24:36.093424Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58522,
-      "forks": 11204,
-      "issues": 12761,
-      "pull_requests": 6401,
+      "stars": 58545,
+      "forks": 11216,
+      "issues": 12762,
+      "pull_requests": 6408,
       "contributors": 369
     },
     {
       "name": "yolov5",
-      "stars": 57531,
-      "forks": 17465,
+      "stars": 57529,
+      "forks": 17463,
       "issues": 9445,
       "pull_requests": 2974,
       "contributors": 347
     },
     {
       "name": "yolov3",
-      "stars": 10570,
-      "forks": 3435,
+      "stars": 10571,
+      "forks": 3434,
       "issues": 1826,
       "pull_requests": 557,
       "contributors": 55
@@ -42,10 +42,10 @@
     },
     {
       "name": "assets",
-      "stars": 611,
+      "stars": 613,
       "forks": 49,
       "issues": 9,
-      "pull_requests": 145,
+      "pull_requests": 146,
       "contributors": 19
     },
     {
@@ -133,7 +133,7 @@
       "stars": 94,
       "forks": 14,
       "issues": 10,
-      "pull_requests": 244,
+      "pull_requests": 245,
       "contributors": 5
     },
     {
@@ -149,7 +149,7 @@
       "stars": 84,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 355,
+      "pull_requests": 356,
       "contributors": 6
     },
     {
@@ -269,7 +269,7 @@
       "stars": 59,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 58,
+      "pull_requests": 59,
       "contributors": 5
     },
     {
@@ -321,6 +321,14 @@
       "contributors": 3
     },
     {
+      "name": "yoloe_data_engine",
+      "stars": 56,
+      "forks": 2,
+      "issues": 0,
+      "pull_requests": 3,
+      "contributors": 3
+    },
+    {
       "name": "magellan",
       "stars": 55,
       "forks": 2,
@@ -334,14 +342,6 @@
       "forks": 1,
       "issues": 0,
       "pull_requests": 9,
-      "contributors": 3
-    },
-    {
-      "name": "yoloe_data_engine",
-      "stars": 55,
-      "forks": 2,
-      "issues": 0,
-      "pull_requests": 3,
       "contributors": 3
     },
     {
