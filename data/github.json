@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 132947,
-  "total_forks": 33104,
+  "total_stars": 132977,
+  "total_forks": 33112,
   "total_issues": 25527,
-  "total_pull_requests": 14581,
-  "total_contributors": 1043,
+  "total_pull_requests": 14590,
+  "total_contributors": 1045,
   "public_repos": 48,
-  "timestamp": "2026-06-21T03:23:37.218162Z",
+  "timestamp": "2026-06-22T03:25:19.682739Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58608,
-      "forks": 11231,
+      "stars": 58638,
+      "forks": 11233,
       "issues": 12765,
-      "pull_requests": 6417,
-      "contributors": 370
+      "pull_requests": 6422,
+      "contributors": 371
     },
     {
       "name": "yolov5",
-      "stars": 57540,
-      "forks": 17462,
+      "stars": 57541,
+      "forks": 17466,
       "issues": 9445,
       "pull_requests": 2976,
-      "contributors": 347
+      "contributors": 348
     },
     {
       "name": "yolov3",
-      "stars": 10572,
-      "forks": 3435,
+      "stars": 10570,
+      "forks": 3436,
       "issues": 1826,
       "pull_requests": 558,
       "contributors": 55
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 614,
+      "stars": 615,
       "forks": 49,
       "issues": 9,
       "pull_requests": 147,
@@ -53,7 +53,7 @@
       "stars": 481,
       "forks": 92,
       "issues": 51,
-      "pull_requests": 229,
+      "pull_requests": 230,
       "contributors": 11
     },
     {
@@ -133,13 +133,13 @@
       "stars": 94,
       "forks": 14,
       "issues": 10,
-      "pull_requests": 248,
+      "pull_requests": 250,
       "contributors": 5
     },
     {
       "name": "hub-sdk",
       "stars": 87,
-      "forks": 4,
+      "forks": 5,
       "issues": 3,
       "pull_requests": 307,
       "contributors": 12
@@ -149,7 +149,7 @@
       "stars": 84,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 359,
+      "pull_requests": 360,
       "contributors": 6
     },
     {
