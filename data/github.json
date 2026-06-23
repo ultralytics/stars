@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 132977,
-  "total_forks": 33112,
-  "total_issues": 25527,
-  "total_pull_requests": 14590,
+  "total_stars": 133049,
+  "total_forks": 33128,
+  "total_issues": 25533,
+  "total_pull_requests": 14604,
   "total_contributors": 1045,
   "public_repos": 48,
-  "timestamp": "2026-06-22T03:25:19.682739Z",
+  "timestamp": "2026-06-23T03:20:16.129445Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58638,
-      "forks": 11233,
-      "issues": 12765,
-      "pull_requests": 6422,
+      "stars": 58687,
+      "forks": 11239,
+      "issues": 12768,
+      "pull_requests": 6429,
       "contributors": 371
     },
     {
       "name": "yolov5",
-      "stars": 57541,
-      "forks": 17466,
+      "stars": 57551,
+      "forks": 17469,
       "issues": 9445,
       "pull_requests": 2976,
       "contributors": 348
     },
     {
       "name": "yolov3",
-      "stars": 10570,
+      "stars": 10571,
       "forks": 3436,
       "issues": 1826,
       "pull_requests": 558,
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 481,
+      "stars": 482,
       "forks": 92,
       "issues": 51,
       "pull_requests": 230,
@@ -60,14 +60,14 @@
       "name": "yolo-flutter-app",
       "stars": 445,
       "forks": 165,
-      "issues": 235,
-      "pull_requests": 304,
+      "issues": 236,
+      "pull_requests": 305,
       "contributors": 28
     },
     {
       "name": "xview-yolov3",
-      "stars": 333,
-      "forks": 58,
+      "stars": 334,
+      "forks": 59,
       "issues": 31,
       "pull_requests": 46,
       "contributors": 5
@@ -84,22 +84,22 @@
       "name": "hub",
       "stars": 234,
       "forks": 18,
-      "issues": 1022,
+      "issues": 1024,
       "pull_requests": 244,
       "contributors": 11
     },
     {
       "name": "notebooks",
       "stars": 223,
-      "forks": 51,
+      "forks": 52,
       "issues": 0,
       "pull_requests": 97,
       "contributors": 5
     },
     {
       "name": "velocity",
-      "stars": 129,
-      "forks": 22,
+      "stars": 130,
+      "forks": 23,
       "issues": 10,
       "pull_requests": 133,
       "contributors": 3
@@ -130,10 +130,10 @@
     },
     {
       "name": "inference",
-      "stars": 94,
+      "stars": 99,
       "forks": 14,
       "issues": 10,
-      "pull_requests": 250,
+      "pull_requests": 252,
       "contributors": 5
     },
     {
@@ -141,7 +141,7 @@
       "stars": 87,
       "forks": 5,
       "issues": 3,
-      "pull_requests": 307,
+      "pull_requests": 308,
       "contributors": 12
     },
     {
@@ -149,7 +149,7 @@
       "stars": 84,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 360,
+      "pull_requests": 361,
       "contributors": 6
     },
     {
@@ -170,8 +170,8 @@
     },
     {
       "name": "wave",
-      "stars": 72,
-      "forks": 6,
+      "stars": 73,
+      "forks": 7,
       "issues": 1,
       "pull_requests": 44,
       "contributors": 3
@@ -189,7 +189,7 @@
       "stars": 70,
       "forks": 29,
       "issues": 3,
-      "pull_requests": 296,
+      "pull_requests": 297,
       "contributors": 31
     },
     {
@@ -226,8 +226,8 @@
     },
     {
       "name": "xview-docker",
-      "stars": 61,
-      "forks": 2,
+      "stars": 62,
+      "forks": 3,
       "issues": 0,
       "pull_requests": 28,
       "contributors": 3
@@ -269,7 +269,7 @@
       "stars": 59,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 61,
+      "pull_requests": 62,
       "contributors": 5
     },
     {
@@ -370,16 +370,16 @@
     },
     {
       "name": "yolo26",
-      "stars": 6,
-      "forks": 0,
+      "stars": 7,
+      "forks": 1,
       "issues": 0,
       "pull_requests": 1,
       "contributors": 1
     },
     {
       "name": "yolov8",
-      "stars": 4,
-      "forks": 0,
+      "stars": 5,
+      "forks": 1,
       "issues": 0,
       "pull_requests": 1,
       "contributors": 1
