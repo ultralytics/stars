@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 133164,
-  "total_forks": 33140,
-  "total_issues": 25536,
-  "total_pull_requests": 14636,
+  "total_stars": 133218,
+  "total_forks": 33144,
+  "total_issues": 25540,
+  "total_pull_requests": 14657,
   "total_contributors": 1045,
   "public_repos": 48,
-  "timestamp": "2026-06-25T03:20:26.290567Z",
+  "timestamp": "2026-06-26T03:20:57.798512Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58779,
-      "forks": 11250,
-      "issues": 12770,
-      "pull_requests": 6449,
+      "stars": 58827,
+      "forks": 11256,
+      "issues": 12774,
+      "pull_requests": 6461,
       "contributors": 371
     },
     {
       "name": "yolov5",
-      "stars": 57557,
-      "forks": 17468,
+      "stars": 57558,
+      "forks": 17466,
       "issues": 9445,
       "pull_requests": 2975,
       "contributors": 348
@@ -42,10 +42,10 @@
     },
     {
       "name": "assets",
-      "stars": 616,
+      "stars": 618,
       "forks": 49,
       "issues": 9,
-      "pull_requests": 147,
+      "pull_requests": 148,
       "contributors": 19
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 445,
+      "stars": 446,
       "forks": 167,
       "issues": 236,
       "pull_requests": 307,
@@ -109,7 +109,7 @@
       "stars": 119,
       "forks": 15,
       "issues": 6,
-      "pull_requests": 312,
+      "pull_requests": 313,
       "contributors": 10
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "name": "inference",
-      "stars": 102,
+      "stars": 104,
       "forks": 14,
       "issues": 10,
       "pull_requests": 255,
@@ -149,7 +149,7 @@
       "stars": 84,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 363,
+      "pull_requests": 364,
       "contributors": 6
     },
     {
@@ -189,7 +189,7 @@
       "stars": 70,
       "forks": 29,
       "issues": 3,
-      "pull_requests": 297,
+      "pull_requests": 298,
       "contributors": 31
     },
     {
@@ -261,7 +261,7 @@
       "stars": 59,
       "forks": 4,
       "issues": 0,
-      "pull_requests": 34,
+      "pull_requests": 39,
       "contributors": 4
     },
     {
