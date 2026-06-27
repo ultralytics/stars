@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 133218,
-  "total_forks": 33144,
-  "total_issues": 25540,
-  "total_pull_requests": 14657,
-  "total_contributors": 1045,
+  "total_stars": 133251,
+  "total_forks": 33157,
+  "total_issues": 25541,
+  "total_pull_requests": 14678,
+  "total_contributors": 1047,
   "public_repos": 48,
-  "timestamp": "2026-06-26T03:20:57.798512Z",
+  "timestamp": "2026-06-27T03:19:35.815574Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 58827,
-      "forks": 11256,
-      "issues": 12774,
-      "pull_requests": 6461,
-      "contributors": 371
+      "stars": 58854,
+      "forks": 11267,
+      "issues": 12775,
+      "pull_requests": 6471,
+      "contributors": 373
     },
     {
       "name": "yolov5",
-      "stars": 57558,
-      "forks": 17466,
+      "stars": 57560,
+      "forks": 17468,
       "issues": 9445,
       "pull_requests": 2975,
       "contributors": 348
     },
     {
       "name": "yolov3",
-      "stars": 10572,
+      "stars": 10573,
       "forks": 3435,
       "issues": 1826,
       "pull_requests": 558,
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 618,
+      "stars": 620,
       "forks": 49,
       "issues": 9,
       "pull_requests": 148,
@@ -53,7 +53,7 @@
       "stars": 482,
       "forks": 93,
       "issues": 51,
-      "pull_requests": 230,
+      "pull_requests": 231,
       "contributors": 11
     },
     {
@@ -61,7 +61,7 @@
       "stars": 446,
       "forks": 167,
       "issues": 236,
-      "pull_requests": 307,
+      "pull_requests": 308,
       "contributors": 28
     },
     {
@@ -93,7 +93,7 @@
       "stars": 223,
       "forks": 52,
       "issues": 0,
-      "pull_requests": 97,
+      "pull_requests": 98,
       "contributors": 5
     },
     {
@@ -109,7 +109,7 @@
       "stars": 119,
       "forks": 15,
       "issues": 6,
-      "pull_requests": 313,
+      "pull_requests": 314,
       "contributors": 10
     },
     {
@@ -122,10 +122,10 @@
     },
     {
       "name": "inference",
-      "stars": 104,
+      "stars": 105,
       "forks": 14,
       "issues": 10,
-      "pull_requests": 255,
+      "pull_requests": 258,
       "contributors": 5
     },
     {
@@ -149,7 +149,7 @@
       "stars": 84,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 364,
+      "pull_requests": 365,
       "contributors": 6
     },
     {
@@ -189,7 +189,7 @@
       "stars": 70,
       "forks": 29,
       "issues": 3,
-      "pull_requests": 298,
+      "pull_requests": 299,
       "contributors": 31
     },
     {
@@ -261,7 +261,7 @@
       "stars": 59,
       "forks": 4,
       "issues": 0,
-      "pull_requests": 39,
+      "pull_requests": 40,
       "contributors": 4
     },
     {
@@ -269,7 +269,7 @@
       "stars": 59,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 64,
+      "pull_requests": 65,
       "contributors": 5
     },
     {
