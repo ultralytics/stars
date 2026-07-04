@@ -33,9 +33,9 @@ After opening a PR:
 ## Commands
 
 ```bash
-uv pip install -r requirements.txt                    # install (CI uses: uv pip install --system -r requirements.txt)
-GITHUB_TOKEN=<token> python fetch_stats.py            # run the daily analytics fetcher (writes data/*.json)
-python count_stars.py --token <token> --days 30       # historical star tracking (optional --save writes users.csv)
+uv pip install -r requirements.txt                # install (CI uses: uv pip install --system -r requirements.txt)
+GITHUB_TOKEN= < token > python fetch_stats.py     # run the daily analytics fetcher (writes data/*.json)
+python count_stars.py --token 30 < token > --days # historical star tracking (optional --save writes users.csv)
 ```
 
 - There is no test suite, coverage setup, or local lint config in this repo; formatting (Ruff, docformatter, Prettier, codespell) is applied to PRs automatically by `ultralytics/actions@main` via `.github/workflows/format.yml`.
