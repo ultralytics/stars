@@ -91,6 +91,7 @@ stars/
 │   ├── pypi.json          # PyPI analytics (updated daily)
 │   ├── google_analytics.json  # Google Analytics (updated daily)
 │   ├── reddit.json        # Reddit stats (updated daily)
+│   ├── platform.json      # Ultralytics Platform stats (updated daily)
 │   └── summary.json       # Combined summary (updated daily)
 └── .github/workflows/
     ├── analytics.yml       # Daily analytics update
