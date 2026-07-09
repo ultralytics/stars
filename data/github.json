@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 133892,
-  "total_forks": 33255,
-  "total_issues": 25558,
-  "total_pull_requests": 14953,
-  "total_contributors": 1066,
+  "total_stars": 133930,
+  "total_forks": 33257,
+  "total_issues": 25560,
+  "total_pull_requests": 14972,
+  "total_contributors": 1067,
   "public_repos": 48,
-  "timestamp": "2026-07-08T03:12:39.984927Z",
+  "timestamp": "2026-07-09T03:15:43.354984Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 59225,
-      "forks": 11336,
-      "issues": 12791,
-      "pull_requests": 6566,
-      "contributors": 387
+      "stars": 59262,
+      "forks": 11339,
+      "issues": 12793,
+      "pull_requests": 6582,
+      "contributors": 388
     },
     {
       "name": "yolov5",
-      "stars": 57648,
-      "forks": 17487,
+      "stars": 57650,
+      "forks": 17485,
       "issues": 9445,
       "pull_requests": 2989,
       "contributors": 349
     },
     {
       "name": "yolov3",
-      "stars": 10579,
+      "stars": 10577,
       "forks": 3435,
       "issues": 1826,
       "pull_requests": 567,
@@ -113,20 +113,20 @@
       "contributors": 10
     },
     {
+      "name": "inference",
+      "stars": 117,
+      "forks": 16,
+      "issues": 10,
+      "pull_requests": 290,
+      "contributors": 5
+    },
+    {
       "name": "actions",
       "stars": 116,
       "forks": 18,
       "issues": 11,
       "pull_requests": 789,
       "contributors": 13
-    },
-    {
-      "name": "inference",
-      "stars": 116,
-      "forks": 16,
-      "issues": 10,
-      "pull_requests": 289,
-      "contributors": 5
     },
     {
       "name": "llm",
@@ -141,7 +141,7 @@
       "stars": 90,
       "forks": 5,
       "issues": 3,
-      "pull_requests": 314,
+      "pull_requests": 315,
       "contributors": 12
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 378,
+      "pull_requests": 379,
       "contributors": 6
     },
     {
@@ -387,7 +387,7 @@
     {
       "name": "yolo11",
       "stars": 12,
-      "forks": 0,
+      "forks": 1,
       "issues": 0,
       "pull_requests": 1,
       "contributors": 1
