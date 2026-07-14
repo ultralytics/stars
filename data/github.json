@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 134107,
-  "total_forks": 33281,
-  "total_issues": 25575,
-  "total_pull_requests": 15114,
-  "total_contributors": 1073,
+  "total_stars": 134172,
+  "total_forks": 33273,
+  "total_issues": 25582,
+  "total_pull_requests": 15137,
+  "total_contributors": 1081,
   "public_repos": 48,
-  "timestamp": "2026-07-13T03:14:31.391306Z",
+  "timestamp": "2026-07-14T03:11:11.476357Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 59403,
-      "forks": 11359,
-      "issues": 12808,
-      "pull_requests": 6622,
-      "contributors": 394
+      "stars": 59457,
+      "forks": 11371,
+      "issues": 12815,
+      "pull_requests": 6637,
+      "contributors": 403
     },
     {
       "name": "yolov5",
-      "stars": 57672,
-      "forks": 17489,
+      "stars": 57678,
+      "forks": 17469,
       "issues": 9445,
-      "pull_requests": 2992,
-      "contributors": 349
+      "pull_requests": 2984,
+      "contributors": 348
     },
     {
       "name": "yolov3",
-      "stars": 10579,
-      "forks": 3435,
+      "stars": 10581,
+      "forks": 3434,
       "issues": 1826,
       "pull_requests": 570,
       "contributors": 55
@@ -75,7 +75,7 @@
     {
       "name": "flickr_scraper",
       "stars": 290,
-      "forks": 67,
+      "forks": 68,
       "issues": 11,
       "pull_requests": 42,
       "contributors": 4
@@ -109,15 +109,15 @@
       "stars": 122,
       "forks": 15,
       "issues": 6,
-      "pull_requests": 327,
+      "pull_requests": 329,
       "contributors": 10
     },
     {
       "name": "inference",
-      "stars": 118,
+      "stars": 119,
       "forks": 16,
       "issues": 10,
-      "pull_requests": 301,
+      "pull_requests": 312,
       "contributors": 5
     },
     {
@@ -141,7 +141,7 @@
       "stars": 90,
       "forks": 5,
       "issues": 3,
-      "pull_requests": 317,
+      "pull_requests": 318,
       "contributors": 12
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 384,
+      "pull_requests": 385,
       "contributors": 6
     },
     {
@@ -210,7 +210,7 @@
     },
     {
       "name": "iSky",
-      "stars": 66,
+      "stars": 67,
       "forks": 7,
       "issues": 0,
       "pull_requests": 22,
@@ -253,7 +253,7 @@
       "stars": 63,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 86,
+      "pull_requests": 87,
       "contributors": 5
     },
     {
@@ -386,7 +386,7 @@
     },
     {
       "name": "yolo11",
-      "stars": 14,
+      "stars": 15,
       "forks": 1,
       "issues": 0,
       "pull_requests": 2,
