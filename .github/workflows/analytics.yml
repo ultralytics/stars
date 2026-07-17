@@ -43,6 +43,9 @@ jobs:
         with:
           python-version: "3.x"
       - uses: ultralytics/actions/setup-uv@main
+        with:
+          enable-cache: true
+          cache-dependency-glob: "requirements.txt"
       - run: uv pip install --system -r requirements.txt
       - name: Fetch analytics
         env:
