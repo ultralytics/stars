@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 134332,
-  "total_forks": 33304,
-  "total_issues": 25584,
-  "total_pull_requests": 15294,
+  "total_stars": 134371,
+  "total_forks": 33313,
+  "total_issues": 25589,
+  "total_pull_requests": 15314,
   "total_contributors": 1085,
   "public_repos": 48,
-  "timestamp": "2026-07-18T03:10:40.119469Z",
+  "timestamp": "2026-07-19T03:13:02.774437Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 59596,
-      "forks": 11399,
-      "issues": 12820,
-      "pull_requests": 6737,
+      "stars": 59627,
+      "forks": 11405,
+      "issues": 12823,
+      "pull_requests": 6751,
       "contributors": 406
     },
     {
       "name": "yolov5",
-      "stars": 57692,
-      "forks": 17469,
+      "stars": 57696,
+      "forks": 17470,
       "issues": 9442,
       "pull_requests": 2987,
       "contributors": 348
@@ -58,7 +58,7 @@
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 459,
+      "stars": 461,
       "forks": 169,
       "issues": 237,
       "pull_requests": 327,
@@ -107,25 +107,25 @@
     {
       "name": "docs",
       "stars": 122,
-      "forks": 15,
-      "issues": 6,
-      "pull_requests": 333,
+      "forks": 16,
+      "issues": 7,
+      "pull_requests": 334,
       "contributors": 10
     },
     {
       "name": "inference",
-      "stars": 120,
+      "stars": 122,
       "forks": 16,
       "issues": 10,
-      "pull_requests": 321,
+      "pull_requests": 322,
       "contributors": 5
     },
     {
       "name": "actions",
       "stars": 116,
-      "forks": 18,
-      "issues": 11,
-      "pull_requests": 809,
+      "forks": 19,
+      "issues": 12,
+      "pull_requests": 811,
       "contributors": 13
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 390,
+      "pull_requests": 391,
       "contributors": 6
     },
     {
@@ -253,7 +253,7 @@
       "stars": 63,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 89,
+      "pull_requests": 90,
       "contributors": 5
     },
     {
