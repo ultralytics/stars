@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 134484,
-  "total_forks": 33334,
-  "total_issues": 25601,
-  "total_pull_requests": 15426,
+  "total_stars": 134545,
+  "total_forks": 33343,
+  "total_issues": 25606,
+  "total_pull_requests": 15447,
   "total_contributors": 1088,
   "public_repos": 48,
-  "timestamp": "2026-07-22T03:12:27.255325Z",
+  "timestamp": "2026-07-23T03:12:06.760414Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 59712,
-      "forks": 11424,
-      "issues": 12834,
-      "pull_requests": 6813,
+      "stars": 59763,
+      "forks": 11428,
+      "issues": 12838,
+      "pull_requests": 6825,
       "contributors": 407
     },
     {
       "name": "yolov5",
-      "stars": 57708,
-      "forks": 17471,
+      "stars": 57713,
+      "forks": 17472,
       "issues": 9442,
       "pull_requests": 2989,
       "contributors": 348
@@ -27,7 +27,7 @@
     {
       "name": "yolov3",
       "stars": 10585,
-      "forks": 3433,
+      "forks": 3434,
       "issues": 1826,
       "pull_requests": 573,
       "contributors": 55
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 636,
+      "stars": 638,
       "forks": 51,
       "issues": 9,
       "pull_requests": 156,
@@ -51,17 +51,17 @@
     {
       "name": "yolo-ios-app",
       "stars": 497,
-      "forks": 95,
+      "forks": 97,
       "issues": 51,
-      "pull_requests": 249,
+      "pull_requests": 251,
       "contributors": 11
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 462,
-      "forks": 172,
-      "issues": 237,
-      "pull_requests": 329,
+      "stars": 463,
+      "forks": 173,
+      "issues": 238,
+      "pull_requests": 330,
       "contributors": 28
     },
     {
@@ -106,10 +106,10 @@
     },
     {
       "name": "inference",
-      "stars": 125,
+      "stars": 126,
       "forks": 16,
       "issues": 11,
-      "pull_requests": 331,
+      "pull_requests": 336,
       "contributors": 5
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 395,
+      "pull_requests": 396,
       "contributors": 6
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "name": "mkdocs",
-      "stars": 77,
+      "stars": 78,
       "forks": 2,
       "issues": 7,
       "pull_requests": 198,
