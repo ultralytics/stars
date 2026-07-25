@@ -1,17 +1,17 @@
 {
-  "total_stars": 134599,
-  "total_forks": 33352,
-  "total_issues": 25608,
-  "total_pull_requests": 15505,
-  "total_downloads": 305232143,
-  "events_per_day": 3327897412,
-  "total_contributors": 1089,
+  "total_stars": 134668,
+  "total_forks": 33364,
+  "total_issues": 25611,
+  "total_pull_requests": 15545,
+  "total_downloads": 305766476,
+  "events_per_day": 3333305174,
+  "total_contributors": 1092,
   "reddit_subscribers": 4100,
   "platform_datasets": 52119,
-  "platform_annotations": 1212719644,
+  "platform_annotations": 1211504910,
   "platform_images": 241908216,
   "platform_projects": 19519,
   "platform_models": 44599,
   "platform_exports": 13611,
-  "timestamp": "2026-07-24T03:12:51.300707Z"
+  "timestamp": "2026-07-25T03:12:24.489275Z"
 }
