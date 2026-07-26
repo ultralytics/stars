@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 134668,
-  "total_forks": 33364,
-  "total_issues": 25611,
-  "total_pull_requests": 15545,
-  "total_contributors": 1092,
+  "total_stars": 134709,
+  "total_forks": 33367,
+  "total_issues": 25613,
+  "total_pull_requests": 15572,
+  "total_contributors": 1093,
   "public_repos": 48,
-  "timestamp": "2026-07-25T03:11:24.234970Z",
+  "timestamp": "2026-07-26T03:12:41.098362Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 59844,
-      "forks": 11446,
+      "stars": 59877,
+      "forks": 11450,
       "issues": 12843,
-      "pull_requests": 6865,
+      "pull_requests": 6879,
       "contributors": 409
     },
     {
       "name": "yolov5",
-      "stars": 57739,
-      "forks": 17469,
+      "stars": 57745,
+      "forks": 17468,
       "issues": 9442,
       "pull_requests": 2991,
       "contributors": 349
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 641,
+      "stars": 643,
       "forks": 51,
       "issues": 9,
       "pull_requests": 158,
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 497,
+      "stars": 496,
       "forks": 98,
       "issues": 51,
       "pull_requests": 253,
@@ -60,7 +60,7 @@
       "name": "yolo-flutter-app",
       "stars": 463,
       "forks": 173,
-      "issues": 238,
+      "issues": 239,
       "pull_requests": 333,
       "contributors": 28
     },
@@ -109,7 +109,7 @@
       "stars": 128,
       "forks": 16,
       "issues": 11,
-      "pull_requests": 346,
+      "pull_requests": 349,
       "contributors": 5
     },
     {
@@ -117,15 +117,15 @@
       "stars": 122,
       "forks": 15,
       "issues": 7,
-      "pull_requests": 336,
+      "pull_requests": 337,
       "contributors": 11
     },
     {
       "name": "actions",
       "stars": 117,
       "forks": 18,
-      "issues": 12,
-      "pull_requests": 826,
+      "issues": 13,
+      "pull_requests": 832,
       "contributors": 14
     },
     {
@@ -133,7 +133,7 @@
       "stars": 106,
       "forks": 5,
       "issues": 1,
-      "pull_requests": 106,
+      "pull_requests": 107,
       "contributors": 7
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 398,
+      "pull_requests": 399,
       "contributors": 6
     },
     {
@@ -190,7 +190,7 @@
       "forks": 31,
       "issues": 3,
       "pull_requests": 312,
-      "contributors": 34
+      "contributors": 35
     },
     {
       "name": ".github",
@@ -253,7 +253,7 @@
       "stars": 63,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 97,
+      "pull_requests": 98,
       "contributors": 5
     },
     {
@@ -370,7 +370,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 24,
+      "stars": 25,
       "forks": 3,
       "issues": 0,
       "pull_requests": 3,
