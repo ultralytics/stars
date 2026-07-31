@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 134900,
-  "total_forks": 33374,
-  "total_issues": 25621,
-  "total_pull_requests": 15747,
-  "total_contributors": 1103,
+  "total_stars": 134942,
+  "total_forks": 33388,
+  "total_issues": 25624,
+  "total_pull_requests": 15794,
+  "total_contributors": 1107,
   "public_repos": 48,
-  "timestamp": "2026-07-30T03:12:09.152981Z",
+  "timestamp": "2026-07-31T03:12:57.184676Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 60027,
-      "forks": 11474,
-      "issues": 12850,
-      "pull_requests": 6968,
-      "contributors": 413
+      "stars": 60061,
+      "forks": 11484,
+      "issues": 12853,
+      "pull_requests": 7000,
+      "contributors": 415
     },
     {
       "name": "yolov5",
-      "stars": 57769,
-      "forks": 17464,
+      "stars": 57775,
+      "forks": 17467,
       "issues": 9442,
       "pull_requests": 3012,
       "contributors": 349
@@ -42,16 +42,16 @@
     },
     {
       "name": "assets",
-      "stars": 645,
+      "stars": 646,
       "forks": 51,
       "issues": 9,
-      "pull_requests": 161,
+      "pull_requests": 163,
       "contributors": 20
     },
     {
       "name": "yolo-ios-app",
       "stars": 497,
-      "forks": 97,
+      "forks": 98,
       "issues": 51,
       "pull_requests": 254,
       "contributors": 12
@@ -94,7 +94,7 @@
       "forks": 53,
       "issues": 0,
       "pull_requests": 105,
-      "contributors": 5
+      "contributors": 7
     },
     {
       "name": "velocity",
@@ -106,10 +106,10 @@
     },
     {
       "name": "inference",
-      "stars": 132,
+      "stars": 133,
       "forks": 16,
       "issues": 11,
-      "pull_requests": 369,
+      "pull_requests": 378,
       "contributors": 6
     },
     {
@@ -125,7 +125,7 @@
       "stars": 118,
       "forks": 18,
       "issues": 13,
-      "pull_requests": 833,
+      "pull_requests": 835,
       "contributors": 14
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 403,
+      "pull_requests": 404,
       "contributors": 6
     },
     {
@@ -253,7 +253,7 @@
       "stars": 63,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 100,
+      "pull_requests": 101,
       "contributors": 5
     },
     {
