@@ -40,7 +40,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi.json
 
 **Packages tracked:**
 
-- `ultralytics` - Main YOLO11 package
+- `ultralytics` - Main Ultralytics YOLO package
 - `ultralytics-actions` - GitHub Actions
 - `ultralytics-thop` - PyTorch ops profiling
 - `hub-sdk` - Ultralytics HUB SDK
