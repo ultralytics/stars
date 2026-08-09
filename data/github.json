@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 135323,
-  "total_forks": 33463,
+  "total_stars": 135356,
+  "total_forks": 33468,
   "total_issues": 25663,
-  "total_pull_requests": 16113,
-  "total_contributors": 1113,
+  "total_pull_requests": 16132,
+  "total_contributors": 1115,
   "public_repos": 49,
-  "timestamp": "2026-08-08T02:45:08.495757Z",
+  "timestamp": "2026-08-09T02:48:59.778612Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 60354,
-      "forks": 11544,
+      "stars": 60379,
+      "forks": 11546,
       "issues": 12874,
-      "pull_requests": 7121,
-      "contributors": 417
+      "pull_requests": 7128,
+      "contributors": 419
     },
     {
       "name": "yolov5",
-      "stars": 57829,
-      "forks": 17482,
+      "stars": 57834,
+      "forks": 17483,
       "issues": 9442,
       "pull_requests": 3026,
       "contributors": 349
     },
     {
       "name": "yolov3",
-      "stars": 10589,
+      "stars": 10590,
       "forks": 3432,
       "issues": 1826,
       "pull_requests": 599,
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 649,
+      "stars": 651,
       "forks": 51,
       "issues": 9,
       "pull_requests": 167,
@@ -99,9 +99,9 @@
     {
       "name": "inference",
       "stars": 141,
-      "forks": 16,
+      "forks": 17,
       "issues": 11,
-      "pull_requests": 404,
+      "pull_requests": 405,
       "contributors": 6
     },
     {
@@ -117,7 +117,7 @@
       "stars": 122,
       "forks": 14,
       "issues": 7,
-      "pull_requests": 342,
+      "pull_requests": 343,
       "contributors": 11
     },
     {
@@ -125,7 +125,7 @@
       "stars": 118,
       "forks": 18,
       "issues": 13,
-      "pull_requests": 846,
+      "pull_requests": 847,
       "contributors": 14
     },
     {
@@ -149,7 +149,7 @@
       "stars": 88,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 415,
+      "pull_requests": 416,
       "contributors": 6
     },
     {
@@ -253,7 +253,7 @@
       "stars": 63,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 109,
+      "pull_requests": 110,
       "contributors": 5
     },
     {
@@ -395,9 +395,9 @@
     {
       "name": "lite",
       "stars": 8,
-      "forks": 1,
+      "forks": 2,
       "issues": 17,
-      "pull_requests": 24,
+      "pull_requests": 31,
       "contributors": 3
     }
   ]
