@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 135759,
-  "total_forks": 33514,
-  "total_issues": 25681,
-  "total_pull_requests": 16467,
-  "total_contributors": 1129,
+  "total_stars": 135787,
+  "total_forks": 33510,
+  "total_issues": 25684,
+  "total_pull_requests": 16478,
+  "total_contributors": 1130,
   "public_repos": 52,
-  "timestamp": "2026-08-16T02:33:39.457311Z",
+  "timestamp": "2026-08-17T02:33:19.442620Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 60646,
-      "forks": 11588,
-      "issues": 12888,
-      "pull_requests": 7220,
+      "stars": 60670,
+      "forks": 11586,
+      "issues": 12890,
+      "pull_requests": 7223,
       "contributors": 424
     },
     {
       "name": "yolov5",
-      "stars": 57877,
-      "forks": 17478,
+      "stars": 57880,
+      "forks": 17476,
       "issues": 9443,
       "pull_requests": 3032,
       "contributors": 349
@@ -101,7 +101,7 @@
       "stars": 155,
       "forks": 21,
       "issues": 11,
-      "pull_requests": 414,
+      "pull_requests": 415,
       "contributors": 7
     },
     {
@@ -125,7 +125,7 @@
       "stars": 119,
       "forks": 19,
       "issues": 13,
-      "pull_requests": 861,
+      "pull_requests": 862,
       "contributors": 14
     },
     {
@@ -146,10 +146,10 @@
     },
     {
       "name": "stars",
-      "stars": 89,
+      "stars": 90,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 424,
+      "pull_requests": 425,
       "contributors": 6
     },
     {
@@ -253,7 +253,7 @@
       "stars": 64,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 114,
+      "pull_requests": 115,
       "contributors": 5
     },
     {
@@ -342,7 +342,7 @@
       "forks": 1,
       "issues": 0,
       "pull_requests": 18,
-      "contributors": 3
+      "contributors": 4
     },
     {
       "name": "ios_screenshots",
@@ -396,8 +396,8 @@
       "name": "lite",
       "stars": 14,
       "forks": 4,
-      "issues": 20,
-      "pull_requests": 94,
+      "issues": 21,
+      "pull_requests": 98,
       "contributors": 5
     },
     {
