@@ -1,27 +1,27 @@
 {
   "org": "ultralytics",
-  "total_stars": 136047,
-  "total_forks": 33519,
-  "total_issues": 25688,
-  "total_pull_requests": 16539,
-  "total_contributors": 1138,
+  "total_stars": 136098,
+  "total_forks": 33526,
+  "total_issues": 25689,
+  "total_pull_requests": 16620,
+  "total_contributors": 1145,
   "public_repos": 52,
-  "timestamp": "2026-08-20T02:30:58.363659Z",
+  "timestamp": "2026-08-21T02:35:48.580260Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 60771,
-      "forks": 11597,
-      "issues": 12893,
-      "pull_requests": 7251,
+      "stars": 60812,
+      "forks": 11603,
+      "issues": 12894,
+      "pull_requests": 7266,
       "contributors": 432
     },
     {
       "name": "yolov5",
-      "stars": 57905,
+      "stars": 57910,
       "forks": 17474,
       "issues": 9443,
-      "pull_requests": 3032,
+      "pull_requests": 3033,
       "contributors": 349
     },
     {
@@ -29,7 +29,7 @@
       "stars": 10594,
       "forks": 3431,
       "issues": 1826,
-      "pull_requests": 600,
+      "pull_requests": 601,
       "contributors": 55
     },
     {
@@ -37,15 +37,15 @@
       "stars": 1230,
       "forks": 260,
       "issues": 65,
-      "pull_requests": 76,
+      "pull_requests": 77,
       "contributors": 8
     },
     {
       "name": "assets",
-      "stars": 659,
+      "stars": 660,
       "forks": 51,
       "issues": 9,
-      "pull_requests": 170,
+      "pull_requests": 171,
       "contributors": 20
     },
     {
@@ -53,7 +53,7 @@
       "stars": 505,
       "forks": 100,
       "issues": 52,
-      "pull_requests": 259,
+      "pull_requests": 260,
       "contributors": 12
     },
     {
@@ -61,7 +61,7 @@
       "stars": 477,
       "forks": 173,
       "issues": 241,
-      "pull_requests": 346,
+      "pull_requests": 347,
       "contributors": 29
     },
     {
@@ -69,7 +69,7 @@
       "stars": 341,
       "forks": 59,
       "issues": 31,
-      "pull_requests": 52,
+      "pull_requests": 53,
       "contributors": 5
     },
     {
@@ -77,7 +77,7 @@
       "stars": 294,
       "forks": 67,
       "issues": 11,
-      "pull_requests": 46,
+      "pull_requests": 47,
       "contributors": 4
     },
     {
@@ -85,7 +85,7 @@
       "stars": 241,
       "forks": 18,
       "issues": 1025,
-      "pull_requests": 261,
+      "pull_requests": 262,
       "contributors": 12
     },
     {
@@ -93,7 +93,7 @@
       "stars": 233,
       "forks": 53,
       "issues": 0,
-      "pull_requests": 110,
+      "pull_requests": 111,
       "contributors": 7
     },
     {
@@ -101,7 +101,7 @@
       "stars": 160,
       "forks": 22,
       "issues": 11,
-      "pull_requests": 419,
+      "pull_requests": 425,
       "contributors": 7
     },
     {
@@ -109,7 +109,7 @@
       "stars": 136,
       "forks": 24,
       "issues": 10,
-      "pull_requests": 138,
+      "pull_requests": 139,
       "contributors": 3
     },
     {
@@ -117,7 +117,7 @@
       "stars": 125,
       "forks": 14,
       "issues": 7,
-      "pull_requests": 347,
+      "pull_requests": 349,
       "contributors": 11
     },
     {
@@ -125,7 +125,7 @@
       "stars": 121,
       "forks": 19,
       "issues": 13,
-      "pull_requests": 866,
+      "pull_requests": 870,
       "contributors": 14
     },
     {
@@ -133,7 +133,7 @@
       "stars": 110,
       "forks": 5,
       "issues": 1,
-      "pull_requests": 112,
+      "pull_requests": 113,
       "contributors": 7
     },
     {
@@ -141,7 +141,7 @@
       "stars": 93,
       "forks": 4,
       "issues": 3,
-      "pull_requests": 332,
+      "pull_requests": 333,
       "contributors": 12
     },
     {
@@ -149,7 +149,7 @@
       "stars": 92,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 428,
+      "pull_requests": 430,
       "contributors": 6
     },
     {
@@ -157,7 +157,7 @@
       "stars": 82,
       "forks": 8,
       "issues": 2,
-      "pull_requests": 31,
+      "pull_requests": 32,
       "contributors": 3
     },
     {
@@ -165,7 +165,7 @@
       "stars": 81,
       "forks": 2,
       "issues": 7,
-      "pull_requests": 201,
+      "pull_requests": 202,
       "contributors": 7
     },
     {
@@ -173,7 +173,7 @@
       "stars": 80,
       "forks": 7,
       "issues": 1,
-      "pull_requests": 49,
+      "pull_requests": 50,
       "contributors": 3
     },
     {
@@ -181,7 +181,7 @@
       "stars": 77,
       "forks": 10,
       "issues": 1,
-      "pull_requests": 101,
+      "pull_requests": 102,
       "contributors": 5
     },
     {
@@ -189,7 +189,7 @@
       "stars": 76,
       "forks": 30,
       "issues": 3,
-      "pull_requests": 326,
+      "pull_requests": 328,
       "contributors": 36
     },
     {
@@ -197,7 +197,7 @@
       "stars": 75,
       "forks": 9,
       "issues": 4,
-      "pull_requests": 72,
+      "pull_requests": 73,
       "contributors": 4
     },
     {
@@ -205,7 +205,7 @@
       "stars": 74,
       "forks": 18,
       "issues": 2,
-      "pull_requests": 30,
+      "pull_requests": 31,
       "contributors": 4
     },
     {
@@ -213,7 +213,7 @@
       "stars": 71,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 26,
+      "pull_requests": 27,
       "contributors": 3
     },
     {
@@ -221,7 +221,7 @@
       "stars": 70,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 24,
+      "pull_requests": 25,
       "contributors": 3
     },
     {
@@ -229,7 +229,7 @@
       "stars": 68,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 32,
+      "pull_requests": 33,
       "contributors": 3
     },
     {
@@ -237,7 +237,7 @@
       "stars": 67,
       "forks": 4,
       "issues": 1,
-      "pull_requests": 59,
+      "pull_requests": 60,
       "contributors": 4
     },
     {
@@ -245,7 +245,7 @@
       "stars": 66,
       "forks": 5,
       "issues": 0,
-      "pull_requests": 31,
+      "pull_requests": 32,
       "contributors": 3
     },
     {
@@ -253,7 +253,7 @@
       "stars": 66,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 47,
+      "pull_requests": 48,
       "contributors": 5
     },
     {
@@ -261,7 +261,7 @@
       "stars": 66,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 116,
+      "pull_requests": 117,
       "contributors": 5
     },
     {
@@ -269,7 +269,7 @@
       "stars": 65,
       "forks": 2,
       "issues": 4,
-      "pull_requests": 34,
+      "pull_requests": 35,
       "contributors": 3
     },
     {
@@ -277,7 +277,7 @@
       "stars": 64,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 32,
+      "pull_requests": 33,
       "contributors": 3
     },
     {
@@ -285,7 +285,7 @@
       "stars": 64,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 8,
+      "pull_requests": 9,
       "contributors": 3
     },
     {
@@ -293,7 +293,7 @@
       "stars": 63,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 28,
+      "pull_requests": 30,
       "contributors": 3
     },
     {
@@ -301,7 +301,7 @@
       "stars": 63,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 27,
+      "pull_requests": 28,
       "contributors": 3
     },
     {
@@ -309,7 +309,7 @@
       "stars": 63,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 29,
+      "pull_requests": 30,
       "contributors": 3
     },
     {
@@ -317,7 +317,7 @@
       "stars": 62,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 27,
+      "pull_requests": 28,
       "contributors": 3
     },
     {
@@ -325,7 +325,7 @@
       "stars": 62,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 28,
+      "pull_requests": 29,
       "contributors": 3
     },
     {
@@ -333,7 +333,7 @@
       "stars": 61,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 25,
+      "pull_requests": 26,
       "contributors": 3
     },
     {
@@ -341,7 +341,7 @@
       "stars": 61,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 26,
+      "pull_requests": 27,
       "contributors": 3
     },
     {
@@ -349,7 +349,7 @@
       "stars": 61,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 18,
+      "pull_requests": 19,
       "contributors": 4
     },
     {
@@ -357,7 +357,7 @@
       "stars": 60,
       "forks": 1,
       "issues": 1,
-      "pull_requests": 28,
+      "pull_requests": 29,
       "contributors": 3
     },
     {
@@ -365,64 +365,64 @@
       "stars": 60,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 24,
+      "pull_requests": 25,
       "contributors": 4
     },
     {
       "name": "yolo26",
-      "stars": 47,
-      "forks": 6,
+      "stars": 48,
+      "forks": 7,
       "issues": 0,
-      "pull_requests": 9,
-      "contributors": 2
+      "pull_requests": 10,
+      "contributors": 3
     },
     {
       "name": "yolov8",
       "stars": 30,
       "forks": 3,
       "issues": 0,
-      "pull_requests": 9,
-      "contributors": 2
+      "pull_requests": 10,
+      "contributors": 3
     },
     {
       "name": "yolo11",
-      "stars": 20,
+      "stars": 21,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 9,
-      "contributors": 2
+      "pull_requests": 10,
+      "contributors": 3
     },
     {
       "name": "lite",
-      "stars": 19,
+      "stars": 20,
       "forks": 3,
       "issues": 21,
-      "pull_requests": 106,
-      "contributors": 5
+      "pull_requests": 109,
+      "contributors": 6
     },
     {
       "name": "skills",
-      "stars": 9,
+      "stars": 10,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 8,
-      "contributors": 2
+      "pull_requests": 9,
+      "contributors": 3
     },
     {
       "name": "openapi",
       "stars": 4,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 44,
-      "contributors": 1
+      "pull_requests": 45,
+      "contributors": 2
     },
     {
       "name": "sdk",
       "stars": 3,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 30,
-      "contributors": 2
+      "pull_requests": 32,
+      "contributors": 3
     }
   ]
 }
