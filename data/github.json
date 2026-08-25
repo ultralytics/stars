@@ -1,28 +1,28 @@
 {
   "org": "ultralytics",
-  "total_stars": 136214,
-  "total_forks": 33545,
-  "total_issues": 25690,
-  "total_pull_requests": 16669,
-  "total_contributors": 1149,
+  "total_stars": 136245,
+  "total_forks": 33550,
+  "total_issues": 25692,
+  "total_pull_requests": 16692,
+  "total_contributors": 1155,
   "public_repos": 52,
-  "timestamp": "2026-08-24T02:36:06.461102Z",
+  "timestamp": "2026-08-25T02:31:27.253661Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 60900,
-      "forks": 11620,
-      "issues": 12894,
-      "pull_requests": 7287,
-      "contributors": 436
+      "stars": 60930,
+      "forks": 11627,
+      "issues": 12896,
+      "pull_requests": 7304,
+      "contributors": 441
     },
     {
       "name": "yolov5",
       "stars": 57921,
-      "forks": 17476,
+      "forks": 17474,
       "issues": 9444,
       "pull_requests": 3034,
-      "contributors": 349
+      "contributors": 350
     },
     {
       "name": "yolov3",
@@ -101,7 +101,7 @@
       "stars": 161,
       "forks": 22,
       "issues": 11,
-      "pull_requests": 430,
+      "pull_requests": 431,
       "contributors": 7
     },
     {
@@ -149,7 +149,7 @@
       "stars": 92,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 433,
+      "pull_requests": 434,
       "contributors": 6
     },
     {
@@ -189,7 +189,7 @@
       "stars": 76,
       "forks": 30,
       "issues": 3,
-      "pull_requests": 329,
+      "pull_requests": 330,
       "contributors": 36
     },
     {
@@ -370,7 +370,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 50,
+      "stars": 51,
       "forks": 8,
       "issues": 0,
       "pull_requests": 10,
@@ -397,7 +397,7 @@
       "stars": 20,
       "forks": 3,
       "issues": 21,
-      "pull_requests": 112,
+      "pull_requests": 113,
       "contributors": 6
     },
     {
@@ -421,7 +421,7 @@
       "stars": 4,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 37,
+      "pull_requests": 39,
       "contributors": 3
     }
   ]
