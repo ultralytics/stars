@@ -46,6 +46,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/pypi.json
 - `hub-sdk` - Ultralytics HUB SDK
 - `mkdocs-ultralytics-plugin` - Documentation plugin
 - `ultralytics-autoimport` - Auto-import utilities
+- `ultralytics-platform` - Ultralytics Platform Python SDK
 
 **Fields:**
 

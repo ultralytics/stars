@@ -338,6 +338,7 @@ if __name__ == "__main__":
         "hub-sdk",
         "mkdocs-ultralytics-plugin",
         "ultralytics-autoimport",
+        "ultralytics-platform",
     ]
     pypi_output = BASE_DIR / "data/pypi.json"
     pepy_api_key = os.getenv("PEPY_API_KEY")

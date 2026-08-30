@@ -13,7 +13,7 @@
 #   - All-time total downloads per package and org-wide (via pepy.tech API with auth)
 #   - Daily, weekly, and monthly download counts (via pypistats.org API)
 #   - Tracked packages: ultralytics, ultralytics-actions, ultralytics-thop,
-#     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport
+#     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport, ultralytics-platform
 #
 # Google Analytics Data (data/google_analytics.json):
 #   - Active users, sessions, and page views (30-day window)
