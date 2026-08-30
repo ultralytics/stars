@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 136417,
-  "total_forks": 33568,
-  "total_issues": 25701,
-  "total_pull_requests": 16815,
-  "total_contributors": 1157,
+  "total_stars": 136438,
+  "total_forks": 33571,
+  "total_issues": 25704,
+  "total_pull_requests": 16840,
+  "total_contributors": 1158,
   "public_repos": 52,
-  "timestamp": "2026-08-29T02:24:47.115900Z",
+  "timestamp": "2026-08-30T01:01:21.481939Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61054,
-      "forks": 11644,
-      "issues": 12904,
-      "pull_requests": 7351,
+      "stars": 61074,
+      "forks": 11650,
+      "issues": 12907,
+      "pull_requests": 7366,
       "contributors": 443
     },
     {
       "name": "yolov5",
-      "stars": 57942,
-      "forks": 17473,
+      "stars": 57939,
+      "forks": 17468,
       "issues": 9444,
-      "pull_requests": 3035,
+      "pull_requests": 3036,
       "contributors": 350
     },
     {
       "name": "yolov3",
-      "stars": 10598,
+      "stars": 10599,
       "forks": 3428,
       "issues": 1826,
       "pull_requests": 602,
@@ -34,7 +34,7 @@
     },
     {
       "name": "JSON2YOLO",
-      "stars": 1231,
+      "stars": 1232,
       "forks": 260,
       "issues": 65,
       "pull_requests": 78,
@@ -99,10 +99,10 @@
     {
       "name": "inference",
       "stars": 163,
-      "forks": 22,
+      "forks": 23,
       "issues": 11,
-      "pull_requests": 438,
-      "contributors": 7
+      "pull_requests": 440,
+      "contributors": 8
     },
     {
       "name": "velocity",
@@ -141,7 +141,7 @@
       "stars": 93,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 439,
+      "pull_requests": 441,
       "contributors": 6
     },
     {
@@ -210,7 +210,7 @@
     },
     {
       "name": "iSky",
-      "stars": 71,
+      "stars": 72,
       "forks": 6,
       "issues": 0,
       "pull_requests": 28,
@@ -241,6 +241,14 @@
       "contributors": 4
     },
     {
+      "name": "replicate",
+      "stars": 67,
+      "forks": 4,
+      "issues": 0,
+      "pull_requests": 49,
+      "contributors": 5
+    },
+    {
       "name": "mnist",
       "stars": 66,
       "forks": 5,
@@ -249,19 +257,11 @@
       "contributors": 3
     },
     {
-      "name": "replicate",
-      "stars": 66,
-      "forks": 4,
-      "issues": 0,
-      "pull_requests": 49,
-      "contributors": 5
-    },
-    {
       "name": "template-rust",
       "stars": 66,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 122,
+      "pull_requests": 123,
       "contributors": 5
     },
     {
@@ -379,7 +379,7 @@
     {
       "name": "yolov8",
       "stars": 34,
-      "forks": 3,
+      "forks": 4,
       "issues": 0,
       "pull_requests": 11,
       "contributors": 3
@@ -397,7 +397,7 @@
       "stars": 22,
       "forks": 3,
       "issues": 22,
-      "pull_requests": 119,
+      "pull_requests": 121,
       "contributors": 6
     },
     {
@@ -421,7 +421,7 @@
       "stars": 5,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 45,
+      "pull_requests": 47,
       "contributors": 3
     }
   ]
