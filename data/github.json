@@ -1,16 +1,16 @@
 {
   "org": "ultralytics",
-  "total_stars": 136438,
+  "total_stars": 136441,
   "total_forks": 33571,
   "total_issues": 25704,
-  "total_pull_requests": 16840,
+  "total_pull_requests": 16841,
   "total_contributors": 1158,
   "public_repos": 52,
-  "timestamp": "2026-08-30T01:01:21.481939Z",
+  "timestamp": "2026-08-30T02:29:09.533204Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61074,
+      "stars": 61077,
       "forks": 11650,
       "issues": 12907,
       "pull_requests": 7366,
@@ -141,7 +141,7 @@
       "stars": 93,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 441,
+      "pull_requests": 442,
       "contributors": 6
     },
     {
