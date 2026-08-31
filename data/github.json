@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 136441,
-  "total_forks": 33571,
-  "total_issues": 25704,
-  "total_pull_requests": 16841,
-  "total_contributors": 1158,
+  "total_stars": 136467,
+  "total_forks": 33585,
+  "total_issues": 25705,
+  "total_pull_requests": 16850,
+  "total_contributors": 1161,
   "public_repos": 52,
-  "timestamp": "2026-08-30T02:29:09.533204Z",
+  "timestamp": "2026-08-31T02:31:49.962468Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61077,
-      "forks": 11650,
-      "issues": 12907,
-      "pull_requests": 7366,
-      "contributors": 443
+      "stars": 61100,
+      "forks": 11662,
+      "issues": 12908,
+      "pull_requests": 7371,
+      "contributors": 446
     },
     {
       "name": "yolov5",
-      "stars": 57939,
-      "forks": 17468,
+      "stars": 57942,
+      "forks": 17469,
       "issues": 9444,
       "pull_requests": 3036,
       "contributors": 350
@@ -58,8 +58,8 @@
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 483,
-      "forks": 173,
+      "stars": 484,
+      "forks": 174,
       "issues": 241,
       "pull_requests": 350,
       "contributors": 29
@@ -122,7 +122,7 @@
     },
     {
       "name": "actions",
-      "stars": 121,
+      "stars": 120,
       "forks": 19,
       "issues": 13,
       "pull_requests": 879,
@@ -141,7 +141,7 @@
       "stars": 93,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 442,
+      "pull_requests": 443,
       "contributors": 6
     },
     {
@@ -189,7 +189,7 @@
       "stars": 76,
       "forks": 30,
       "issues": 3,
-      "pull_requests": 331,
+      "pull_requests": 333,
       "contributors": 36
     },
     {
@@ -397,7 +397,7 @@
       "stars": 22,
       "forks": 3,
       "issues": 22,
-      "pull_requests": 121,
+      "pull_requests": 122,
       "contributors": 6
     },
     {
