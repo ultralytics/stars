@@ -1,6 +1,6 @@
 # Base
 pandas>=3.0.5
-PyGithub>=2.9.1
+PyGithub>=2.10.0
 tqdm>=4.70.0
 requests>=2.33.1
 
