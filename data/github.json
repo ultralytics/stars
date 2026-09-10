@@ -1,24 +1,24 @@
 {
   "org": "ultralytics",
-  "total_stars": 137018,
-  "total_forks": 33658,
-  "total_issues": 25681,
-  "total_pull_requests": 17047,
-  "total_contributors": 1166,
+  "total_stars": 137071,
+  "total_forks": 33669,
+  "total_issues": 25683,
+  "total_pull_requests": 17066,
+  "total_contributors": 1168,
   "public_repos": 52,
-  "timestamp": "2026-09-09T02:29:31.390652Z",
+  "timestamp": "2026-09-10T02:29:37.848778Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61414,
-      "forks": 11733,
-      "issues": 12902,
-      "pull_requests": 7461,
+      "stars": 61455,
+      "forks": 11743,
+      "issues": 12904,
+      "pull_requests": 7474,
       "contributors": 450
     },
     {
       "name": "yolov5",
-      "stars": 57983,
+      "stars": 57989,
       "forks": 17465,
       "issues": 9424,
       "pull_requests": 3037,
@@ -43,7 +43,7 @@
     {
       "name": "assets",
       "stars": 666,
-      "forks": 51,
+      "forks": 52,
       "issues": 9,
       "pull_requests": 172,
       "contributors": 20
@@ -90,7 +90,7 @@
     },
     {
       "name": "notebooks",
-      "stars": 239,
+      "stars": 240,
       "forks": 53,
       "issues": 0,
       "pull_requests": 112,
@@ -98,7 +98,7 @@
     },
     {
       "name": "inference",
-      "stars": 168,
+      "stars": 169,
       "forks": 25,
       "issues": 11,
       "pull_requests": 481,
@@ -141,7 +141,7 @@
       "stars": 96,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 453,
+      "pull_requests": 454,
       "contributors": 6
     },
     {
@@ -185,20 +185,20 @@
       "contributors": 5
     },
     {
-      "name": "handbook",
-      "stars": 79,
-      "forks": 30,
-      "issues": 3,
-      "pull_requests": 337,
-      "contributors": 36
-    },
-    {
       "name": "yolo26",
-      "stars": 79,
+      "stars": 82,
       "forks": 12,
       "issues": 0,
       "pull_requests": 11,
       "contributors": 3
+    },
+    {
+      "name": "handbook",
+      "stars": 79,
+      "forks": 30,
+      "issues": 3,
+      "pull_requests": 338,
+      "contributors": 36
     },
     {
       "name": ".github",
@@ -397,15 +397,15 @@
       "stars": 25,
       "forks": 5,
       "issues": 26,
-      "pull_requests": 139,
+      "pull_requests": 142,
       "contributors": 6
     },
     {
       "name": "skills",
-      "stars": 19,
+      "stars": 20,
       "forks": 0,
       "issues": 0,
-      "pull_requests": 11,
+      "pull_requests": 12,
       "contributors": 3
     },
     {
@@ -414,7 +414,7 @@
       "forks": 1,
       "issues": 0,
       "pull_requests": 50,
-      "contributors": 2
+      "contributors": 3
     },
     {
       "name": "sdk",
@@ -422,7 +422,7 @@
       "forks": 1,
       "issues": 0,
       "pull_requests": 60,
-      "contributors": 3
+      "contributors": 4
     }
   ]
 }
