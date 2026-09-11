@@ -2,7 +2,7 @@
 
 # Ultralytics Analytics & Star Tracking ⭐️
 
-Track GitHub stars, contributors, and PyPI downloads for [Ultralytics](https://github.com/ultralytics) projects.
+Track GitHub stars, contributors, PyPI downloads, Google Analytics, Reddit, and Ultralytics Platform stats for [Ultralytics](https://github.com/ultralytics) projects.
 
 [![Ultralytics Actions](https://github.com/ultralytics/stars/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/stars/actions/workflows/format.yml)
 [![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
@@ -23,6 +23,7 @@ https://raw.githubusercontent.com/ultralytics/stars/main/data/github.json
 
 **Fields:**
 
+- `org`: GitHub organization the stats were collected for
 - `total_stars`: Total stars across all public repos
 - `total_forks`: Total forks across all public repos
 - `total_issues`: Total issues across all public repos (all-time)
@@ -84,7 +85,7 @@ print(f"PyPI downloads (30d): {downloads['total_last_month']:,}")
 
 ```
 stars/
-├── fetch_stats.py          # Unified analytics fetcher (GitHub + PyPI)
+├── fetch_stats.py          # Unified analytics fetcher (GitHub, PyPI, GA, Reddit, Platform)
 ├── count_stars.py          # Historical star tracking script
 ├── utils.py                # Shared utilities
 ├── data/

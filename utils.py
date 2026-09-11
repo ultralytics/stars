@@ -37,14 +37,6 @@ def retry_request(func, *args, retries: int = 3, backoff: float = 2.0, **kwargs)
     raise last_error
 
 
-def fetch_json(url: str, headers: dict | None = None, timeout: int = 60) -> dict:
-    """Fetch JSON from URL with error handling."""
-    r = requests.get(url, headers=headers, timeout=timeout)
-    if r.status_code != 200:
-        sys.exit(f"HTTP {r.status_code}: {r.text[:200]}")
-    return r.json()
-
-
 def post_json(url: str, headers: dict, payload: dict, timeout: int = 60, retries: int = 3) -> dict:
     """POST JSON to URL with retry and error handling."""
     last_error = None

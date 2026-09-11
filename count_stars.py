@@ -92,12 +92,8 @@ def run(
     Notes:
         - Ensure you have a valid GitHub personal access token if you are accessing private repositories or want to avoid
           rate limits. You can generate one at https://github.com/settings/tokens.
-        - Requires 'repos.yaml' file in the same directory with a list of repositories to analyze, in the format:
-          ```yaml
-          repositories:
-              - 'repository_owner/repository_name'
-              - 'another_owner/another_repository'
-          ```
+        - Repositories are read from the module-level REPOS list of 'owner/name' strings; edit it to change what is
+          tracked.
     """
     # Settings
     # date = datetime(2022, 3, 1)  # count stars since this day, i.e. March 1st 2022
