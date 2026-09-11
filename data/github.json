@@ -1,35 +1,35 @@
 {
   "org": "ultralytics",
-  "total_stars": 137071,
-  "total_forks": 33669,
-  "total_issues": 25683,
-  "total_pull_requests": 17066,
+  "total_stars": 137108,
+  "total_forks": 33679,
+  "total_issues": 25690,
+  "total_pull_requests": 17085,
   "total_contributors": 1168,
   "public_repos": 52,
-  "timestamp": "2026-09-10T02:29:37.848778Z",
+  "timestamp": "2026-09-11T02:29:27.289986Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61455,
-      "forks": 11743,
-      "issues": 12904,
-      "pull_requests": 7474,
+      "stars": 61488,
+      "forks": 11748,
+      "issues": 12906,
+      "pull_requests": 7485,
       "contributors": 450
     },
     {
       "name": "yolov5",
-      "stars": 57989,
-      "forks": 17465,
-      "issues": 9424,
+      "stars": 57990,
+      "forks": 17468,
+      "issues": 9428,
       "pull_requests": 3037,
       "contributors": 350
     },
     {
       "name": "yolov3",
-      "stars": 10602,
+      "stars": 10601,
       "forks": 3425,
       "issues": 1826,
-      "pull_requests": 605,
+      "pull_requests": 606,
       "contributors": 55
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 666,
+      "stars": 669,
       "forks": 52,
       "issues": 9,
       "pull_requests": 172,
@@ -100,7 +100,7 @@
       "name": "inference",
       "stars": 169,
       "forks": 25,
-      "issues": 11,
+      "issues": 12,
       "pull_requests": 481,
       "contributors": 8
     },
@@ -123,7 +123,7 @@
     {
       "name": "actions",
       "stars": 123,
-      "forks": 19,
+      "forks": 20,
       "issues": 13,
       "pull_requests": 885,
       "contributors": 15
@@ -141,7 +141,7 @@
       "stars": 96,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 454,
+      "pull_requests": 455,
       "contributors": 6
     },
     {
@@ -177,6 +177,14 @@
       "contributors": 3
     },
     {
+      "name": "yolo26",
+      "stars": 83,
+      "forks": 13,
+      "issues": 0,
+      "pull_requests": 11,
+      "contributors": 3
+    },
+    {
       "name": "template",
       "stars": 82,
       "forks": 10,
@@ -185,19 +193,11 @@
       "contributors": 5
     },
     {
-      "name": "yolo26",
-      "stars": 82,
-      "forks": 12,
-      "issues": 0,
-      "pull_requests": 11,
-      "contributors": 3
-    },
-    {
       "name": "handbook",
       "stars": 79,
       "forks": 30,
       "issues": 3,
-      "pull_requests": 338,
+      "pull_requests": 339,
       "contributors": 36
     },
     {
@@ -397,7 +397,7 @@
       "stars": 25,
       "forks": 5,
       "issues": 26,
-      "pull_requests": 142,
+      "pull_requests": 143,
       "contributors": 6
     },
     {
@@ -413,7 +413,7 @@
       "stars": 8,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 50,
+      "pull_requests": 51,
       "contributors": 3
     },
     {
@@ -421,7 +421,7 @@
       "stars": 8,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 60,
+      "pull_requests": 63,
       "contributors": 4
     }
   ]
