@@ -46,7 +46,7 @@ python -m py_compile fetch_stats.py utils.py count_stars.py
 # is set. PEPY_API_KEY unlocks pepy.tech all-time totals; ORG overrides the GitHub organization (default "ultralytics").
 GITHUB_TOKEN=ghp_... python fetch_stats.py
 GITHUB_TOKEN=ghp_... PEPY_API_KEY=... GA_CREDENTIALS_JSON="$(cat service-account.json)" PORTAL_API_KEY=... python fetch_stats.py
-git diff -- data/ # inspect what changed and read every "Warning:" line in the run output
+git diff -- data/     # inspect what changed and read every "Warning:" line in the run output
 git checkout -- data/ # then discard local data churn (the bot owns data/)
 
 # Exercise one source in isolation: importing fetch_stats does not run the pipeline (guarded by __main__), and every
