@@ -16,11 +16,18 @@
 #     hub-sdk, mkdocs-ultralytics-plugin, ultralytics-autoimport, ultralytics-platform
 #
 # Google Analytics Data (data/google_analytics.json):
-#   - Active users, sessions, and page views (30-day window)
+#   - Active users, sessions, events, and average session duration over 1d/7d/30d/90d/365d windows
 #   - Requires GA_CREDENTIALS_JSON secret
 #
-# All data is publicly available via GitHub API, pypistats.org API, and pepy.tech API.
-# Note: pepy.tech requires API key (set PEPY_API_KEY secret in repo settings).
+# Reddit Data (data/reddit.json):
+#   - r/ultralytics subscriber count (via shields.io)
+#
+# Platform Data (data/platform.json):
+#   - Ultralytics Platform projects, datasets, images, models, exports, and annotations (via portal.ultralytics.com)
+#   - Requires PORTAL_API_KEY secret
+#
+# Summary (data/summary.json) combines the headline totals from all sources.
+# GitHub, pypistats.org, pepy.tech, and shields.io data is public; pepy.tech needs the PEPY_API_KEY secret for totals.
 # Results are committed daily to main branch via automated PR.
 
 name: Update Analytics
