@@ -45,7 +45,7 @@ python -m py_compile fetch_stats.py utils.py count_stars.py
 # when PORTAL_API_KEY is set. PEPY_API_KEY unlocks pepy.tech all-time totals; ORG overrides the default "ultralytics".
 GITHUB_TOKEN=ghp_... python fetch_stats.py
 GITHUB_TOKEN=ghp_... PEPY_API_KEY=... GA_CREDENTIALS_JSON="$(cat service-account.json)" PORTAL_API_KEY=... python fetch_stats.py
-git diff --stat data/ && git checkout -- data/   # inspect, then discard local data churn (the bot owns data/)
+git diff --stat data/ && git checkout -- data/ # inspect, then discard local data churn (the bot owns data/)
 
 # Manual historical star counting. Reads --token only (never the GITHUB_TOKEN env var); --save also writes users.csv
 # (names, companies, emails) into the cwd — it is not gitignored, never commit it.
