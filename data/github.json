@@ -1,24 +1,24 @@
 {
   "org": "ultralytics",
-  "total_stars": 137832,
-  "total_forks": 33728,
-  "total_issues": 25718,
-  "total_pull_requests": 17372,
+  "total_stars": 137863,
+  "total_forks": 33724,
+  "total_issues": 25720,
+  "total_pull_requests": 17401,
   "total_contributors": 1181,
   "public_repos": 52,
-  "timestamp": "2026-09-25T02:28:50.856831Z",
+  "timestamp": "2026-09-26T02:28:31.026501Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 61990,
-      "forks": 11799,
-      "issues": 12929,
-      "pull_requests": 7647,
+      "stars": 62010,
+      "forks": 11795,
+      "issues": 12931,
+      "pull_requests": 7667,
       "contributors": 462
     },
     {
       "name": "yolov5",
-      "stars": 58077,
+      "stars": 58084,
       "forks": 17462,
       "issues": 9428,
       "pull_requests": 3038,
@@ -26,7 +26,7 @@
     },
     {
       "name": "yolov3",
-      "stars": 10609,
+      "stars": 10611,
       "forks": 3423,
       "issues": 1826,
       "pull_requests": 606,
@@ -42,7 +42,7 @@
     },
     {
       "name": "assets",
-      "stars": 676,
+      "stars": 677,
       "forks": 53,
       "issues": 9,
       "pull_requests": 173,
@@ -98,15 +98,15 @@
     },
     {
       "name": "inference",
-      "stars": 181,
+      "stars": 182,
       "forks": 26,
       "issues": 12,
-      "pull_requests": 502,
+      "pull_requests": 505,
       "contributors": 8
     },
     {
       "name": "velocity",
-      "stars": 141,
+      "stars": 140,
       "forks": 24,
       "issues": 10,
       "pull_requests": 140,
@@ -125,7 +125,7 @@
       "stars": 124,
       "forks": 20,
       "issues": 13,
-      "pull_requests": 891,
+      "pull_requests": 892,
       "contributors": 15
     },
     {
@@ -149,7 +149,7 @@
       "stars": 97,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 471,
+      "pull_requests": 472,
       "contributors": 6
     },
     {
@@ -197,7 +197,7 @@
       "stars": 80,
       "forks": 31,
       "issues": 3,
-      "pull_requests": 347,
+      "pull_requests": 348,
       "contributors": 36
     },
     {
@@ -378,7 +378,7 @@
     },
     {
       "name": "yolov8",
-      "stars": 48,
+      "stars": 49,
       "forks": 4,
       "issues": 0,
       "pull_requests": 12,
@@ -397,7 +397,7 @@
       "stars": 30,
       "forks": 6,
       "issues": 28,
-      "pull_requests": 173,
+      "pull_requests": 176,
       "contributors": 7
     },
     {
