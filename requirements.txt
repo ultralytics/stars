@@ -1,5 +1,5 @@
 # Base
-pandas>=3.0.5
+pandas>=3.0.6
 PyGithub>=2.10.0
 tqdm>=4.70.0
 requests>=2.33.1
