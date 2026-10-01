@@ -1,7 +1,7 @@
 # Base
 pandas>=3.0.6
 PyGithub>=2.10.0
-tqdm>=4.70.0
+tqdm>=4.70.1
 requests>=2.33.1
 
 # For Google Analytics
