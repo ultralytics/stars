@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 138086,
-  "total_forks": 33743,
-  "total_issues": 25739,
-  "total_pull_requests": 17660,
+  "total_stars": 138114,
+  "total_forks": 33747,
+  "total_issues": 25744,
+  "total_pull_requests": 17680,
   "total_contributors": 1186,
   "public_repos": 52,
-  "timestamp": "2026-10-04T03:06:10.238760Z",
+  "timestamp": "2026-10-05T02:40:46.797872Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62180,
-      "forks": 11816,
-      "issues": 12949,
-      "pull_requests": 7813,
+      "stars": 62206,
+      "forks": 11819,
+      "issues": 12953,
+      "pull_requests": 7827,
       "contributors": 466
     },
     {
       "name": "yolov5",
-      "stars": 58104,
-      "forks": 17459,
+      "stars": 58106,
+      "forks": 17460,
       "issues": 9428,
       "pull_requests": 3044,
       "contributors": 350
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 515,
+      "stars": 516,
       "forks": 102,
       "issues": 54,
       "pull_requests": 266,
@@ -74,7 +74,7 @@
     },
     {
       "name": "flickr_scraper",
-      "stars": 301,
+      "stars": 300,
       "forks": 67,
       "issues": 11,
       "pull_requests": 48,
@@ -117,7 +117,7 @@
       "stars": 128,
       "forks": 14,
       "issues": 7,
-      "pull_requests": 355,
+      "pull_requests": 356,
       "contributors": 11
     },
     {
@@ -157,7 +157,7 @@
       "stars": 97,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 482,
+      "pull_requests": 483,
       "contributors": 6
     },
     {
@@ -396,8 +396,8 @@
       "name": "lite",
       "stars": 31,
       "forks": 6,
-      "issues": 29,
-      "pull_requests": 200,
+      "issues": 30,
+      "pull_requests": 203,
       "contributors": 7
     },
     {
@@ -413,7 +413,7 @@
       "stars": 12,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 98,
+      "pull_requests": 99,
       "contributors": 4
     },
     {
