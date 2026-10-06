@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: ultralytics/actions/setup-uv@setup-uv-defaults
+      - uses: ultralytics/actions/setup-uv@main
         with:
           enable-cache: true
       - run: uv pip install -r requirements.txt
