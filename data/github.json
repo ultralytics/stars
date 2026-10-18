@@ -1,35 +1,35 @@
 {
   "org": "ultralytics",
-  "total_stars": 138668,
-  "total_forks": 33798,
-  "total_issues": 25765,
-  "total_pull_requests": 17989,
-  "total_contributors": 1201,
+  "total_stars": 138694,
+  "total_forks": 33804,
+  "total_issues": 25768,
+  "total_pull_requests": 18027,
+  "total_contributors": 1203,
   "public_repos": 52,
-  "timestamp": "2026-10-17T02:27:09.438517Z",
+  "timestamp": "2026-10-18T02:27:56.275350Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62574,
-      "forks": 11866,
-      "issues": 12969,
-      "pull_requests": 7987,
-      "contributors": 477
+      "stars": 62597,
+      "forks": 11870,
+      "issues": 12972,
+      "pull_requests": 8016,
+      "contributors": 479
     },
     {
       "name": "yolov5",
-      "stars": 58181,
-      "forks": 17457,
+      "stars": 58179,
+      "forks": 17458,
       "issues": 9428,
-      "pull_requests": 3045,
+      "pull_requests": 3048,
       "contributors": 350
     },
     {
       "name": "yolov3",
-      "stars": 10622,
+      "stars": 10621,
       "forks": 3420,
       "issues": 1826,
-      "pull_requests": 614,
+      "pull_requests": 616,
       "contributors": 55
     },
     {
@@ -98,15 +98,15 @@
     },
     {
       "name": "inference",
-      "stars": 193,
-      "forks": 28,
+      "stars": 198,
+      "forks": 29,
       "issues": 12,
       "pull_requests": 552,
       "contributors": 8
     },
     {
       "name": "velocity",
-      "stars": 141,
+      "stars": 142,
       "forks": 24,
       "issues": 10,
       "pull_requests": 140,
@@ -133,7 +133,7 @@
       "stars": 125,
       "forks": 21,
       "issues": 13,
-      "pull_requests": 919,
+      "pull_requests": 921,
       "contributors": 16
     },
     {
@@ -157,7 +157,7 @@
       "stars": 98,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 496,
+      "pull_requests": 497,
       "contributors": 6
     },
     {
@@ -397,7 +397,7 @@
       "stars": 35,
       "forks": 7,
       "issues": 31,
-      "pull_requests": 230,
+      "pull_requests": 231,
       "contributors": 9
     },
     {
