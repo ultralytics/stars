@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 138896,
-  "total_forks": 33833,
-  "total_issues": 25776,
-  "total_pull_requests": 18170,
-  "total_contributors": 1208,
+  "total_stars": 138952,
+  "total_forks": 33832,
+  "total_issues": 25777,
+  "total_pull_requests": 18190,
+  "total_contributors": 1209,
   "public_repos": 52,
-  "timestamp": "2026-10-23T02:30:01.555696Z",
+  "timestamp": "2026-10-24T02:28:13.255950Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62752,
-      "forks": 11889,
-      "issues": 12980,
-      "pull_requests": 8103,
+      "stars": 62785,
+      "forks": 11892,
+      "issues": 12981,
+      "pull_requests": 8117,
       "contributors": 482
     },
     {
       "name": "yolov5",
-      "stars": 58187,
-      "forks": 17457,
+      "stars": 58207,
+      "forks": 17456,
       "issues": 9428,
       "pull_requests": 3050,
       "contributors": 352
     },
     {
       "name": "yolov3",
-      "stars": 10621,
-      "forks": 3419,
+      "stars": 10622,
+      "forks": 3417,
       "issues": 1826,
       "pull_requests": 617,
       "contributors": 55
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 524,
+      "stars": 525,
       "forks": 103,
       "issues": 54,
       "pull_requests": 269,
@@ -107,7 +107,7 @@
     {
       "name": "yolo26",
       "stars": 149,
-      "forks": 22,
+      "forks": 21,
       "issues": 0,
       "pull_requests": 12,
       "contributors": 3
@@ -157,7 +157,7 @@
       "stars": 98,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 502,
+      "pull_requests": 503,
       "contributors": 6
     },
     {
@@ -197,8 +197,8 @@
       "stars": 83,
       "forks": 32,
       "issues": 3,
-      "pull_requests": 364,
-      "contributors": 37
+      "pull_requests": 365,
+      "contributors": 38
     },
     {
       "name": ".github",
@@ -397,12 +397,12 @@
       "stars": 35,
       "forks": 7,
       "issues": 31,
-      "pull_requests": 233,
+      "pull_requests": 235,
       "contributors": 9
     },
     {
       "name": "skills",
-      "stars": 31,
+      "stars": 32,
       "forks": 0,
       "issues": 2,
       "pull_requests": 30,
@@ -413,7 +413,7 @@
       "stars": 13,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 123,
+      "pull_requests": 125,
       "contributors": 4
     },
     {
