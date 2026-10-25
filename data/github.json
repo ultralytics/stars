@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 138952,
-  "total_forks": 33832,
-  "total_issues": 25777,
-  "total_pull_requests": 18190,
+  "total_stars": 138990,
+  "total_forks": 33836,
+  "total_issues": 25781,
+  "total_pull_requests": 18213,
   "total_contributors": 1209,
   "public_repos": 52,
-  "timestamp": "2026-10-24T02:28:13.255950Z",
+  "timestamp": "2026-10-25T02:29:58.046563Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62785,
-      "forks": 11892,
-      "issues": 12981,
-      "pull_requests": 8117,
+      "stars": 62813,
+      "forks": 11896,
+      "issues": 12984,
+      "pull_requests": 8129,
       "contributors": 482
     },
     {
       "name": "yolov5",
-      "stars": 58207,
-      "forks": 17456,
+      "stars": 58215,
+      "forks": 17455,
       "issues": 9428,
       "pull_requests": 3050,
       "contributors": 352
     },
     {
       "name": "yolov3",
-      "stars": 10622,
+      "stars": 10623,
       "forks": 3417,
       "issues": 1826,
       "pull_requests": 617,
@@ -53,15 +53,15 @@
       "stars": 525,
       "forks": 103,
       "issues": 54,
-      "pull_requests": 269,
+      "pull_requests": 272,
       "contributors": 12
     },
     {
       "name": "yolo-flutter-app",
       "stars": 506,
       "forks": 174,
-      "issues": 241,
-      "pull_requests": 359,
+      "issues": 242,
+      "pull_requests": 364,
       "contributors": 30
     },
     {
@@ -98,10 +98,10 @@
     },
     {
       "name": "inference",
-      "stars": 202,
+      "stars": 203,
       "forks": 30,
       "issues": 12,
-      "pull_requests": 580,
+      "pull_requests": 582,
       "contributors": 8
     },
     {
@@ -157,7 +157,7 @@
       "stars": 98,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 503,
+      "pull_requests": 504,
       "contributors": 6
     },
     {
@@ -379,7 +379,7 @@
     {
       "name": "yolov8",
       "stars": 58,
-      "forks": 6,
+      "forks": 7,
       "issues": 0,
       "pull_requests": 12,
       "contributors": 3
