@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 139073,
-  "total_forks": 33845,
-  "total_issues": 25786,
-  "total_pull_requests": 18251,
+  "total_stars": 139122,
+  "total_forks": 33854,
+  "total_issues": 25787,
+  "total_pull_requests": 18267,
   "total_contributors": 1215,
   "public_repos": 52,
-  "timestamp": "2026-10-27T02:29:46.723452Z",
+  "timestamp": "2026-10-28T02:21:02.129168Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62871,
-      "forks": 11913,
-      "issues": 12989,
-      "pull_requests": 8151,
+      "stars": 62913,
+      "forks": 11923,
+      "issues": 12990,
+      "pull_requests": 8163,
       "contributors": 486
     },
     {
       "name": "yolov5",
-      "stars": 58227,
-      "forks": 17447,
+      "stars": 58230,
+      "forks": 17446,
       "issues": 9428,
       "pull_requests": 3050,
       "contributors": 352
     },
     {
       "name": "yolov3",
-      "stars": 10627,
+      "stars": 10628,
       "forks": 3417,
       "issues": 1826,
       "pull_requests": 617,
@@ -34,7 +34,7 @@
     },
     {
       "name": "JSON2YOLO",
-      "stars": 1240,
+      "stars": 1239,
       "forks": 260,
       "issues": 65,
       "pull_requests": 80,
@@ -74,7 +74,7 @@
     },
     {
       "name": "flickr_scraper",
-      "stars": 301,
+      "stars": 300,
       "forks": 67,
       "issues": 11,
       "pull_requests": 49,
@@ -106,7 +106,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 150,
+      "stars": 151,
       "forks": 21,
       "issues": 0,
       "pull_requests": 12,
@@ -133,7 +133,7 @@
       "stars": 125,
       "forks": 21,
       "issues": 13,
-      "pull_requests": 929,
+      "pull_requests": 930,
       "contributors": 16
     },
     {
@@ -157,7 +157,7 @@
       "stars": 98,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 506,
+      "pull_requests": 507,
       "contributors": 6
     },
     {
@@ -394,7 +394,7 @@
     },
     {
       "name": "lite",
-      "stars": 35,
+      "stars": 36,
       "forks": 7,
       "issues": 31,
       "pull_requests": 238,
@@ -402,23 +402,23 @@
     },
     {
       "name": "skills",
-      "stars": 32,
+      "stars": 33,
       "forks": 0,
       "issues": 2,
-      "pull_requests": 30,
+      "pull_requests": 31,
       "contributors": 3
     },
     {
       "name": "sdk",
-      "stars": 13,
+      "stars": 14,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 127,
+      "pull_requests": 128,
       "contributors": 4
     },
     {
       "name": "openapi",
-      "stars": 12,
+      "stars": 13,
       "forks": 1,
       "issues": 0,
       "pull_requests": 59,
