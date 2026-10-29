@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 139122,
-  "total_forks": 33854,
+  "total_stars": 139154,
+  "total_forks": 33859,
   "total_issues": 25787,
-  "total_pull_requests": 18267,
-  "total_contributors": 1215,
+  "total_pull_requests": 18291,
+  "total_contributors": 1216,
   "public_repos": 52,
-  "timestamp": "2026-10-28T02:21:02.129168Z",
+  "timestamp": "2026-10-29T02:21:24.043559Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 62913,
-      "forks": 11923,
+      "stars": 62943,
+      "forks": 11931,
       "issues": 12990,
-      "pull_requests": 8163,
+      "pull_requests": 8177,
       "contributors": 486
     },
     {
       "name": "yolov5",
-      "stars": 58230,
-      "forks": 17446,
+      "stars": 58233,
+      "forks": 17443,
       "issues": 9428,
       "pull_requests": 3050,
       "contributors": 352
@@ -53,15 +53,15 @@
       "stars": 526,
       "forks": 103,
       "issues": 54,
-      "pull_requests": 272,
-      "contributors": 12
+      "pull_requests": 277,
+      "contributors": 13
     },
     {
       "name": "yolo-flutter-app",
       "stars": 508,
       "forks": 174,
       "issues": 242,
-      "pull_requests": 366,
+      "pull_requests": 367,
       "contributors": 30
     },
     {
@@ -133,7 +133,7 @@
       "stars": 125,
       "forks": 21,
       "issues": 13,
-      "pull_requests": 930,
+      "pull_requests": 931,
       "contributors": 16
     },
     {
@@ -157,7 +157,7 @@
       "stars": 98,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 507,
+      "pull_requests": 508,
       "contributors": 6
     },
     {
@@ -186,7 +186,7 @@
     },
     {
       "name": "template",
-      "stars": 85,
+      "stars": 84,
       "forks": 10,
       "issues": 1,
       "pull_requests": 106,
@@ -397,7 +397,7 @@
       "stars": 36,
       "forks": 7,
       "issues": 31,
-      "pull_requests": 238,
+      "pull_requests": 239,
       "contributors": 9
     },
     {
@@ -413,7 +413,7 @@
       "stars": 14,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 128,
+      "pull_requests": 129,
       "contributors": 4
     },
     {
