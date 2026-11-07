@@ -1,25 +1,25 @@
 {
   "org": "ultralytics",
-  "total_stars": 139535,
-  "total_forks": 33898,
-  "total_issues": 25792,
-  "total_pull_requests": 18518,
+  "total_stars": 139550,
+  "total_forks": 33899,
+  "total_issues": 25796,
+  "total_pull_requests": 18544,
   "total_contributors": 1223,
   "public_repos": 52,
-  "timestamp": "2026-11-06T02:18:37.921617Z",
+  "timestamp": "2026-11-07T02:17:20.841451Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63166,
-      "forks": 11970,
-      "issues": 12996,
-      "pull_requests": 8286,
+      "stars": 63176,
+      "forks": 11972,
+      "issues": 13000,
+      "pull_requests": 8307,
       "contributors": 491
     },
     {
       "name": "yolov5",
       "stars": 58254,
-      "forks": 17442,
+      "forks": 17441,
       "issues": 9428,
       "pull_requests": 3065,
       "contributors": 353
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 531,
+      "stars": 530,
       "forks": 106,
       "issues": 54,
       "pull_requests": 278,
@@ -93,12 +93,12 @@
       "stars": 248,
       "forks": 58,
       "issues": 0,
-      "pull_requests": 117,
+      "pull_requests": 119,
       "contributors": 7
     },
     {
       "name": "inference",
-      "stars": 215,
+      "stars": 217,
       "forks": 31,
       "issues": 12,
       "pull_requests": 605,
@@ -122,10 +122,10 @@
     },
     {
       "name": "docs",
-      "stars": 132,
+      "stars": 133,
       "forks": 14,
       "issues": 7,
-      "pull_requests": 375,
+      "pull_requests": 376,
       "contributors": 12
     },
     {
@@ -157,7 +157,7 @@
       "stars": 100,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 517,
+      "pull_requests": 518,
       "contributors": 6
     },
     {
@@ -194,7 +194,7 @@
     },
     {
       "name": "handbook",
-      "stars": 85,
+      "stars": 86,
       "forks": 32,
       "issues": 3,
       "pull_requests": 370,
@@ -402,11 +402,19 @@
     },
     {
       "name": "skills",
-      "stars": 35,
+      "stars": 36,
       "forks": 0,
       "issues": 2,
       "pull_requests": 35,
       "contributors": 3
+    },
+    {
+      "name": "sdk",
+      "stars": 17,
+      "forks": 1,
+      "issues": 0,
+      "pull_requests": 145,
+      "contributors": 4
     },
     {
       "name": "openapi",
@@ -415,14 +423,6 @@
       "issues": 0,
       "pull_requests": 60,
       "contributors": 3
-    },
-    {
-      "name": "sdk",
-      "stars": 16,
-      "forks": 1,
-      "issues": 0,
-      "pull_requests": 144,
-      "contributors": 4
     }
   ]
 }
