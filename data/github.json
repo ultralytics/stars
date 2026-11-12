@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 139685,
-  "total_forks": 33900,
+  "total_stars": 139713,
+  "total_forks": 33901,
   "total_issues": 25798,
-  "total_pull_requests": 18664,
-  "total_contributors": 1227,
+  "total_pull_requests": 18678,
+  "total_contributors": 1226,
   "public_repos": 52,
-  "timestamp": "2026-11-11T02:16:23.023437Z",
+  "timestamp": "2026-11-12T02:17:45.093901Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63284,
-      "forks": 11974,
+      "stars": 63307,
+      "forks": 11980,
       "issues": 13002,
-      "pull_requests": 8369,
+      "pull_requests": 8382,
       "contributors": 494
     },
     {
       "name": "yolov5",
-      "stars": 58259,
-      "forks": 17439,
+      "stars": 58261,
+      "forks": 17436,
       "issues": 9428,
       "pull_requests": 3066,
       "contributors": 353
     },
     {
       "name": "yolov3",
-      "stars": 10637,
-      "forks": 3411,
+      "stars": 10638,
+      "forks": 3410,
       "issues": 1826,
       "pull_requests": 625,
       "contributors": 55
@@ -59,10 +59,10 @@
     {
       "name": "yolo-flutter-app",
       "stars": 513,
-      "forks": 176,
+      "forks": 175,
       "issues": 242,
-      "pull_requests": 376,
-      "contributors": 31
+      "pull_requests": 375,
+      "contributors": 30
     },
     {
       "name": "xview-yolov3",
@@ -106,7 +106,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 168,
+      "stars": 169,
       "forks": 22,
       "issues": 0,
       "pull_requests": 12,
@@ -157,7 +157,7 @@
       "stars": 100,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 522,
+      "pull_requests": 523,
       "contributors": 6
     },
     {
@@ -378,7 +378,7 @@
     },
     {
       "name": "yolov8",
-      "stars": 65,
+      "stars": 66,
       "forks": 8,
       "issues": 0,
       "pull_requests": 12,
@@ -413,7 +413,7 @@
       "stars": 17,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 151,
+      "pull_requests": 152,
       "contributors": 4
     },
     {
