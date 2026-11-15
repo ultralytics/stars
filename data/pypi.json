@@ -1,56 +1,56 @@
 {
-  "total_downloads": 351372018,
-  "total_last_month": 12309948,
-  "timestamp": "2026-11-14T02:18:30.959888Z",
+  "total_downloads": 351848177,
+  "total_last_month": 12227874,
+  "timestamp": "2026-11-15T02:18:10.302950Z",
   "packages": [
     {
       "package": "ultralytics",
-      "last_day": 199353,
-      "last_week": 1199166,
-      "last_month": 5035605,
-      "total": 228661223
+      "last_day": 131629,
+      "last_week": 1202563,
+      "last_month": 4989103,
+      "total": 228853777
     },
     {
       "package": "ultralytics-actions",
-      "last_day": 131,
-      "last_week": 813,
-      "last_month": 4797,
-      "total": 326009
+      "last_day": 268,
+      "last_week": 947,
+      "last_month": 4941,
+      "total": 326333
     },
     {
       "package": "ultralytics-thop",
-      "last_day": 182697,
-      "last_week": 1160984,
-      "last_month": 4823003,
-      "total": 114345234
+      "last_day": 126691,
+      "last_week": 1156308,
+      "last_month": 4779031,
+      "total": 114529217
     },
     {
       "package": "hub-sdk",
-      "last_day": 321,
-      "last_week": 2005,
-      "last_month": 11273,
-      "total": 1300958
+      "last_day": 223,
+      "last_week": 2078,
+      "last_month": 10360,
+      "total": 1301278
     },
     {
       "package": "mkdocs-ultralytics-plugin",
-      "last_day": 100,
-      "last_week": 938,
-      "last_month": 2286,
-      "total": 333755
+      "last_day": 59,
+      "last_week": 960,
+      "last_month": 2302,
+      "total": 333870
     },
     {
       "package": "ultralytics-autoimport",
-      "last_day": 7,
-      "last_week": 26,
+      "last_day": 4,
+      "last_week": 23,
       "last_month": 144,
-      "total": 7180
+      "total": 7185
     },
     {
       "package": "ultralytics-platform",
-      "last_day": 107197,
-      "last_week": 667401,
-      "last_month": 2432840,
-      "total": 6397659
+      "last_day": 71029,
+      "last_week": 661192,
+      "last_month": 2441993,
+      "total": 6496517
     }
   ]
 }
