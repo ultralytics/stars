@@ -1,27 +1,27 @@
 {
   "org": "ultralytics",
-  "total_stars": 139777,
-  "total_forks": 33899,
+  "total_stars": 139841,
+  "total_forks": 33920,
   "total_issues": 25799,
-  "total_pull_requests": 18724,
-  "total_contributors": 1227,
+  "total_pull_requests": 18735,
+  "total_contributors": 1228,
   "public_repos": 52,
-  "timestamp": "2026-11-14T02:17:48.826208Z",
+  "timestamp": "2026-11-15T02:17:58.600020Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63360,
-      "forks": 11987,
+      "stars": 63418,
+      "forks": 12006,
       "issues": 13003,
-      "pull_requests": 8416,
-      "contributors": 495
+      "pull_requests": 8425,
+      "contributors": 496
     },
     {
       "name": "yolov5",
-      "stars": 58264,
-      "forks": 17431,
+      "stars": 58268,
+      "forks": 17433,
       "issues": 9428,
-      "pull_requests": 3068,
+      "pull_requests": 3069,
       "contributors": 353
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 513,
+      "stars": 512,
       "forks": 174,
       "issues": 242,
       "pull_requests": 375,
@@ -98,7 +98,7 @@
     },
     {
       "name": "inference",
-      "stars": 220,
+      "stars": 221,
       "forks": 31,
       "issues": 13,
       "pull_requests": 621,
@@ -106,7 +106,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 170,
+      "stars": 171,
       "forks": 22,
       "issues": 0,
       "pull_requests": 12,
@@ -157,7 +157,7 @@
       "stars": 100,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 525,
+      "pull_requests": 526,
       "contributors": 6
     },
     {
@@ -378,7 +378,7 @@
     },
     {
       "name": "yolov8",
-      "stars": 66,
+      "stars": 67,
       "forks": 8,
       "issues": 0,
       "pull_requests": 12,
