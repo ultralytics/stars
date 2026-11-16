@@ -1,56 +1,56 @@
 {
-  "total_downloads": 351848177,
-  "total_last_month": 12227874,
-  "timestamp": "2026-11-15T02:18:10.302950Z",
+  "total_downloads": 352181845,
+  "total_last_month": 12151416,
+  "timestamp": "2026-11-16T02:20:14.592972Z",
   "packages": [
     {
       "package": "ultralytics",
-      "last_day": 131629,
-      "last_week": 1202563,
-      "last_month": 4989103,
-      "total": 228853777
+      "last_day": 125529,
+      "last_week": 1208508,
+      "last_month": 4947694,
+      "total": 228987458
     },
     {
       "package": "ultralytics-actions",
-      "last_day": 268,
-      "last_week": 947,
-      "last_month": 4941,
-      "total": 326333
+      "last_day": 62,
+      "last_week": 895,
+      "last_month": 4759,
+      "total": 326659
     },
     {
       "package": "ultralytics-thop",
-      "last_day": 126691,
-      "last_week": 1156308,
-      "last_month": 4779031,
-      "total": 114529217
+      "last_day": 123072,
+      "last_week": 1160616,
+      "last_month": 4745877,
+      "total": 114656805
     },
     {
       "package": "hub-sdk",
-      "last_day": 223,
-      "last_week": 2078,
-      "last_month": 10360,
-      "total": 1301278
+      "last_day": 249,
+      "last_week": 2207,
+      "last_month": 10148,
+      "total": 1301504
     },
     {
       "package": "mkdocs-ultralytics-plugin",
-      "last_day": 59,
-      "last_week": 960,
-      "last_month": 2302,
-      "total": 333870
+      "last_day": 23,
+      "last_week": 923,
+      "last_month": 2262,
+      "total": 333932
     },
     {
       "package": "ultralytics-autoimport",
-      "last_day": 4,
-      "last_week": 23,
-      "last_month": 144,
-      "total": 7185
+      "last_day": 5,
+      "last_week": 28,
+      "last_month": 147,
+      "total": 7189
     },
     {
       "package": "ultralytics-platform",
-      "last_day": 71029,
-      "last_week": 661192,
-      "last_month": 2441993,
-      "total": 6496517
+      "last_day": 70621,
+      "last_week": 653782,
+      "last_month": 2440529,
+      "total": 6568298
     }
   ]
 }
