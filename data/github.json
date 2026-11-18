@@ -1,24 +1,24 @@
 {
   "org": "ultralytics",
-  "total_stars": 140040,
-  "total_forks": 33931,
-  "total_issues": 25800,
-  "total_pull_requests": 18780,
+  "total_stars": 140093,
+  "total_forks": 33938,
+  "total_issues": 25802,
+  "total_pull_requests": 18806,
   "total_contributors": 1232,
   "public_repos": 52,
-  "timestamp": "2026-11-17T02:18:37.954575Z",
+  "timestamp": "2026-11-18T02:18:24.494752Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63500,
-      "forks": 12016,
-      "issues": 13004,
-      "pull_requests": 8456,
+      "stars": 63542,
+      "forks": 12023,
+      "issues": 13006,
+      "pull_requests": 8475,
       "contributors": 497
     },
     {
       "name": "yolov5",
-      "stars": 58280,
+      "stars": 58285,
       "forks": 17434,
       "issues": 9428,
       "pull_requests": 3072,
@@ -26,7 +26,7 @@
     },
     {
       "name": "yolov3",
-      "stars": 10642,
+      "stars": 10643,
       "forks": 3409,
       "issues": 1826,
       "pull_requests": 625,
@@ -98,15 +98,15 @@
     },
     {
       "name": "inference",
-      "stars": 223,
+      "stars": 224,
       "forks": 31,
       "issues": 13,
-      "pull_requests": 626,
+      "pull_requests": 629,
       "contributors": 8
     },
     {
       "name": "yolo26",
-      "stars": 173,
+      "stars": 176,
       "forks": 22,
       "issues": 0,
       "pull_requests": 12,
@@ -157,7 +157,7 @@
       "stars": 102,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 528,
+      "pull_requests": 529,
       "contributors": 6
     },
     {
@@ -353,6 +353,14 @@
       "contributors": 4
     },
     {
+      "name": "yolov8",
+      "stars": 71,
+      "forks": 8,
+      "issues": 0,
+      "pull_requests": 12,
+      "contributors": 3
+    },
+    {
       "name": "sandd",
       "stars": 70,
       "forks": 1,
@@ -367,14 +375,6 @@
       "issues": 0,
       "pull_requests": 26,
       "contributors": 4
-    },
-    {
-      "name": "yolov8",
-      "stars": 70,
-      "forks": 8,
-      "issues": 0,
-      "pull_requests": 12,
-      "contributors": 3
     },
     {
       "name": "ios_screenshots",
@@ -405,7 +405,7 @@
       "stars": 40,
       "forks": 0,
       "issues": 1,
-      "pull_requests": 38,
+      "pull_requests": 39,
       "contributors": 3
     },
     {
@@ -413,7 +413,7 @@
       "stars": 19,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 154,
+      "pull_requests": 156,
       "contributors": 4
     },
     {
