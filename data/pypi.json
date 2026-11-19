@@ -1,56 +1,56 @@
 {
-  "total_downloads": 352987488,
-  "total_last_month": 12573755,
-  "timestamp": "2026-11-18T02:18:35.601721Z",
+  "total_downloads": 353529246,
+  "total_last_month": 12701218,
+  "timestamp": "2026-11-19T02:18:08.118341Z",
   "packages": [
     {
       "package": "ultralytics",
-      "last_day": 213630,
-      "last_week": 1238468,
-      "last_month": 5108290,
-      "total": 229309547
+      "last_day": 219937,
+      "last_week": 1271025,
+      "last_month": 5143044,
+      "total": 229529522
     },
     {
       "package": "ultralytics-actions",
-      "last_day": 70,
-      "last_week": 861,
-      "last_month": 4404,
-      "total": 326891
+      "last_day": 140,
+      "last_week": 799,
+      "last_month": 4363,
+      "total": 326981
     },
     {
       "package": "ultralytics-thop",
-      "last_day": 200455,
-      "last_week": 1182631,
-      "last_month": 4897011,
-      "total": 114963545
+      "last_day": 209774,
+      "last_week": 1214946,
+      "last_month": 4940443,
+      "total": 115168875
     },
     {
       "package": "hub-sdk",
-      "last_day": 261,
-      "last_week": 2073,
-      "last_month": 10155,
-      "total": 1302140
+      "last_day": 218,
+      "last_week": 1857,
+      "last_month": 10022,
+      "total": 1302404
     },
     {
       "package": "mkdocs-ultralytics-plugin",
-      "last_day": 16,
-      "last_week": 423,
-      "last_month": 2212,
-      "total": 334167
+      "last_day": 28,
+      "last_week": 387,
+      "last_month": 2031,
+      "total": 334359
     },
     {
       "package": "ultralytics-autoimport",
       "last_day": 0,
-      "last_week": 20,
-      "last_month": 147,
-      "total": 7221
+      "last_week": 18,
+      "last_month": 146,
+      "total": 7225
     },
     {
       "package": "ultralytics-platform",
-      "last_day": 113277,
-      "last_week": 666938,
-      "last_month": 2551536,
-      "total": 6743977
+      "last_day": 124316,
+      "last_week": 687921,
+      "last_month": 2601169,
+      "total": 6859880
     }
   ]
 }
