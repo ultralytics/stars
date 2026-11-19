@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 140093,
-  "total_forks": 33938,
-  "total_issues": 25802,
-  "total_pull_requests": 18806,
-  "total_contributors": 1232,
+  "total_stars": 140126,
+  "total_forks": 33935,
+  "total_issues": 25805,
+  "total_pull_requests": 18833,
+  "total_contributors": 1234,
   "public_repos": 52,
-  "timestamp": "2026-11-18T02:18:24.494752Z",
+  "timestamp": "2026-11-19T02:17:55.927724Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63542,
+      "stars": 63566,
       "forks": 12023,
-      "issues": 13006,
-      "pull_requests": 8475,
-      "contributors": 497
+      "issues": 13009,
+      "pull_requests": 8494,
+      "contributors": 498
     },
     {
       "name": "yolov5",
-      "stars": 58285,
-      "forks": 17434,
+      "stars": 58288,
+      "forks": 17431,
       "issues": 9428,
       "pull_requests": 3072,
       "contributors": 356
     },
     {
       "name": "yolov3",
-      "stars": 10643,
-      "forks": 3409,
+      "stars": 10645,
+      "forks": 3407,
       "issues": 1826,
       "pull_requests": 625,
       "contributors": 55
@@ -50,16 +50,16 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 534,
+      "stars": 535,
       "forks": 106,
       "issues": 54,
-      "pull_requests": 288,
-      "contributors": 13
+      "pull_requests": 290,
+      "contributors": 14
     },
     {
       "name": "yolo-flutter-app",
-      "stars": 514,
-      "forks": 174,
+      "stars": 515,
+      "forks": 175,
       "issues": 242,
       "pull_requests": 375,
       "contributors": 30
@@ -93,7 +93,7 @@
       "stars": 250,
       "forks": 56,
       "issues": 0,
-      "pull_requests": 120,
+      "pull_requests": 121,
       "contributors": 8
     },
     {
@@ -106,7 +106,7 @@
     },
     {
       "name": "yolo26",
-      "stars": 176,
+      "stars": 177,
       "forks": 22,
       "issues": 0,
       "pull_requests": 12,
@@ -133,7 +133,7 @@
       "stars": 128,
       "forks": 19,
       "issues": 13,
-      "pull_requests": 938,
+      "pull_requests": 939,
       "contributors": 16
     },
     {
@@ -157,7 +157,7 @@
       "stars": 102,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 529,
+      "pull_requests": 530,
       "contributors": 6
     },
     {
@@ -185,20 +185,20 @@
       "contributors": 3
     },
     {
+      "name": "handbook",
+      "stars": 89,
+      "forks": 32,
+      "issues": 3,
+      "pull_requests": 372,
+      "contributors": 38
+    },
+    {
       "name": "template",
       "stars": 88,
       "forks": 10,
       "issues": 1,
       "pull_requests": 107,
       "contributors": 5
-    },
-    {
-      "name": "handbook",
-      "stars": 88,
-      "forks": 32,
-      "issues": 3,
-      "pull_requests": 372,
-      "contributors": 38
     },
     {
       "name": "functions-matlab",
@@ -355,7 +355,7 @@
     {
       "name": "yolov8",
       "stars": 71,
-      "forks": 8,
+      "forks": 9,
       "issues": 0,
       "pull_requests": 12,
       "contributors": 3
@@ -413,7 +413,7 @@
       "stars": 19,
       "forks": 1,
       "issues": 0,
-      "pull_requests": 156,
+      "pull_requests": 159,
       "contributors": 4
     },
     {
