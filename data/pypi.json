@@ -1,56 +1,56 @@
 {
-  "total_downloads": 353529246,
-  "total_last_month": 12701218,
-  "timestamp": "2026-11-19T02:18:08.118341Z",
+  "total_downloads": 354090004,
+  "total_last_month": 12745343,
+  "timestamp": "2026-11-20T02:18:24.752207Z",
   "packages": [
     {
       "package": "ultralytics",
-      "last_day": 219937,
-      "last_week": 1271025,
-      "last_month": 5143044,
-      "total": 229529522
+      "last_day": 193521,
+      "last_week": 1265193,
+      "last_month": 5154997,
+      "total": 229753494
     },
     {
       "package": "ultralytics-actions",
-      "last_day": 140,
-      "last_week": 799,
-      "last_month": 4363,
-      "total": 326981
+      "last_day": 81,
+      "last_week": 797,
+      "last_month": 4104,
+      "total": 327381
     },
     {
       "package": "ultralytics-thop",
-      "last_day": 209774,
-      "last_week": 1214946,
-      "last_month": 4940443,
-      "total": 115168875
+      "last_day": 182499,
+      "last_week": 1206494,
+      "last_month": 4942197,
+      "total": 115380013
     },
     {
       "package": "hub-sdk",
-      "last_day": 218,
-      "last_week": 1857,
-      "last_month": 10022,
-      "total": 1302404
+      "last_day": 186,
+      "last_week": 1722,
+      "last_month": 9804,
+      "total": 1302675
     },
     {
       "package": "mkdocs-ultralytics-plugin",
-      "last_day": 28,
-      "last_week": 387,
-      "last_month": 2031,
-      "total": 334359
+      "last_day": 39,
+      "last_week": 282,
+      "last_month": 1970,
+      "total": 334402
     },
     {
       "package": "ultralytics-autoimport",
-      "last_day": 0,
-      "last_week": 18,
+      "last_day": 2,
+      "last_week": 13,
       "last_month": 146,
-      "total": 7225
+      "total": 7230
     },
     {
       "package": "ultralytics-platform",
-      "last_day": 124316,
-      "last_week": 687921,
-      "last_month": 2601169,
-      "total": 6859880
+      "last_day": 105398,
+      "last_week": 686122,
+      "last_month": 2632125,
+      "total": 6984809
     }
   ]
 }
