@@ -1,33 +1,33 @@
 {
   "org": "ultralytics",
-  "total_stars": 140330,
-  "total_forks": 33933,
+  "total_stars": 140359,
+  "total_forks": 33936,
   "total_issues": 25807,
-  "total_pull_requests": 18923,
-  "total_contributors": 1236,
+  "total_pull_requests": 18948,
+  "total_contributors": 1235,
   "public_repos": 52,
-  "timestamp": "2026-11-24T02:19:23.190493Z",
+  "timestamp": "2026-11-25T02:19:34.255290Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63689,
-      "forks": 12023,
+      "stars": 63716,
+      "forks": 12030,
       "issues": 13011,
-      "pull_requests": 8556,
+      "pull_requests": 8568,
       "contributors": 500
     },
     {
       "name": "yolov5",
-      "stars": 58305,
-      "forks": 17430,
+      "stars": 58304,
+      "forks": 17426,
       "issues": 9428,
-      "pull_requests": 3073,
-      "contributors": 356
+      "pull_requests": 3072,
+      "contributors": 355
     },
     {
       "name": "yolov3",
       "stars": 10649,
-      "forks": 3406,
+      "forks": 3404,
       "issues": 1826,
       "pull_requests": 625,
       "contributors": 55
@@ -82,7 +82,7 @@
     },
     {
       "name": "hub",
-      "stars": 255,
+      "stars": 254,
       "forks": 18,
       "issues": 1026,
       "pull_requests": 263,
@@ -98,16 +98,16 @@
     },
     {
       "name": "inference",
-      "stars": 226,
-      "forks": 31,
+      "stars": 228,
+      "forks": 32,
       "issues": 13,
-      "pull_requests": 634,
+      "pull_requests": 643,
       "contributors": 8
     },
     {
       "name": "yolo26",
-      "stars": 185,
-      "forks": 22,
+      "stars": 186,
+      "forks": 23,
       "issues": 0,
       "pull_requests": 12,
       "contributors": 3
@@ -157,7 +157,7 @@
       "stars": 103,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 535,
+      "pull_requests": 536,
       "contributors": 6
     },
     {
@@ -393,27 +393,27 @@
       "contributors": 3
     },
     {
-      "name": "skills",
-      "stars": 42,
-      "forks": 0,
-      "issues": 1,
-      "pull_requests": 40,
-      "contributors": 3
-    },
-    {
       "name": "lite",
-      "stars": 41,
+      "stars": 42,
       "forks": 7,
       "issues": 31,
       "pull_requests": 262,
       "contributors": 9
     },
     {
+      "name": "skills",
+      "stars": 42,
+      "forks": 0,
+      "issues": 1,
+      "pull_requests": 43,
+      "contributors": 3
+    },
+    {
       "name": "sdk",
       "stars": 21,
       "forks": 2,
       "issues": 0,
-      "pull_requests": 164,
+      "pull_requests": 165,
       "contributors": 4
     },
     {
