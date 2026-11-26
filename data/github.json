@@ -1,32 +1,32 @@
 {
   "org": "ultralytics",
-  "total_stars": 140359,
-  "total_forks": 33936,
-  "total_issues": 25807,
-  "total_pull_requests": 18948,
+  "total_stars": 140408,
+  "total_forks": 33947,
+  "total_issues": 25809,
+  "total_pull_requests": 18968,
   "total_contributors": 1235,
   "public_repos": 52,
-  "timestamp": "2026-11-25T02:19:34.255290Z",
+  "timestamp": "2026-11-26T02:18:53.615608Z",
   "repos": [
     {
       "name": "ultralytics",
-      "stars": 63716,
-      "forks": 12030,
-      "issues": 13011,
-      "pull_requests": 8568,
+      "stars": 63754,
+      "forks": 12038,
+      "issues": 13013,
+      "pull_requests": 8583,
       "contributors": 500
     },
     {
       "name": "yolov5",
-      "stars": 58304,
-      "forks": 17426,
+      "stars": 58311,
+      "forks": 17429,
       "issues": 9428,
       "pull_requests": 3072,
       "contributors": 355
     },
     {
       "name": "yolov3",
-      "stars": 10649,
+      "stars": 10650,
       "forks": 3404,
       "issues": 1826,
       "pull_requests": 625,
@@ -50,7 +50,7 @@
     },
     {
       "name": "yolo-ios-app",
-      "stars": 536,
+      "stars": 537,
       "forks": 106,
       "issues": 54,
       "pull_requests": 291,
@@ -101,12 +101,12 @@
       "stars": 228,
       "forks": 32,
       "issues": 13,
-      "pull_requests": 643,
+      "pull_requests": 644,
       "contributors": 8
     },
     {
       "name": "yolo26",
-      "stars": 186,
+      "stars": 187,
       "forks": 23,
       "issues": 0,
       "pull_requests": 12,
@@ -125,7 +125,7 @@
       "stars": 136,
       "forks": 14,
       "issues": 7,
-      "pull_requests": 379,
+      "pull_requests": 382,
       "contributors": 12
     },
     {
@@ -157,7 +157,7 @@
       "stars": 103,
       "forks": 6,
       "issues": 0,
-      "pull_requests": 536,
+      "pull_requests": 537,
       "contributors": 6
     },
     {
@@ -297,6 +297,14 @@
       "contributors": 3
     },
     {
+      "name": "yolov8",
+      "stars": 74,
+      "forks": 9,
+      "issues": 0,
+      "pull_requests": 12,
+      "contributors": 3
+    },
+    {
       "name": "agm2015",
       "stars": 73,
       "forks": 1,
@@ -318,14 +326,6 @@
       "forks": 2,
       "issues": 0,
       "pull_requests": 31,
-      "contributors": 3
-    },
-    {
-      "name": "yolov8",
-      "stars": 73,
-      "forks": 9,
-      "issues": 0,
-      "pull_requests": 12,
       "contributors": 3
     },
     {
