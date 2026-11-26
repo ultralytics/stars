@@ -1,56 +1,56 @@
 {
-  "total_downloads": 356034069,
-  "total_last_month": 12713088,
-  "timestamp": "2026-11-25T02:19:46.821175Z",
+  "total_downloads": 356482282,
+  "total_last_month": 12777987,
+  "timestamp": "2026-11-26T02:19:04.565132Z",
   "packages": [
     {
       "package": "ultralytics",
-      "last_day": 182675,
-      "last_week": 1153802,
-      "last_month": 5124754,
-      "total": 230542814
+      "last_day": 193377,
+      "last_week": 1127242,
+      "last_month": 5159899,
+      "total": 230734925
     },
     {
       "package": "ultralytics-actions",
-      "last_day": 56,
-      "last_week": 510,
-      "last_month": 3553,
-      "total": 328358
+      "last_day": 38,
+      "last_week": 408,
+      "last_month": 3354,
+      "total": 328434
     },
     {
       "package": "ultralytics-thop",
-      "last_day": 161182,
-      "last_week": 1078612,
-      "last_month": 4893973,
-      "total": 116103602
+      "last_day": 161454,
+      "last_week": 1030292,
+      "last_month": 4907473,
+      "total": 116267885
     },
     {
       "package": "hub-sdk",
-      "last_day": 258,
-      "last_week": 1245,
-      "last_month": 9008,
-      "total": 1303723
+      "last_day": 290,
+      "last_week": 1317,
+      "last_month": 8997,
+      "total": 1304080
     },
     {
       "package": "mkdocs-ultralytics-plugin",
-      "last_day": 88,
-      "last_week": 248,
-      "last_month": 1971,
-      "total": 335106
+      "last_day": 105,
+      "last_week": 325,
+      "last_month": 2029,
+      "total": 335207
     },
     {
       "package": "ultralytics-autoimport",
-      "last_day": 12,
+      "last_day": 0,
       "last_week": 25,
-      "last_month": 160,
-      "total": 7288
+      "last_month": 158,
+      "total": 7304
     },
     {
       "package": "ultralytics-platform",
-      "last_day": 90295,
-      "last_week": 637170,
-      "last_month": 2679669,
-      "total": 7413178
+      "last_day": 91205,
+      "last_week": 604059,
+      "last_month": 2696077,
+      "total": 7504447
     }
   ]
 }
